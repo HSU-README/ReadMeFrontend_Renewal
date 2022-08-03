@@ -1,14 +1,14 @@
 import React from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import LoginPage from './Login/LoginPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

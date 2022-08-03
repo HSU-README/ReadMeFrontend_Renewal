@@ -1,0 +1,40 @@
+form{
+    border: 5px solid;
+    border-radius: 15px;
+    border-color:#F57842;
+    max-width: 900px;
+    width: 60%;
+    height:500px;
+    box-shadow: 25% 0px 20px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+#input{
+    margin-left:10%;
+    margin-right:10%;
+    display:block;
+    width:200px;
+}
+#validationText{
+    text-align: left;
+    width: 800px;
+    margin: 10px 5px;
+    color: red;
+}
+#loginBtn{
+    margin-bottom: 12px;
+    width: 60%;
+    height: 40px;
+    background-color: #F57842;
+    color:white;    
+    max-width: 540px;
+    max-height: 80px;
+    border: none;
+    font-size: 18px;
+    padding: 0 16px 0px;
+    transition: all 80ms linear;
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
