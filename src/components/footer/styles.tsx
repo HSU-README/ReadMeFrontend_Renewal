@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { maxWidth } from 'styles/mixin';
+import maxWidth from 'styles/mixin';
 import colors from 'styles/colors';
 
 const Container = styled.footer`
