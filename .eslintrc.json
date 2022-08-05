@@ -15,14 +15,18 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "linebreak-style": ["error", "windows"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "semi": 2,
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "import/extensions": [
       "error",
-      {
-        "endOfLine": "auto"
-      },
       "ignorePackages",
       {
         "ts": "never",
