@@ -1,0 +1,1226 @@
+{
+  "data": [
+    {
+      "code": "S200",
+      "message": "문서 정보 조회 성공",
+      "result": {
+        "docId": 1001,
+        "title": "프로젝트 양식1",
+        "docDate": "2022-05-20T09:11:28",
+        "visibility": "PUBLIC",
+        "tags": [{ "name": "#공학" }, { "name": "#예술" }],
+        "major": null,
+        "docUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/project.png?alt=media&token=e112fb57-e561-48ec-8fcb-c98c2a4d25af",
+        "designer": "Propofol",
+        "designerUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=9fc3aa2d-3e21-4f0f-b182-35e0d94c48d5",
+        "components": [
+          {
+            "type": "text",
+            "x": 34.0,
+            "y": 16.0,
+            "height": 50,
+            "width": 281,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 32px;\">[ 프로젝트 제목 ]</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "image",
+            "x": 38.0,
+            "y": 68.0,
+            "height": 422,
+            "width": 711,
+            "imgUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/KakaoTalk_20220517_125746676.png?alt=media&token=43976c44-6ef0-42be-b4c7-da3825b91784",
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 100.0,
+            "y": 100.0,
+            "height": 150,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 36.0,
+            "y": 513.0,
+            "height": 56,
+            "width": 103,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 37.0,
+            "y": 491.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"color: rgb(187, 187, 187);\">&lt;프로젝트 대표 이미지 소개&gt;</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 37.0,
+            "y": 535.0,
+            "height": 72,
+            "width": 315,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 14px;\">요약</strong></p><ul><li><span style=\"font-size: 14px;\"> 프로젝트 내용 요약</span></li></ul>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 35.0,
+            "y": 626.0,
+            "height": 80,
+            "width": 274,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 14px;\">역할</strong></p><ul><li><span style=\"font-size: 14px;\">프로젝트 전체 인원</span></li><li><span style=\"font-size: 14px;\">나의 역할과 기여도</span></li></ul>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 32.0,
+            "y": 754.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 14px;\">성과</strong></p><ul><li><span style=\"font-size: 14px;\">성과는 구체적이고 정량적으로 표현</span></li></ul>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 33.0,
+            "y": 850.0,
+            "height": 77,
+            "width": 266,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 14px;\">시기</strong></p><ul><li><span style=\"font-size: 14px;\">프로젝트 진행 기간 (Ex. 2022.03 ~</span></li></ul>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 100.0,
+            "y": 100.0,
+            "height": 150,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S200",
+      "message": "문서 정보 조회 성공",
+      "result": {
+        "docId": 1002,
+        "title": "전통 양식",
+        "docDate": "2022-05-12T09:04:28",
+        "visibility": "PUBLIC",
+        "tags": [{ "name": "#인문" }, { "name": "#사회" }],
+        "major": null,
+        "likeCnt": 0,
+        "docUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/basicPofol.png?alt=media&token=4b90417b-ccb0-4313-989e-266704a031f5",
+        "designer": "Propofol",
+        "designerUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=9fc3aa2d-3e21-4f0f-b182-35e0d94c48d5",
+        "components": [
+          {
+            "type": "text",
+            "x": 140.0,
+            "y": 30.0,
+            "height": 120,
+            "width": 500,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p class=\"ql-align-center\"><strong style=\"font-size: 36px;\">기본적인 이력서</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 78.0,
+            "y": 90.0,
+            "height": 150,
+            "width": 139,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2F%EC%83%81%EC%83%81%EB%B6%80%EA%B8%B0%203.png?alt=media&token=56f78386-26eb-4af2-934f-cf015eee3abb",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 57.0,
+            "y": 371.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 20px;\">학력</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 60.0,
+            "y": 586.0,
+            "height": 50,
+            "width": 199,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 20px;\">외부 활동 (인턴)</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 58.0,
+            "y": 480.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 20px;\">자격증</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 64.0,
+            "y": 719.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 20px;\">수상 내역</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 84.0,
+            "y": 412.0,
+            "height": 50,
+            "width": 532,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 14px;\">한성대학교 컴퓨터공학부 빅데이터 트랙 </span><strong style=\"font-size: 14px;\"><em> </em></strong>\t\t\t\t\t<strong style=\"font-size: 12px;\"><em>2019 ~ 2023</em></strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 82.0,
+            "y": 518.0,
+            "height": 73,
+            "width": 316,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 14px;\">정보처리기사 </span> \t\t\t\t<strong style=\"font-size: 12px;\"><em>한국산업인력공단</em></strong></p><p><span style=\"font-size: 14px;\">TOPCIT </span>\t\t\t\t\t\t\t<strong style=\"font-size: 12px;\"><em>정보통신기획평가원</em></strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 99.0,
+            "y": 631.0,
+            "height": 91,
+            "width": 357,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 14px;\">멋쟁이사자처럼 대학 10기</span> <strong style=\"font-size: 12px;\"><em>2022.03 ~ 2022.12</em></strong></p><p><span style=\"font-size: 14px;\">소프트웨어마에스트로 13기</span><strong style=\"font-size: 12px;\"><em> </em></strong> <strong style=\"font-size: 12px;\"><em>2022.04 ~ 2022.12</em></strong></p><p><span style=\"font-size: 14px;\">차세대 보안리더 양성프로그램 11기</span><strong style=\"font-size: 12px;\"><em> </em></strong> <strong style=\"font-size: 12px;\"><em>2022.07 ~ 2023.03</em></strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 96.0,
+            "y": 758.0,
+            "height": 108,
+            "width": 329,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 14px;\">엄청 멋진 정부 대회 대상</span> <strong style=\"font-size: 12px;\"><em>2022.07</em></strong></p><p><span style=\"font-size: 14px;\">한성대학교 공학경진대회 대상</span><strong style=\"font-size: 12px;\"><em> </em></strong> <strong style=\"font-size: 12px;\"><em>2022.08</em></strong></p><p><span style=\"font-size: 14px;\">한성대학교 프로그래밍 경진대회 1등</span><strong style=\"font-size: 12px;\"><em> 2022.10</em></strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 218.0,
+            "y": 118.0,
+            "height": 166,
+            "width": 424,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 14px;\">이름 : 이한성</strong></p><p><br></p><p><strong style=\"font-size: 14px;\">생년월일 :  2022.05.12</strong></p><p><br></p><p><strong style=\"font-size: 14px;\">전화번호 : 010-1234-5678</strong></p><p><strong style=\"font-size: 14px;\"> </strong></p><p><strong style=\"font-size: 14px;\">주소 : 서울시 성북구 한성대학교</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 465.0,
+            "y": 119.0,
+            "height": 222,
+            "width": 327,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 14px;\">성별 : 남</strong></p><p><br></p><p><strong style=\"font-size: 14px;\">이메일 : best@hansung.ac.kr</strong></p><p><br></p><p><strong style=\"font-size: 14px;\">학점 : 4.5 / 4.5</strong></p><p><br></p><p><strong style=\"font-size: 14px;\">병역 사항 : 병역 필</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S200",
+      "message": "문서 정보 조회 성공",
+      "result": {
+        "docId": 1003,
+        "title": "프로젝트 양식2",
+        "docDate": "2022-05-21T09:11:28",
+        "visibility": "PUBLIC",
+        "tags": [{ "name": "#공학" }, { "name": "#예술" }],
+        "major": null,
+        "likeCnt": 0,
+        "docUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/project2.PNG?alt=media&token=e7013644-7ce5-4f7c-842b-bff557259d3d",
+        "designer": "Propofol",
+        "designerUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=9fc3aa2d-3e21-4f0f-b182-35e0d94c48d5",
+        "components": [
+          {
+            "type": "icon",
+            "x": 101.0,
+            "y": 99.0,
+            "height": 1022,
+            "width": 100,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Flinesero_2.png?alt=media&token=321fe691-9af2-430f-8b97-91eeeb6372ee",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "image",
+            "x": 679.0,
+            "y": 991.0,
+            "height": 100,
+            "width": 100,
+            "imgUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/QRCodeImg.jpg?alt=media&token=b0a94ed8-d448-4ce0-a0c9-e0846a993e1c",
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "image",
+            "x": 171.0,
+            "y": 100.0,
+            "height": 398,
+            "width": 564,
+            "imgUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/KakaoTalk_20220517_125726430.png?alt=media&token=1c6d02df-844e-4159-865d-70498c30ce11",
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 168.0,
+            "y": 40.0,
+            "height": 85,
+            "width": 525,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 32px;\">[ 프로젝트 명 기재 ]</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 28.0,
+            "y": 554.0,
+            "height": 50,
+            "width": 100,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 20px; font-family: Tahoma;\">요약</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 171.0,
+            "y": 529.0,
+            "height": 150,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 172.0,
+            "y": 507.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"color: rgb(136, 136, 136);\">프로젝트 이미지 설명</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 120.0,
+            "y": 562.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 12px;\">프로젝트를 요약 설명해주세요.</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 113.0,
+            "y": 652.0,
+            "height": 150,
+            "width": 265,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 27.0,
+            "y": 659.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-family: Tahoma; font-size: 20px;\">역할</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 89.0,
+            "y": 661.0,
+            "height": 74,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<ol><li>프로젝트 인원 </li><li>나의 역할</li><li>기여도 ( 25 % / 100 % )</li></ol>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 115.0,
+            "y": 749.0,
+            "height": 50,
+            "width": 265,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 26.0,
+            "y": 757.0,
+            "height": 149,
+            "width": 100,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-family: Tahoma; font-size: 20px;\">성과</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 116.0,
+            "y": 761.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p>성과는 구체적이고 정량적으로 표현</p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 7.0,
+            "y": 862.0,
+            "height": 50,
+            "width": 114,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-family: Tahoma; font-size: 20px;\">수행 기간</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 117.0,
+            "y": 871.0,
+            "height": 231,
+            "width": 206,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p>프로젝트 진행 기간 (Ex 2022.03 ~</p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 119.0,
+            "y": 858.0,
+            "height": 301,
+            "width": 263,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S200",
+      "message": "문서 정보 조회 성공",
+      "result": {
+        "docId": 1004,
+        "title": "픽토그램 양식",
+        "docDate": "2022-05-12T09:11:28",
+        "visibility": "PUBLIC",
+        "tags": [{ "name": "#심플" }, { "name": "#모던" }],
+        "major": null,
+        "likeCnt": 0,
+        "docUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Image%2Fpicktogram.png?alt=media&token=fa4af7d8-0387-418a-bb83-14a61848121a",
+        "designer": "Propofol",
+        "designerUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=9fc3aa2d-3e21-4f0f-b182-35e0d94c48d5",
+        "components": [
+          {
+            "type": "table",
+            "x": 67.0,
+            "y": 31.0,
+            "height": 181,
+            "width": 167,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 1,
+            "tableRow": 1,
+            "tableContents": [
+              {
+                "row": 0,
+                "column": 0,
+                "content": ""
+              },
+              {
+                "row": 0,
+                "column": 1,
+                "content": ""
+              },
+              {
+                "row": 0,
+                "column": 2,
+                "content": ""
+              },
+              {
+                "row": 0,
+                "column": 3,
+                "content": ""
+              },
+              {
+                "row": 0,
+                "column": 4,
+                "content": ""
+              },
+              {
+                "row": 0,
+                "column": 5,
+                "content": ""
+              },
+              {
+                "row": 1,
+                "column": 0,
+                "content": ""
+              },
+              {
+                "row": 1,
+                "column": 1,
+                "content": ""
+              },
+              {
+                "row": 1,
+                "column": 2,
+                "content": ""
+              },
+              {
+                "row": 1,
+                "column": 3,
+                "content": ""
+              },
+              {
+                "row": 1,
+                "column": 4,
+                "content": ""
+              },
+              {
+                "row": 1,
+                "column": 5,
+                "content": ""
+              },
+              {
+                "row": 2,
+                "column": 0,
+                "content": ""
+              },
+              {
+                "row": 2,
+                "column": 1,
+                "content": ""
+              },
+              {
+                "row": 2,
+                "column": 2,
+                "content": ""
+              },
+              {
+                "row": 2,
+                "column": 3,
+                "content": ""
+              },
+              {
+                "row": 2,
+                "column": 4,
+                "content": ""
+              },
+              {
+                "row": 2,
+                "column": 5,
+                "content": ""
+              },
+              {
+                "row": 3,
+                "column": 0,
+                "content": ""
+              },
+              {
+                "row": 3,
+                "column": 1,
+                "content": ""
+              },
+              {
+                "row": 3,
+                "column": 2,
+                "content": ""
+              },
+              {
+                "row": 3,
+                "column": 3,
+                "content": ""
+              },
+              {
+                "row": 3,
+                "column": 4,
+                "content": ""
+              },
+              {
+                "row": 3,
+                "column": 5,
+                "content": ""
+              },
+              {
+                "row": 4,
+                "column": 0,
+                "content": ""
+              },
+              {
+                "row": 4,
+                "column": 1,
+                "content": ""
+              },
+              {
+                "row": 4,
+                "column": 2,
+                "content": ""
+              },
+              {
+                "row": 4,
+                "column": 3,
+                "content": ""
+              },
+              {
+                "row": 4,
+                "column": 4,
+                "content": ""
+              },
+              {
+                "row": 4,
+                "column": 5,
+                "content": ""
+              },
+              {
+                "row": 5,
+                "column": 0,
+                "content": ""
+              },
+              {
+                "row": 5,
+                "column": 1,
+                "content": ""
+              },
+              {
+                "row": 5,
+                "column": 2,
+                "content": ""
+              },
+              {
+                "row": 5,
+                "column": 3,
+                "content": ""
+              },
+              {
+                "row": 5,
+                "column": 4,
+                "content": ""
+              },
+              {
+                "row": 5,
+                "column": 5,
+                "content": ""
+              }
+            ],
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 91.0,
+            "y": 288.0,
+            "height": 50,
+            "width": 100,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2Fphone.png?alt=media&token=2b88439d-07ae-447e-ba8c-6ba45eb50a91",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 94.0,
+            "y": 35.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2F%EC%83%81%EC%83%81%EB%B6%80%EA%B8%B0%201.png?alt=media&token=713113eb-fef8-4d71-b52f-40d2b686ef88",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 281.0,
+            "y": 62.0,
+            "height": 121,
+            "width": 391,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 32px;\">세상을 바꾸는 개발자</span></p><p><strong style=\"font-size: 40px; color: rgb(0, 102, 204);\">상상부기</strong><span style=\"font-size: 32px;\">입니다.</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 1.0,
+            "y": 236.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fred.png?alt=media&token=73a0bc11-a464-484c-9b01-13411ace33fa",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 73.0,
+            "y": 476.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2Femail.png?alt=media&token=1eac9b7f-c7d1-41ed-a7f8-e3d304609c8b",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 67.0,
+            "y": 743.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2Fschool.png?alt=media&token=12663f1c-3570-4bbb-aac3-f5c1edc90e93",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 68.0,
+            "y": 873.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2Fgithub.png?alt=media&token=d157ea6d-1b09-4dfb-aa6b-7ed31bb5b9c3",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 183.0,
+            "y": 350.0,
+            "height": 50,
+            "width": 185,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 24px;\">010-1234-5678</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 187.0,
+            "y": 494.0,
+            "height": 50,
+            "width": 150,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 20px;\">test@test.com</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 185.0,
+            "y": 626.0,
+            "height": 50,
+            "width": 317,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 20px;\">서울특별시 성북구 한성대학교</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 187.0,
+            "y": 758.0,
+            "height": 50,
+            "width": 345,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 20px;\">한성대학교 컴퓨터공학부 웹 공학 </span><span style=\"font-size: 14px;\">(졸)</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 191.0,
+            "y": 894.0,
+            "height": 50,
+            "width": 100,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 16px;\">github.com</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 72.0,
+            "y": 338.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2Fphone-call.png?alt=media&token=3c859a9e-350c-4f61-a57b-d7c27d564ad6",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "icon",
+            "x": 69.0,
+            "y": 612.0,
+            "height": 64,
+            "width": 64,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Imoji%2Faddress.png?alt=media&token=8d237e9b-4367-4343-98c8-eb8367f29e86",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S200",
+      "message": "문서 정보 조회 성공",
+      "result": {
+        "docId": 1005,
+        "title": "컴공 캡스톤 판넬양식",
+        "docDate": "2022-05-29T09:11:28",
+        "visibility": "PUBLIC",
+        "tags": [{ "name": "#공학" }, { "name": "#예술" }],
+        "major": null,
+        "likeCnt": 0,
+        "docUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/capstone.png?alt=media&token=97c47986-a6f7-41f1-bd49-8a510920dbce",
+        "designer": "Propofol",
+        "designerUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=9fc3aa2d-3e21-4f0f-b182-35e0d94c48d5",
+        "components": [
+          {
+            "type": "icon",
+            "x": 1.0,
+            "y": 913.0,
+            "height": 150,
+            "width": 150,
+            "imgUrl": null,
+            "iconUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Shape%2Fline.png?alt=media&token=d0604db3-5bca-4a13-9b9a-cb3203ff7055",
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 35,
+            "y": 1051,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 24px;\">팀명</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 17.0,
+            "y": 932.0,
+            "height": 50,
+            "width": 203,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<ul><li><strong style=\"font-size: 16px; color: rgb(230, 0, 0);\">기대효과</strong></li></ul>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 409.0,
+            "y": 933.0,
+            "height": 50,
+            "width": 136,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<ul><li><strong style=\"font-size: 16px; color: rgb(230, 0, 0);\">개발도구</strong></li></ul>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "image",
+            "x": 671.0,
+            "y": 995.0,
+            "height": 100,
+            "width": 117,
+            "imgUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/noname01.png?alt=media&token=271c2756-06f2-4753-a1c5-fb408d0ba489",
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 17.0,
+            "y": 132.0,
+            "height": 94,
+            "width": 520,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><strong style=\"font-size: 24px;\">작품 한 줄 소개를 작성해보세요.</strong></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "image",
+            "x": 20,
+            "y": 24,
+            "height": 105,
+            "width": 254,
+            "imgUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=238f0df1-e9fd-4cc2-8dfa-823dff7546d3",
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 588.0,
+            "y": 31.0,
+            "height": 115,
+            "width": 184,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 12px;\">지도교수 : 황누구 </span></p><p><span style=\"font-size: 12px;\">박누구 : 팀장이 한 일</span></p><p><span style=\"font-size: 12px;\">유누구 : 팀원이 한 일</span></p><p><span style=\"font-size: 12px;\">이누구 : 팀원이 한 일</span></p><p><span style=\"font-size: 12px;\">이누구 : 팀원이 한 일</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 19.0,
+            "y": 180.0,
+            "height": 50,
+            "width": 156,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<ul><li><strong style=\"font-size: 18px; color: rgb(230, 0, 0);\">작품개요</strong></li></ul><p><br></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 47.0,
+            "y": 217.0,
+            "height": 50,
+            "width": 300,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 14px;\">작품에 대한 개요를 작성하는 곳 입니다.</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "image",
+            "x": 405,
+            "y": 162,
+            "height": 213,
+            "width": 376,
+            "imgUrl": "https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/img.png?alt=media&token=65e9d1a8-df1e-4210-b1ea-6b2eb3fbbdd2",
+            "iconUrl": null,
+            "textContent": null,
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 498.0,
+            "y": 370.0,
+            "height": 50,
+            "width": 187,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<p><span style=\"font-size: 10px;\">&lt;메인페이지 이미지를 넣어보세요!&gt;</span></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 28.0,
+            "y": 419.0,
+            "height": 50,
+            "width": 177,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<ul><li><strong style=\"color: rgb(230, 0, 0); font-size: 18px;\">서비스 구조도</strong></li></ul><p><br></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          },
+          {
+            "type": "text",
+            "x": 405.0,
+            "y": 411.0,
+            "height": 50,
+            "width": 158,
+            "imgUrl": null,
+            "iconUrl": null,
+            "textContent": "<ul><li><strong style=\"font-size: 18px; color: rgb(230, 0, 0);\">작품 설명</strong></li></ul><p><br></p>",
+            "tableCol": 0,
+            "tableRow": 0,
+            "tableContents": null,
+            "zindex": 0
+          }
+        ]
+      }
+    }
+  ]
+}
