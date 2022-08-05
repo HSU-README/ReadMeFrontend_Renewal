@@ -31,7 +31,8 @@
     "implicit-arrow-linebreak": "off",
     "global-require": "off",
     "indent": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {

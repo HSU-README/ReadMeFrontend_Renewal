@@ -8,7 +8,9 @@
       "styles/*": ["src/styles/*"],
       "types/*": ["src/types/*"],
       "assets/*": ["src/assets/*"],
-      "recoil/*": ["src/recoil/*"]
+      "recoil/*": ["src/recoil/*"],
+      "hooks/*": ["src/hooks/*"],
+      "localData/*": ["src/localData/*"]
     }
   }
 }
