@@ -83,3 +83,20 @@
   padding: 10px;
   display: inline-block;
 }
+
+/* header text */
+.headerText {
+  color: black;
+  margin-top: '9%';
+  font-size: '18px';
+  text-decoration-line: none;
+  font-weight: 700;
+}
+
+.headerMypage {
+  color: #F24444;
+  margin-top: '9%';
+  font-size: '18px';
+  text-decoration-line: none;
+  font-weight: 700;
+}
