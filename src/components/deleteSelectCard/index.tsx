@@ -6,7 +6,7 @@ import closeBtn from 'assets/icons/close-button.png';
 import { DocumentType, TagType } from 'types/document';
 import { Container } from './styles';
 
-export default function DeleteSelectCard(data: DocumentType) {
+export default function DeleteSelectCard({ data }: { data: DocumentType }) {
   const [documentId, setDocumentId] = useRecoilState(deletePofolDocIdState);
   const [userName, setUserName] = useState('');
   const [profileImg, setProfileImg] = useState(
