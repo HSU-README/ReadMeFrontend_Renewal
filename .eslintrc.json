@@ -15,7 +15,6 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "linebreak-style": ["error", "windows"],
     "prettier/prettier": [
       "error",
       {
@@ -39,7 +38,8 @@
     "global-require": "off",
     "indent": "off",
     "operator-linebreak": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "function-paren-newline": "off"
   },
   "settings": {
     "import/resolver": {

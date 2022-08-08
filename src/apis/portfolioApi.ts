@@ -200,7 +200,7 @@ export const getSearchPortfolio = async (searchText: string) => {
 // };
 
 // 문서 삭제
-export const deletePortfolio = async (docId: string) => {
+export const deletePortfolio = async (docId: number) => {
   const response: any = await serverApi
     .post(`/api/v1/doc/delete/${docId}`, {
       docId,
