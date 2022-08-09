@@ -6,6 +6,7 @@ import { RecoilRoot } from 'recoil';
 const Home = loadable(() => import('pages/Home'));
 const MyPage = loadable(() => import('pages/MyPage'));
 const SelectPortfolio = loadable(() => import('pages/SelectPage'));
+const AllPortfolio = loadable(() => import('pages/AllPortfolio'));
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/myPage" element={<MyPage />} />
             <Route path="/select" element={<SelectPortfolio />} />
+            <Route path="/all" element={<AllPortfolio />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
