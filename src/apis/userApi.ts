@@ -20,7 +20,7 @@ export const getUser = async (userId: number) => {
 export const updateUser = async (
   userId: string,
   name: string,
-  image: string,
+  image: any,
   university: string,
   major: string,
   interests: string,
