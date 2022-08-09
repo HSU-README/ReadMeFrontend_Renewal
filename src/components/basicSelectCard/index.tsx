@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { DocumentType, TagType } from 'types/document';
 import Container from './styles';
 
-export default function BasicSelectCard(data: DocumentType) {
+export default function BasicSelectCard({ data }: { data: DocumentType }) {
   const [docuemntId, setDocumentId] = useState<number>(0);
   const [, setUserName] = useState('');
   const [, setProfileImg] = useState(
