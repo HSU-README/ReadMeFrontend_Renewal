@@ -1,4 +1,5 @@
 {
+  "globals": { "JSX": true },
   "env": {
     "browser": true,
     "es2021": true
@@ -14,6 +15,12 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "semi": 2,
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
@@ -24,7 +31,15 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "global-require": "off",
+    "indent": "off",
+    "operator-linebreak": "off",
+    "react/jsx-props-no-spreading": "off",
+    "function-paren-newline": "off"
   },
   "settings": {
     "import/resolver": {
@@ -35,7 +50,8 @@
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }]
+        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }],
+        "@typescript-eslint/no-use-before-define": ["error"]
       }
     }
   ]
