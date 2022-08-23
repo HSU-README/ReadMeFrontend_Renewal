@@ -9,10 +9,10 @@ const serverApi = axios.create({
 });
 
 // 좋아요 추가
-export const likePortfolio = async (userId: string, docId: string) => {
+export const likePortfolio = async (userId: number, docId: number) => {
   await serverApi
     .post(`/api/v1/doc/${docId}/like`, {
-      memberId: parseInt(userId, 10),
+      memberId: userId,
     })
     .catch(() => console.log(docId));
   try {
@@ -24,10 +24,10 @@ export const likePortfolio = async (userId: string, docId: string) => {
 };
 
 // 좋아요 취소
-export const unlikePortfolio = async (userId: string, docId: string) => {
+export const unlikePortfolio = async (userId: number, docId: number) => {
   await serverApi
     .post(`/api/v1/doc/${docId}/unlike`, {
-      memberId: parseInt(userId, 10),
+      memberId: userId,
     })
     .catch(() => console.log(docId));
   try {
@@ -39,7 +39,7 @@ export const unlikePortfolio = async (userId: string, docId: string) => {
 };
 
 // 유저가 좋아요한 문서들 불러오기
-export const getUserLikePortfolio = async (userId: string) => {
+export const getUserLikePortfolio = async (userId: number) => {
   const response = await serverApi.get(`/api/v1/member/${userId}/docs/like`);
   try {
     return response.data.result;
