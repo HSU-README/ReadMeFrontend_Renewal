@@ -5,7 +5,7 @@ export interface ICanvasData {
   id?: string;
   position?: { top: number; left: number };
   dimension?: { width: string; height: string };
-  chart?: { col: number; row: number };
+  chart?: { col: number; row: number; tableContent: any };
   chartContent?: string;
   content?: string;
   type: string;

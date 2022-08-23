@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { ToastError, ToastSuccess } from 'hooks/toastHook';
 import basicSelect from 'localData/basicSelect.json';
-import { ComponentType, CreateComponentType, TagType } from 'types/document';
+import { ComponentType, TagType } from 'types/document';
+import { ICanvasData } from 'types/canvas';
 
 const serverApi = axios.create({
   baseURL: process.env.REACT_APP_SERVER_URL,
@@ -110,7 +111,7 @@ export const getSearchPortfolio = async (searchText: string) => {
 export const createPortfolio = async (
   memberId: number,
   title: string,
-  components: CreateComponentType[],
+  components: ICanvasData[],
   tags: TagType[],
   visibleCheck: boolean,
   docUrl: string,
@@ -121,11 +122,11 @@ export const createPortfolio = async (
 
     // 테이블 생성 과정
     const stringToObject = () => {
-      const arr = component.chartContent.split(',');
+      const arr = component.chartContent?.split(',');
       const content = new Array(0);
       for (let i = 0; i < 6; i += 1) {
         for (let j = 0; j < 6; j += 1) {
-          content.push({ row: i, column: j, content: arr[i * 6 + j] });
+          content.push({ row: i, column: j, content: arr![i * 6 + j] });
         }
       }
       return content;
@@ -135,10 +136,10 @@ export const createPortfolio = async (
       case 'TEXT':
         componentArray.push({
           type: 'text',
-          x: component.position.left,
-          y: component.position.top,
-          width: component.dimension.width.replace('px', ''),
-          height: component.dimension.height.replace('px', ''),
+          x: component.position!.left,
+          y: component.position!.top,
+          width: component.dimension!.width.replace('px', ''),
+          height: component.dimension!.height.replace('px', ''),
           textContent: component.content,
         });
         break;
@@ -146,23 +147,23 @@ export const createPortfolio = async (
       case 'CHART':
         componentArray.push({
           type: 'table',
-          x: component.position.left,
-          y: component.position.top,
-          width: component.dimension.width.replace('px', ''),
-          height: component.dimension.height.replace('px', ''),
+          x: component.position!.left,
+          y: component.position!.top,
+          width: component.dimension!.width.replace('px', ''),
+          height: component.dimension!.height.replace('px', ''),
           tableContents: stringToObject(),
-          tableCol: component.chart.col,
-          tableRow: component.chart.row,
+          tableCol: component.chart!.col,
+          tableRow: component.chart!.row,
         });
         break;
 
       case 'IMAGE':
         componentArray.push({
           type: 'image',
-          x: component.position.left,
-          y: component.position.top,
-          width: component.dimension.width.replace('px', ''),
-          height: component.dimension.height.replace('px', ''),
+          x: component.position!.left,
+          y: component.position!.top,
+          width: component.dimension!.width.replace('px', ''),
+          height: component.dimension!.height.replace('px', ''),
           imgUrl: component.content,
         });
         break;
@@ -170,10 +171,10 @@ export const createPortfolio = async (
       case 'IMOGE':
         componentArray.push({
           type: 'icon',
-          x: component.position.left,
-          y: component.position.top,
-          width: component.dimension.width.replace('px', ''),
-          height: component.dimension.height.replace('px', ''),
+          x: component.position!.left,
+          y: component.position!.top,
+          width: component.dimension!.width.replace('px', ''),
+          height: component.dimension!.height.replace('px', ''),
           iconUrl: component.content,
         });
         break;
