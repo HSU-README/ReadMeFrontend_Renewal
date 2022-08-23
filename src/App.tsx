@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import loadable from '@loadable/component';
-// eslint-disable-next-line import/extensions
 import { RecoilRoot } from 'recoil';
-import LoginPage from './Login/LoginPage';
+import SignUp from 'pages/Signup/SignUp';
+import LoginPage from './pages/Login/LoginPage';
 
 const Home = loadable(() => import('pages/Home'));
 const MyPage = loadable(() => import('pages/MyPage'));
@@ -20,6 +20,7 @@ function App() {
             <Route path="/select" element={<SelectPortfolio />} />
             <Route path="/all" element={<AllPortfolio />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

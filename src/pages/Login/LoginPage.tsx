@@ -3,9 +3,9 @@ import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from 'components/footer';
-import API_ENDPOINT from '../apis/constant';
-import Header from '../pages/Home/header/Header';
-import logo from '../assets/images/logo.jpg';
+import API_ENDPOINT from '../../apis/constant';
+import Header from '../Home/header/Header';
+import logo from '../../assets/images/logo.jpg';
 import './LoginPage.css';
 
 function LoginPage() {
@@ -76,6 +76,7 @@ function LoginPage() {
           variant="outlined"
           className="inputForm"
           label="비밀번호"
+          type="password"
           value={password}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);

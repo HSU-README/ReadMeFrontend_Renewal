@@ -39,7 +39,10 @@
     "indent": "off",
     "operator-linebreak": "off",
     "react/jsx-props-no-spreading": "off",
-    "function-paren-newline": "off"
+    "function-paren-newline": "off",
+    "react/jsx-wrap-multilines": "off",
+    // 제거 필요
+    "react/no-unstable-nested-components": "off"
   },
   "settings": {
     "import/resolver": {

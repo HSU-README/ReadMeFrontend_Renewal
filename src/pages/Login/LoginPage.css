@@ -4,7 +4,7 @@
     border-color:#F24444;
     max-width: 900px;
     width: 60%;
-    height:57vh;
+    height:70vh;
     box-shadow: 25% 0px 20px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin:5% auto 5% auto;
@@ -20,7 +20,6 @@
 }
 
 .footerSection{
-    position:fixed;
     width:100%;
     bottom:0;
 }
@@ -60,4 +59,8 @@
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+#loginBtn:hover{
+    opacity:90%;
 }
