@@ -91,7 +91,7 @@ function Header() {
           <span className="buttonFamily">
             <Button style={{ marginTop: '9%', fontSize: '18px' }}>
               <NavLink className="headerText" to="/login">
-                로그인&nbsp;&nbsp;|
+                로그인&nbsp;&nbsp;
               </NavLink>
             </Button>
             <Button style={{ marginTop: '9%', fontSize: '18px' }}>
