@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div<React.MutableRefObject>`
+const Container = styled.div`
   .table-option {
     display: flex;
     margin: 5px 2px;

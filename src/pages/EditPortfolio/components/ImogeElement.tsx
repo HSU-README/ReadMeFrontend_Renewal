@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import { ICanvasComponent } from 'types/canvas';
-import { CanvasContext } from '../CanvasContainer';
+import { CanvasContext } from '../canvasContainer';
 import '../Canvas.css';
 
 function ImogeElement(props: ICanvasComponent) {

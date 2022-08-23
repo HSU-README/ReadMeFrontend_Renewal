@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react';
 import { ICanvasComponent } from 'types/canvas';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { storage } from 'utils/firebase';
-import { CanvasContext } from '../CanvasContainer';
+import { CanvasContext } from '../canvasContainer';
 import '../Canvas.css';
 
 function ImageElement(props: ICanvasComponent) {

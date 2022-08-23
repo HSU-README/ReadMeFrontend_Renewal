@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState } from 'react';
 import { ICanvasComponent } from 'types/canvas';
 import { useResetRecoilState } from 'recoil';
 import { chartState } from 'recoil/atoms';
-import { CanvasContext } from '../CanvasContainer';
+import { CanvasContext } from '../canvasContainer';
 
 function ChartElement(props: ICanvasComponent) {
   const { id, chart, dimension } = props;
