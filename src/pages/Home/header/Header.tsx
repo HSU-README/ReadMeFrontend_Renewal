@@ -39,20 +39,20 @@ function Header() {
     }
   }, []);
 
-  const dummeyKeywords = [
-    '인문',
-    '사회',
-    '공학',
-    '자연',
-    '예술',
-    '교육',
-    '심플',
-    '모던',
-    '밝은',
-    '어두운',
-    '세련된',
-    '고딕',
-  ];
+  // const dummeyKeywords = [
+  //   '인문',
+  //   '사회',
+  //   '공학',
+  //   '자연',
+  //   '예술',
+  //   '교육',
+  //   '심플',
+  //   '모던',
+  //   '밝은',
+  //   '어두운',
+  //   '세련된',
+  //   '고딕',
+  // ];
 
   return (
     <div className="headerMain">
@@ -106,7 +106,7 @@ function Header() {
       {/* {visibleCheck && ( */}
       <div className="keywordBox" style={keywordBoxLeftRight}>
         <div style={{ display: 'inlineBlock' }}>
-          {dummeyKeywords.map((data) => (
+          {/* {dummeyKeywords.map((data) => (
             <Button
               type="button"
               key={data}
@@ -117,7 +117,7 @@ function Header() {
             >
               # {data}
             </Button>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
