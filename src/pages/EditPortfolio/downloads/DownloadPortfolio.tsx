@@ -1,5 +1,5 @@
 import React from 'react';
-import ExportPdf from './DownloadPdf.js';
+import ExportPdf from './DownloadPdf';
 
 function DownloadPortfolio() {
   return (

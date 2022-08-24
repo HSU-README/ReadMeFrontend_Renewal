@@ -3,7 +3,7 @@ import { ICanvasComponent } from 'types/canvas';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { storage } from 'utils/firebase';
 import { CanvasContext } from '../canvasContainer';
-import '../Canvas.css';
+import './canvas.css';
 
 function ImageElement(props: ICanvasComponent) {
   const { content, id } = props;

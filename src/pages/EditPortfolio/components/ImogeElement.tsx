@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import { ICanvasComponent } from 'types/canvas';
 import { CanvasContext } from '../canvasContainer';
-import '../Canvas.css';
+import './canvas.css';
 
 function ImogeElement(props: ICanvasComponent) {
   const { content, id } = props;

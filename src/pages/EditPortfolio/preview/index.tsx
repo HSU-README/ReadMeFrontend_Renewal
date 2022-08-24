@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import 'pages/EditPortfolio/preview/styles';
 import Footer from 'components/footer/index';
 import Header from 'components/header/index';
-import CanvasContainer from './CanvasContainer.tsx';
+import CanvasContainer from '../canvasContainer';
 
 function Preview() {
   const [createElement] = useState('');

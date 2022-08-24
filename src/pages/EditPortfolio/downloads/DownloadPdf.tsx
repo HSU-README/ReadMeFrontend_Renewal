@@ -1,5 +1,5 @@
 import React from 'react';
-import EditPortfolio from './index.js';
+import EditPortfolio from 'pages/EditPortfolio/index';
 
 function ExportPdf() {
   return <EditPortfolio />;

@@ -6,7 +6,7 @@ import { ICanvasComponent } from 'types/canvas';
 import { fontList, sizeList } from 'styles/fonts';
 import { CanvasContext } from '../canvasContainer';
 
-import '../Canvas.css';
+import './canvas.css';
 
 const Size = Quill.import('attributors/style/size');
 Size.whitelist = sizeList;
