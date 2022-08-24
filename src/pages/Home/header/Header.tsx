@@ -15,18 +15,18 @@ function Header() {
     left: keywordBoxLeft,
     top: keywordBoxTop,
   };
-  const keywordTag = {
-    backgroundColor: '#E8E8E8',
-    borderRadius: '30px',
-    width: '100px',
-    fontSize: '15px',
-    fontWeight: '900',
-    font: 'bold',
-    marginLeft: '25px',
-    color: 'black',
-    marginTop: '13px',
-    marginBottom: '13px',
-  };
+  // const keywordTag = {
+  //   backgroundColor: '#E8E8E8',
+  //   borderRadius: '30px',
+  //   width: '100px',
+  //   fontSize: '15px',
+  //   fontWeight: '900',
+  //   font: 'bold',
+  //   marginLeft: '25px',
+  //   color: 'black',
+  //   marginTop: '13px',
+  //   marginBottom: '13px',
+  // };
 
   useEffect(() => {
     // 로그인&유저정보 state에 저장
