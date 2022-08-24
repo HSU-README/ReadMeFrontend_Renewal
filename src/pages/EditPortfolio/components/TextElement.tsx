@@ -4,9 +4,9 @@ import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { ICanvasComponent } from 'types/canvas';
 import { fontList, sizeList } from 'styles/fonts';
-import { CanvasContext } from '../CanvasContainer';
+import { CanvasContext } from '../canvasContainer';
 
-import '../Canvas.css';
+import './canvas.css';
 
 const Size = Quill.import('attributors/style/size');
 Size.whitelist = sizeList;

@@ -3,8 +3,8 @@ import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from 'components/footer';
+import Header from 'components/header';
 import API_ENDPOINT from '../../apis/constant';
-import Header from '../Home/header/Header';
 import logo from '../../assets/images/logo.jpg';
 import './LoginPage.css';
 

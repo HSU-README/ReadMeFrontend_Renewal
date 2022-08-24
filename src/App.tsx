@@ -2,13 +2,16 @@ import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import loadable from '@loadable/component';
 import { RecoilRoot } from 'recoil';
-import SignUp from 'pages/Signup/SignUp';
-import LoginPage from './pages/Login/LoginPage';
 
 const Home = loadable(() => import('pages/Home'));
+const SignUp = loadable(() => import('pages/Signup/SignUp'));
+const Login = loadable(() => import('pages/Login/LoginPage'));
 const MyPage = loadable(() => import('pages/MyPage'));
 const SelectPortfolio = loadable(() => import('pages/SelectPage'));
 const AllPortfolio = loadable(() => import('pages/AllPortfolio'));
+const DownloadPortfolio = loadable(() => import('pages/EditPortfolio/downloads/DownloadPortfolio'));
+const Preview = loadable(() => import('pages/EditPortfolio/preview'));
+
 function App() {
   return (
     <div className="App">
@@ -16,11 +19,15 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/myPage" element={<MyPage />} />
-            <Route path="/select" element={<SelectPortfolio />} />
-            <Route path="/all" element={<AllPortfolio />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/myPage" element={<MyPage />} />
+            <Route path="/all" element={<AllPortfolio />} />
+            <Route path="/select" element={<SelectPortfolio />} />
+            <Route path="/generate" element={<DownloadPortfolio />} /> {/* 포트폴리오 제작 페이지 라우트 */}
+            <Route path="/generate/:docId" element={<DownloadPortfolio />} /> {/* 특정 문서 제작 페이지 라우트 */}
+            <Route path="/preview" element={<Preview />} /> {/* 포트폴리오 미리보기 페이지 라우트 */}
+            <Route path="/preview/:docId" element={<Preview />} /> {/* 특정 문서 미리보기 페이지 라우트 */}
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
