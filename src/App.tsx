@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import { RecoilRoot } from 'recoil';
 
 const Home = loadable(() => import('pages/Home'));
+const SearchPage = loadable(() => import('./pages/Search/index'));
 const SignUp = loadable(() => import('pages/Signup/SignUp'));
 const Login = loadable(() => import('pages/Login/LoginPage'));
 const MyPage = loadable(() => import('pages/MyPage'));
@@ -28,6 +29,7 @@ function App() {
             <Route path="/generate/:docId" element={<DownloadPortfolio />} /> {/* 특정 문서 제작 페이지 라우트 */}
             <Route path="/preview" element={<Preview />} /> {/* 포트폴리오 미리보기 페이지 라우트 */}
             <Route path="/preview/:docId" element={<Preview />} /> {/* 특정 문서 미리보기 페이지 라우트 */}
+            <Route path="/search" element={<SearchPage />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

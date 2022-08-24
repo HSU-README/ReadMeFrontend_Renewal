@@ -88,7 +88,7 @@ export const getMajorPortfolio = async (memberId: string) => {
 
 // 문서 검색
 export const getSearchPortfolio = async (searchText: string) => {
-  console.log(searchText);
+  // console.log(searchText);
   if (searchText === '전통 양식') {
     return basicSelect.data[0].result;
   }

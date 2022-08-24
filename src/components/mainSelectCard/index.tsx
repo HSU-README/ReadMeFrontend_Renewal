@@ -16,6 +16,8 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
   const [docTags, setDocTags] = useState<TagType[]>([]);
 
   useEffect(() => {
+    console.log('here');
+    console.log(data);
     const { docId, title, docDate, tags, likeCnt, docUrl, designer, designerUrl } = data;
     const date = docDate;
     const year = date.substring(0, 4);
@@ -26,17 +28,17 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
     if (designerUrl !== '') {
       setProfileImg(designerUrl);
     }
-
     setDocumentDate(`${year}년 ${month}월 ${day}일`);
     setDocTitle(title);
     setThumbnail(docUrl);
     setDocLikeCnt(likeCnt);
     setDocTags(tags);
-  }, []);
+  }, [data]);
 
   return (
     // TODO link url 변경 필요
     <Container>
+      <div>kalkadsljkadslkjdaskljadsljk</div>
       <Link
         to={localStorage.getItem('readme_userInfo') != null ? `/preview/${documentId}` : '/login'}
         onClick={() => localStorage.getItem('readme_userInfo') == null && alert('로그인 후 이용 가능합니다.')}
