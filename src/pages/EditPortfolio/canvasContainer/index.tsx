@@ -54,18 +54,22 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
     const wid = updatedData.dimension!.width.substring(0, 3);
     const hei = updatedData.dimension!.height.substring(0, 3);
     // 캔버스 밖으로 벗어나는거 방지.
-    if (updatedData.position!.left < 0) {
-      updatedData.position!.left = 0;
+    console.log(updatedData);
+    if (updatedData.position !== undefined) {
+      if (updatedData.position.left < 0) {
+        updatedData.position.left = 0;
+      }
+      if (updatedData.position.top < 0) {
+        updatedData.position.top = 0;
+      }
+      if (updatedData.position.left + Number(wid) > canvasBox.current!.clientWidth) {
+        updatedData.position.left = canvasBox.current!.clientWidth - Number(wid);
+      }
+      if (updatedData.position.top + Number(hei) > canvasBox.current!.clientHeight) {
+        updatedData.position.top = canvasBox.current!.clientHeight - Number(hei) - 100;
+      }
     }
-    if (updatedData.position!.top < 0) {
-      updatedData.position!.top = 0;
-    }
-    if (updatedData.position!.left + Number(wid) > canvasBox.current!.clientWidth) {
-      updatedData.position!.left = canvasBox.current!.clientWidth - Number(wid);
-    }
-    if (updatedData.position!.top + Number(hei) > canvasBox.current!.clientHeight) {
-      updatedData.position!.top = canvasBox.current!.clientHeight - Number(hei) - 100;
-    }
+
     canvasData.splice(currentDataIndex, 1, updatedData);
     setCanvasData([...(canvasData || [])]);
   };
@@ -228,23 +232,20 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
     setActiveSelection(new Set(activeSelection));
   }, [activeSelection, canvasData]);
 
-  const context: ICanvasContext = React.useMemo(
-    () => ({
-      actions: {
-        setCanvasData,
-        setActiveSelection,
-        updateCanvasData,
-        addElement,
-        setEnableQuillToolbar,
-      },
-      state: {
-        canvasData,
-        activeSelection,
-        enableQuillToolbar,
-      },
-    }),
-    [],
-  );
+  const context: ICanvasContext = {
+    actions: {
+      setCanvasData,
+      setActiveSelection,
+      updateCanvasData,
+      addElement,
+      setEnableQuillToolbar,
+    },
+    state: {
+      canvasData,
+      activeSelection,
+      enableQuillToolbar,
+    },
+  };
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
@@ -280,6 +281,9 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
       document.removeEventListener('mousedown', handleMouseDown);
     };
   }, [handleKeyDown, handleMouseDown]);
+
+  console.log(`canvasData: ${JSON.stringify(canvasData)}`);
+
   return (
     <div
       style={{
@@ -287,7 +291,6 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
         height: '330mm',
       }}
     >
-      {/* {console.log('canvasData: ' + JSON.stringify(canvasData))} */}
       <Toolbar
         isEditEnable={enableQuillToolbar}
         canvasBox={canvasBox}
@@ -301,26 +304,24 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
 
       <div ref={canvasBox}>
         <CanvasContext.Provider value={context}>
-          <div id="capture-div">
-            {isEditable === false ? (
-              <div
-                className="canvas-container"
-                style={{
-                  pointerEvents: 'none',
-                }}
-              >
-                {canvasData.map((canvas) => (
-                  <CanvasComponent {...canvas} />
-                ))}
-              </div>
-            ) : (
-              <div className="canvas-container">
-                {canvasData.map((canvas) => (
-                  <CanvasComponent {...canvas} />
-                ))}
-              </div>
-            )}
-          </div>
+          {isEditable === false ? (
+            <div
+              className="canvas-container"
+              style={{
+                pointerEvents: 'none',
+              }}
+            >
+              {canvasData.map((canvas) => (
+                <CanvasComponent key={canvas.id} {...canvas} />
+              ))}
+            </div>
+          ) : (
+            <div className="canvas-container">
+              {canvasData.map((canvas) => (
+                <CanvasComponent key={canvas.id} {...canvas} />
+              ))}
+            </div>
+          )}
         </CanvasContext.Provider>
       </div>
       <br />

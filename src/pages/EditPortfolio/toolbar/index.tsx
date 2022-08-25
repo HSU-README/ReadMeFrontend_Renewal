@@ -77,10 +77,6 @@ export default function Toolbar({
     }
   };
 
-  useEffect(() => {
-    console.log(tagsArray);
-  }, [tagsArray]);
-
   return (
     <Container style={{ width: '250px', textAlign: 'left', margin: 'auto', marginTop: '20px', marginBottom: '10px' }}>
       {isEditEnable && (

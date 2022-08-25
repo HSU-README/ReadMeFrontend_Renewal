@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from 'pages/EditPortfolio/components/DNDComponent/styles';
-import { image, emoji, emoji2, Picktogram } from 'pages/generateMenu/menuDefaultArrays';
+import { emoji, emoji2, Picktogram } from 'pages/generateMenu/menuDefaultArrays';
 import { ImageList, ImageListItem } from '@mui/material';
 
 function DNDImageComponent(props: any) {
@@ -20,19 +20,17 @@ function DNDImageComponent(props: any) {
           <details>
             <summary>로컬 이미지 업로드</summary>
             <br />
-            {image.map(() => (
-              <img
-                src={require('assets/icons/imageIcon.png')}
-                style={{
-                  width: '100px',
-                  height: '100px',
-                  marginLeft: '11px',
-                }}
-                onClick={() => createCommand('IMAGE')}
-                alt="imoge-command"
-                aria-hidden="true"
-              />
-            ))}
+            <img
+              src={require('assets/icons/imageIcon.png')}
+              style={{
+                width: '100px',
+                height: '100px',
+                marginLeft: '11px',
+              }}
+              onClick={() => createCommand('IMAGE')}
+              alt="imoge-command"
+              aria-hidden="true"
+            />
           </details>
         </div>
 
