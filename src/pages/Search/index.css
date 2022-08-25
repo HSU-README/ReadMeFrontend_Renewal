@@ -1,11 +1,4 @@
-.select-wrapper {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    margin: 60px auto;
-    justify-content: center;
-    border: 1px solid black;
-  }
+
   
   .sectionSelect {
     background-color: green;
@@ -27,6 +20,28 @@
   }
 
   .cardView{
-    display:inline-block;
     width:100%;
+  }
+  .slide-item {
+    background-color: rebeccapurple;
+    color: aqua;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    border: 1px solid white;
+  }
+  .notFound {
+    width:100%;
+    height:100vh;
+    text-align: center;
+    padding-top: 10%;
+  }
+  .notFoundIcon{
+    width:30%;
+  }
+  .notFoundText{
+    font-size: 30px;
+    font-weight: 600;
   }
