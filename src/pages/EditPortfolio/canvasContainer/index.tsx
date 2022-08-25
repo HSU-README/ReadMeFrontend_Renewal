@@ -54,18 +54,21 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
     const wid = updatedData.dimension!.width.substring(0, 3);
     const hei = updatedData.dimension!.height.substring(0, 3);
     // 캔버스 밖으로 벗어나는거 방지.
-    if (updatedData.position!.left < 0) {
-      updatedData.position!.left = 0;
+    if (updatedData.position !== undefined) {
+      if (updatedData.position.left < 0) {
+        updatedData.position.left = 0;
+      }
+      if (updatedData.position.top < 0) {
+        updatedData.position.top = 0;
+      }
+      if (updatedData.position.left + Number(wid) > canvasBox.current!.clientWidth) {
+        updatedData.position.left = canvasBox.current!.clientWidth - Number(wid);
+      }
+      if (updatedData.position.top + Number(hei) > canvasBox.current!.clientHeight) {
+        updatedData.position.top = canvasBox.current!.clientHeight - Number(hei) - 100;
+      }
     }
-    if (updatedData.position!.top < 0) {
-      updatedData.position!.top = 0;
-    }
-    if (updatedData.position!.left + Number(wid) > canvasBox.current!.clientWidth) {
-      updatedData.position!.left = canvasBox.current!.clientWidth - Number(wid);
-    }
-    if (updatedData.position!.top + Number(hei) > canvasBox.current!.clientHeight) {
-      updatedData.position!.top = canvasBox.current!.clientHeight - Number(hei) - 100;
-    }
+
     canvasData.splice(currentDataIndex, 1, updatedData);
     setCanvasData([...(canvasData || [])]);
   };
@@ -310,13 +313,13 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
                 }}
               >
                 {canvasData.map((canvas) => (
-                  <CanvasComponent {...canvas} />
+                  <CanvasComponent key={canvas.id} {...canvas} />
                 ))}
               </div>
             ) : (
               <div className="canvas-container">
                 {canvasData.map((canvas) => (
-                  <CanvasComponent {...canvas} />
+                  <CanvasComponent key={canvas.id} {...canvas} />
                 ))}
               </div>
             )}

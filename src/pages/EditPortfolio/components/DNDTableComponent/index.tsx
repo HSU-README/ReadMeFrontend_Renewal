@@ -36,6 +36,7 @@ function DNDTableComponent(props: any) {
         {tableInput.map((grp, row) =>
           grp.map(({ column, bg }) => (
             <div
+              key={column}
               onClick={() => {
                 setCreateElement(`CHART ${row + 1} ${column + 1}`);
               }}

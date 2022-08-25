@@ -130,12 +130,16 @@ function Home() {
         </Link>
       </div>
       <Slider {...settings}>
-        {allPortfolio.map((data: DocumentType) => data.visibility === 'PUBLIC' && <MainSelectCard data={data} />)}
+        {allPortfolio.map(
+          (data: DocumentType) => data.visibility === 'PUBLIC' && <MainSelectCard key={data.docId} data={data} />,
+        )}
       </Slider>
 
       <div className="sectionFont">학과별 포트폴리오</div>
       <Slider {...settings}>
-        {allPortfolio.map((data: DocumentType) => data.visibility === 'PUBLIC' && <MainSelectCard data={data} />)}
+        {allPortfolio.map(
+          (data: DocumentType) => data.visibility === 'PUBLIC' && <MainSelectCard key={data.docId} data={data} />,
+        )}
       </Slider>
 
       <br />

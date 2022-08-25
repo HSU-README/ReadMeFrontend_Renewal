@@ -3,7 +3,7 @@ import 'pages/EditPortfolio/styles';
 import CanvasContainer from 'pages/EditPortfolio/canvasContainer';
 import Footer from 'components/footer';
 import Header from 'components/header';
-import DndComponent from './components/DNDComponent';
+import DNDComponent from './components/DNDComponent';
 import DNDImageComponent from './components/DNDImageComponent';
 
 function EditPortfolio() {
@@ -18,7 +18,7 @@ function EditPortfolio() {
           <div ref={canvasBox}>
             <CanvasContainer isEditable createElement={createElement} />
           </div>
-          <DndComponent setCreateElement={setCreateElement} />
+          <DNDComponent setCreateElement={setCreateElement} />
         </div>
       </div>
       <Footer />;
