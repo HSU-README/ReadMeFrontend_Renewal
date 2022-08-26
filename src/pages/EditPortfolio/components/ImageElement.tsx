@@ -21,7 +21,7 @@ function ImageElement(props: ICanvasComponent) {
   const getImageDimensions = async (file: string): Promise<{ [key: string]: number }> =>
     new Promise((resolved) => {
       const i = new Image();
-      i.onload = function () {
+      i.onload = () => {
         resolved({
           w: i.width,
           h: i.height,
@@ -100,7 +100,7 @@ function ImageElement(props: ICanvasComponent) {
     />
   );
 
-  return <div>{!content ? renderUploadContent() : renderImage()}</div>;
+  return !content ? renderUploadContent() : renderImage();
 }
 
 export default ImageElement;
