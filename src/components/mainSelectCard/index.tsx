@@ -38,7 +38,6 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
   return (
     // TODO link url 변경 필요
     <Container>
-      <div>kalkadsljkadslkjdaskljadsljk</div>
       <Link
         to={localStorage.getItem('readme_userInfo') != null ? `/preview/${documentId}` : '/login'}
         onClick={() => localStorage.getItem('readme_userInfo') == null && alert('로그인 후 이용 가능합니다.')}
