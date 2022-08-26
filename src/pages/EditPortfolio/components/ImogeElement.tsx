@@ -35,7 +35,7 @@ function ImogeElement(props: ICanvasComponent) {
     />
   );
 
-  return <div>{content && renderImage()}</div>;
+  return content ? renderImage() : <div />;
 }
 
 export default ImogeElement;
