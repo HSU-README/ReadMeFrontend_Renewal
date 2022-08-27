@@ -4,7 +4,7 @@ import MainSelectCard from 'components/mainSelectCard';
 import { getAllPortfolio } from 'apis/portfolioApi';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Grid, Pagination } from 'swiper';
+import { Grid, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -46,18 +46,19 @@ function AllPortfolio() {
           width: '1600px',
           margin: '-30px 0px 50px 100px',
           height: '85vh',
+          padding: userLikePortfolio.length < 8 ? '10%' : '0%',
         }}
       >
         <Swiper
           slidesPerView={5}
           grid={{
-            rows: 2,
+            rows: userLikePortfolio.length < 8 ? 1 : 2,
           }}
           spaceBetween={40}
           pagination={{
             clickable: true,
           }}
-          modules={[Grid, Pagination]}
+          modules={[Grid, Pagination, Navigation]}
           className="mySwiper"
         >
           {userLikePortfolio.map(

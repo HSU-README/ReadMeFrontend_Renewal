@@ -10,6 +10,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: flex-start;
     margin-top: 30px;
+    margin-bottom: 40px;
     margin-left: 100px;
     font-weight: bold;
     color: black;

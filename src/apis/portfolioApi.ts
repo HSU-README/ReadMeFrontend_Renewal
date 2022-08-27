@@ -53,12 +53,10 @@ export const getPortfolio = async (docId: string) => {
 // 전체 문서 불러오기
 export const getAllPortfolio = async () => {
   const response = await serverApi.get('/api/v1/home/docs/all');
-  console.log(response);
   try {
-    console.log('response', response.data.result);
     return response.data.result;
   } catch (error) {
-    return console.log(error);
+    return console.error(error);
   }
 };
 
