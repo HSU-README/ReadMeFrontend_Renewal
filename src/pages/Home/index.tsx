@@ -18,9 +18,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 function Home() {
-  const [, setMostLikePortfolio] = useState([]);
+  const [mostLikePortfolio, setMostLikePortfolio] = useState([]);
   const [allPortfolio, setAllPortfolio] = useState([]);
-
   // const { loginCheck } = useSelector((state) => state.loginCheck);
   useEffect(() => {
     const readmeUserInfo = localStorage.getItem('readme_userInfo');
@@ -80,7 +79,14 @@ function Home() {
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide />
+        {mostLikePortfolio.map(
+          (data: DocumentType) =>
+            data.visibility === 'PUBLIC' && (
+              <SwiperSlide>
+                <MainSelectCard key={data.docId} data={data} />
+              </SwiperSlide>
+            ),
+        )}
       </Swiper>
       <div className="sectionFont">
         전체 포트폴리오
@@ -144,5 +150,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;
