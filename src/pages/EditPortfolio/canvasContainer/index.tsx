@@ -14,7 +14,7 @@ interface IProps {
   createElement: string;
 }
 
-const getInitialData = (data: any[], type: string = 'TEXT') => ({
+const getInitialData = (data: ICanvasData[], type: string = 'TEXT') => ({
   type,
   id: `${type}__${Date.now()}__${data.length}`,
   position: {
@@ -24,19 +24,17 @@ const getInitialData = (data: any[], type: string = 'TEXT') => ({
   chart: {
     row: 0,
     col: 0,
-    tableContent: [],
   },
   chartContent: type === 'CHART' && '',
   dimension: {
     width: '300',
     height: type === 'TEXT' ? '50' : '150',
   },
-  shapeStyle: {},
   content: type === 'TEXT' ? '두 번 클릭하여 텍스트를 입력하세요.' : '',
 });
 
 function CanvasContainer({ isEditable, createElement }: IProps) {
-  const [canvasData, setCanvasData] = useState<ICanvasData[]>([]);
+  const [canvasData, setCanvasData] = useState<any[]>([]);
   const [activeSelection, setActiveSelection] = useState<Set<string>>(new Set());
   const canvasBox = useRef<HTMLDivElement>(null); // 캔버스만 가지고있는 REF
   const [enableQuillToolbar, setEnableQuillToolbar] = useState<boolean>(false);
@@ -55,19 +53,18 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
     const hei = updatedData.dimension!.height.substring(0, 3);
     // 캔버스 밖으로 벗어나는거 방지.
     console.log(updatedData);
-    if (updatedData.position !== undefined) {
-      if (updatedData.position.left < 0) {
-        updatedData.position.left = 0;
-      }
-      if (updatedData.position.top < 0) {
-        updatedData.position.top = 0;
-      }
-      if (updatedData.position.left + Number(wid) > canvasBox.current!.clientWidth) {
-        updatedData.position.left = canvasBox.current!.clientWidth - Number(wid);
-      }
-      if (updatedData.position.top + Number(hei) > canvasBox.current!.clientHeight) {
-        updatedData.position.top = canvasBox.current!.clientHeight - Number(hei) - 100;
-      }
+
+    if (updatedData.position!.left < 0) {
+      updatedData.position!.left = 0;
+    }
+    if (updatedData.position!.top < 0) {
+      updatedData.position!.top = 0;
+    }
+    if (updatedData.position!.left + Number(wid) > canvasBox.current!.clientWidth) {
+      updatedData.position!.left = canvasBox.current!.clientWidth - Number(wid);
+    }
+    if (updatedData.position!.top + Number(hei) > canvasBox.current!.clientHeight) {
+      updatedData.position!.top = canvasBox.current!.clientHeight - Number(hei) - 100;
     }
 
     canvasData.splice(currentDataIndex, 1, updatedData);
@@ -113,7 +110,6 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
               row: 0,
               tableContent: [],
             },
-            shapeStyle: {},
           });
           break;
 
@@ -130,7 +126,6 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
             },
             content: '',
             chartContent: '',
-            shapeStyle: {},
           });
           break;
 
@@ -148,7 +143,6 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
               tableContent: [],
             },
             chartContent: '',
-            shapeStyle: {},
           });
           break;
 
@@ -166,7 +160,6 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
               tableContent: [],
             },
             chartContent: '',
-            shapeStyle: {},
           });
           break;
         default:
@@ -192,7 +185,7 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
     }
     defaultData.chart.row = r;
     defaultData.chart.col = c;
-    setCanvasData({ ...canvasData, ...defaultData });
+    setCanvasData([...canvasData, { ...defaultData }]);
     activeSelection.clear();
     activeSelection.add(defaultData.id);
     setActiveSelection(new Set(activeSelection));
