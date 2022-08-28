@@ -1,7 +1,6 @@
 import React from 'react';
 
 export interface ICanvasData {
-  component?: string;
   id?: string;
   position?: { top: number; left: number };
   dimension?: { width: string; height: string };
@@ -9,7 +8,6 @@ export interface ICanvasData {
   chartContent?: string;
   content?: string;
   type: string;
-  shapeStyle: object;
 }
 
 export interface ICanvasComponent {
@@ -21,7 +19,6 @@ export interface ICanvasComponent {
   id?: string;
   type: string;
   isReadOnly?: boolean;
-  shapeStyle?: object;
 }
 
 export interface ICanvasContext {

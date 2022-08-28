@@ -39,9 +39,7 @@ export const getPortfolio = async (docId: string) => {
   if (parsedDocID === 1005) {
     return basicSelect.data[4].result;
   }
-  console.log(docId);
   const response = await serverApi.get(`/api/v1/doc/${docId}`);
-  console.log(response);
   try {
     console.log('response', response.data.result);
     return response.data.result;

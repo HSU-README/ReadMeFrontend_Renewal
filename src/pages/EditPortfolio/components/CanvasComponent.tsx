@@ -30,7 +30,7 @@ const getEnableResize = (type: string): ResizeEnable => ({
 
 function CanvasComponent(props: ICanvasComponent) {
   const { state, actions } = useContext(CanvasContext);
-  const { dimension, position, content, id, type, chart, chartContent, shapeStyle } = props;
+  const { dimension, position, content, id, type, chart, chartContent } = props;
   const [showGrids, setShowGrids] = React.useState(false);
   const [isReadOnly, setIsReadOnly] = React.useState(true);
   const elementRef = React.useRef<HTMLDivElement>(null);
@@ -68,7 +68,6 @@ function CanvasComponent(props: ICanvasComponent) {
         isReadOnly={isReadOnly}
         chart={chart}
         chartContent={chartContent}
-        shapeStyle={shapeStyle}
       />
     );
   };

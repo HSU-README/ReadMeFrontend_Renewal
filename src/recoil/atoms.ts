@@ -35,3 +35,9 @@ export const openDialogState = atom({
   key: 'openDialogState',
   default: false,
 });
+
+// 문서 좋아요 state
+export const likeState = atom({
+  key: 'likeState',
+  default: false,
+});
