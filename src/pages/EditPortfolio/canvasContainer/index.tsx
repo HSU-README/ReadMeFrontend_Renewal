@@ -6,6 +6,7 @@ import CanvasComponent from 'pages/EditPortfolio/components/CanvasComponent';
 import './canvas.css';
 import { ICanvasComponent, ICanvasContext, ICanvasData } from 'types/canvas';
 import { ComponentType } from 'types/document';
+import { ToastContainer } from 'react-toastify';
 
 export const CanvasContext = React.createContext<ICanvasContext>({});
 
@@ -318,6 +319,7 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
         </CanvasContext.Provider>
       </div>
       <br />
+      <ToastContainer />
     </div>
   );
 }

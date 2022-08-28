@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { likePortfolio, unlikePortfolio, getUserLikePortfolio } from 'apis/likeApi';
+import React, { useEffect, useRef } from 'react';
+import { getUserLikePortfolio, likePortfolio, unlikePortfolio } from 'apis/likeApi';
+import { likeState } from 'recoil/atoms';
+import { useRecoilState } from 'recoil';
 import { DocumentType } from 'types/document';
 
 interface IProps {
@@ -10,21 +12,22 @@ interface IProps {
 
 export default function LikeButton({ isEditable, userId, docId }: IProps) {
   const thumbsImageRef = useRef<HTMLImageElement>(null);
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useRecoilState(likeState);
 
   useEffect(() => {
     async function fetchUserLikePortfolioData() {
       const datas = await getUserLikePortfolio(userId);
-      await datas.map((data: DocumentType) => (data.docId === docId ? setLike(true) : console.log('not same docId')));
+      await datas.map((data: DocumentType) => (data.docId === Number(docId) ? setLike(true) : ''));
     }
+
     fetchUserLikePortfolioData();
-  }, []);
+  }, [docId, like, setLike, userId]);
 
   if (!isEditable) {
     if (like) {
       return (
         <img
-          alt="unlike"
+          alt="make-unlike"
           ref={thumbsImageRef}
           onClick={() => {
             setLike(false);
@@ -36,12 +39,13 @@ export default function LikeButton({ isEditable, userId, docId }: IProps) {
         />
       );
     }
+
     return (
       <img
-        alt="like"
+        alt="make-like"
         ref={thumbsImageRef}
         onClick={() => {
-          setLike(false);
+          setLike(true);
           likePortfolio(userId, docId);
         }}
         style={{ width: '35px', height: '35px', marginLeft: '100px' }}
