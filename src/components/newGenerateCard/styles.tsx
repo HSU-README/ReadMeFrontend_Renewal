@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   position: relative;
   height: 450px;
   width: 300px;
@@ -10,14 +10,15 @@ export const Container = styled.div`
   background-color: white;
 
   .pofol-thumbnail-container {
-    height: 80%;
+    height: 70%;
     margin: 0px 0px 10px 0px;
+    text-align: center;
   }
 
   .pofol-thumbnail {
+    margin-top: 5x0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-top: 50px;
   }
 
   .pofol-title {

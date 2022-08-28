@@ -10,8 +10,9 @@ const Container = styled.div`
   background-color: white;
 
   .pofol-thumbnail-container {
-    height: 80%;
+    height: 70%;
     margin: 0px 0px 10px 0px;
+    text-align: center;
   }
 
   .pofol-thumbnail {
@@ -38,6 +39,7 @@ const Container = styled.div`
   }
 
   .hashtag-container {
+    height: 5%;
     display: flex;
     margin-top: 5px;
   }

@@ -21,9 +21,8 @@ function SelectPortfolio() {
       <div className="sectionFont">양식 선택</div>
       <div
         style={{
-          width: '60%',
-          margin: '-30px 0px 50px 400px',
-          height: '130vh',
+          width: '100%',
+          height: '170vh',
           backgroundColor: '#f8f9fa',
         }}
       >
@@ -32,7 +31,7 @@ function SelectPortfolio() {
           grid={{
             rows: 2,
           }}
-          spaceBetween={5}
+          spaceBetween={40}
           pagination={{
             clickable: true,
           }}
