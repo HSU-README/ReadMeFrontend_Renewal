@@ -19,12 +19,12 @@ export default function LikeButton({ isEditable, userId, docId }: IProps) {
       const datas = await getUserLikePortfolio(userId);
       await datas.map((data: DocumentType) => (data.docId === Number(docId) ? setLike(true) : ''));
     }
-
     fetchUserLikePortfolioData();
-  }, [docId, like, setLike, userId]);
+  }, [docId, setLike, userId]);
 
   if (!isEditable) {
     if (like) {
+      console.log('Test good');
       return (
         <img
           alt="make-unlike"
