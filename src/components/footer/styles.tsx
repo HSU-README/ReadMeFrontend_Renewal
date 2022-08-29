@@ -7,10 +7,10 @@ const Container = styled.footer`
 
 .copyright{
   flex: 1;
-  font-size: 32px;
+  font-size: 24px;
   color: white;
   text-align: center;
-  line-height: 100px;
+  line-height: 70px;
   background-color: #F24444;
   font-weight: 700;
 }
