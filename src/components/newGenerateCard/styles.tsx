@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 
   .pofol-thumbnail {
-    margin-top: 5x0px;
+    margin-top: 15px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }

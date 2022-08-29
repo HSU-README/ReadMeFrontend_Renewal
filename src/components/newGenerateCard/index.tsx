@@ -10,7 +10,7 @@ export default function NewGenerateCard() {
       <Link to="/generate" style={{ textDecoration: 'none', color: 'black', width: '300px' }}>
         <div className="pofol-thumbnail-container">
           <img
-            style={{ width: '70%', height: '70%', objectFit: 'contain' }}
+            style={{ width: '90%', height: '90%', objectFit: 'fill' }}
             className="pofol-thumbnail"
             src={newDocument}
             alt="thumbnail"
