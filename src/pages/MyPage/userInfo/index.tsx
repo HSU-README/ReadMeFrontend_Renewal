@@ -48,20 +48,22 @@ function UserInfo() {
     reader.readAsDataURL(e.target.files[0]);
   };
 
-  const onSubmit = useCallback((e: any) => {
-    e.preventDefault();
-    if (file.name === undefined) {
-      updateUser(userId, name, image, university, major, interests);
-    } else {
-      // create a refernce to the file tp be uploaded
-      const storageRef = ref(storage, file.name);
-      // upload the file
-      const uploadTask = uploadBytesResumable(storageRef, file);
-      getDownloadURL(uploadTask.snapshot.ref).then((url) =>
-        updateUser(userId, name, url, university, major, interests),
-      );
-    }
-  }, []);
+  const onSubmit = useCallback(
+    (e: any) => {
+      e.preventDefault();
+      if (file.name === undefined) {
+        updateUser(userId, name, image, university, major, interests);
+      } else {
+        // create a refernce to the file tp be uploaded
+        const storageRef = ref(storage, file.name);
+        // upload the file
+        uploadBytesResumable(storageRef, file).then(() => {
+          getDownloadURL(storageRef).then((url) => updateUser(userId, name, url, university, major, interests));
+        });
+      }
+    },
+    [file, image, interests, major, name, university, userId],
+  );
 
   return (
     <Container>
@@ -79,7 +81,7 @@ function UserInfo() {
       />
       <div className="nickName">
         <input
-          value={name}
+          value={name || ''}
           onChange={onChangeName}
           style={{ width: '180px', fontWeight: 'bold', backgroundColor: '#f8f9fa' }}
         />
@@ -89,7 +91,7 @@ function UserInfo() {
           <div>
             <span className="inputName">학교명 : </span>
             <input
-              value={university}
+              value={university || ''}
               onChange={onChangeUniversity}
               style={{ backgroundColor: '#f8f9fa', fontWeight: 'bold' }}
             />
@@ -102,7 +104,7 @@ function UserInfo() {
         <div className="inputBorder">
           <span className="inputName">관심분야 : </span>
           <input
-            value={interests}
+            value={interests || ''}
             onChange={onChangeInterests}
             style={{ width: '350px', fontWeight: 'bold', backgroundColor: '#f8f9fa' }}
           />

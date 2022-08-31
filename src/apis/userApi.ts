@@ -20,19 +20,20 @@ export const getUser = async (userId: number) => {
 export const updateUser = async (
   userId: string,
   name: string,
-  image: any,
+  image: string,
   university: string,
   major: string,
   interests: string,
 ) => {
   const response = await serverApi.put(`/api/v1/member/${userId}`, {
     name,
-    profileUrl: image,
+    profileUrl: image || '',
     university,
     major,
-    interests,
+    interests: interests || '',
   });
   try {
+    console.log(name);
     const successMessage = JSON.stringify(response.data.message);
     ToastSuccess(successMessage);
   } catch (error: any) {
