@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  width: 100%;
   .table-option {
     display: flex;
     margin: 5px 2px;
@@ -11,7 +12,6 @@ const Container = styled.div`
   }
   .table-input {
     display: grid;
-    margin-left: 30px;
     margin-bottom: 10px;
     grid-template-columns: auto auto auto auto auto auto;
     gap: 1px;

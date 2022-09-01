@@ -10,16 +10,14 @@ function EditPortfolio() {
   const [createElement, setCreateElement] = useState('');
   const canvasBox = useRef(null);
   return (
-    <div style={{ marginTop: '5px' }}>
+    <div style={{ marginTop: '1%' }}>
       <Header />
       <div style={{ backgroundColor: '#e9ecef', display: 'flex' }}>
         <DNDImageComponent setCreateElement={setCreateElement} />
-        <div style={{ display: 'flex' }}>
-          <div ref={canvasBox}>
-            <CanvasContainer isEditable createElement={createElement} />
-          </div>
-          <DNDComponent setCreateElement={setCreateElement} />
+        <div ref={canvasBox} style={{ margin: '0 5% 0 5%' }}>
+          <CanvasContainer isEditable createElement={createElement} />
         </div>
+        <DNDComponent setCreateElement={setCreateElement} />
       </div>
       <Footer />;
     </div>

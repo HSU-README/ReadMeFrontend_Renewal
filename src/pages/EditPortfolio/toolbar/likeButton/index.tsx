@@ -24,7 +24,6 @@ export default function LikeButton({ isEditable, userId, docId }: IProps) {
 
   if (!isEditable) {
     if (like) {
-      console.log('Test good');
       return (
         <img
           alt="make-unlike"

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import colors from 'styles/colors';
@@ -9,6 +10,7 @@ import Banner from 'pages/Home/header/Banner';
 import Header from 'pages/Home/header/Header';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Pagination, Navigation } from 'swiper';
+import LoginModal from './LoginModal';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -20,9 +22,10 @@ import 'slick-carousel/slick/slick-theme.css';
 function Home() {
   const [mostLikePortfolio, setMostLikePortfolio] = useState([]);
   const [allPortfolio, setAllPortfolio] = useState([]);
-  // const { loginCheck } = useSelector((state) => state.loginCheck);
+  // null 이면 true
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const readmeUserInfo = localStorage.getItem('readme_userInfo');
   useEffect(() => {
-    const readmeUserInfo = localStorage.getItem('readme_userInfo');
     // window.addEventListener('resize', () => {
     //   if (window.outerWidth > 1320) {
     //     setSliderCount(4);
@@ -53,21 +56,25 @@ function Home() {
     fetchMajorPortfolioData();
   }, []);
   return (
+    // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div style={{ position: 'relative', backgroundColor: '#F8F9FA' }}>
+      {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} />}
       <Header />
       <Banner />
-
-      {/* {loginCheck && ( */}
       <br />
       <div className="pofolBtnHeader">
-        <NavLink className="pofolBtn" to="/select" style={{ textDecoration: 'none', color: 'white' }}>
-          <button type="button" className="pofolBtn">
+        {readmeUserInfo ? (
+          <NavLink className="pofolBtn" to="/select" style={{ textDecoration: 'none', color: 'white' }}>
+            <button type="button" className="pofolBtn">
+              포트폴리오 만들기
+            </button>
+          </NavLink>
+        ) : (
+          <button type="button" className="pofolBtn" onClick={() => setShowLoginModal(true)}>
             포트폴리오 만들기
           </button>
-        </NavLink>
+        )}
       </div>
-      {/* )} */}
-
       <div className="sectionFont">인기 포트폴리오</div>
       <Swiper
         slidesPerView={4}
@@ -122,7 +129,6 @@ function Home() {
             ),
         )}
       </Swiper>
-
       <div className="sectionFont">학과별 포트폴리오</div>
       <Swiper
         slidesPerView={4}
@@ -143,7 +149,6 @@ function Home() {
             ),
         )}
       </Swiper>
-
       <br />
       <br />
       <Footer />

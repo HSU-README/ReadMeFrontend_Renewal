@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from 'pages/EditPortfolio/components/DNDComponent/styles';
+import Container from 'pages/EditPortfolio/components/DNDImageComponent/styles';
 import { emoji, emoji2, Picktogram } from 'pages/generateMenu/menuDefaultArrays';
 import { ImageList, ImageListItem } from '@mui/material';
 
@@ -14,8 +14,8 @@ function DNDImageComponent(props: any) {
     });
   };
   return (
-    <Container style={{ marginRight: '40px', marginLeft: '10%' }}>
-      <div className="parent">
+    <Container>
+      <div className="imogeParent">
         <div className="itemBoxCss">
           <details>
             <summary>로컬 이미지 업로드</summary>
@@ -39,8 +39,13 @@ function DNDImageComponent(props: any) {
             <summary>이모티콘</summary>
             <br />
             <details>
-              <summary className="menu1">상상부기</summary>
-              <ImageList sx={{ width: 280, height: 200 }} cols={3} rowHeight={140}>
+              <summary className="menu">상상부기</summary>
+              <ImageList
+                sx={{ width: 280, height: 200, backgroundColor: 'white' }}
+                cols={3}
+                rowHeight={140}
+                className="ImageListIem"
+              >
                 {emoji.map((item) => (
                   <ImageListItem key={item.label}>
                     <div style={{ border: '1px solid lightgray' }} key={`${item.label}`}>
@@ -60,8 +65,13 @@ function DNDImageComponent(props: any) {
             </details>
             <br />
             <details>
-              <summary className="menu2">상상부기 프렌즈</summary>
-              <ImageList sx={{ width: 280, height: 200 }} cols={3} rowHeight={150}>
+              <summary className="menu">상상부기 프렌즈</summary>
+              <ImageList
+                sx={{ width: 280, height: 200, backgroundColor: 'white' }}
+                cols={3}
+                rowHeight={150}
+                className="ImageListIem"
+              >
                 {emoji2.map((item) => (
                   <ImageListItem key={item.label}>
                     <div style={{ border: '1px solid lightgray' }} key={`${item.label}}`}>
@@ -81,10 +91,10 @@ function DNDImageComponent(props: any) {
 
             <br />
             <details>
-              <summary className="menu3">픽토그램</summary>
-              <ImageList sx={{ width: 280, height: 200 }} cols={3} rowHeight={100}>
+              <summary className="menu">픽토그램</summary>
+              <ImageList sx={{ width: 280, height: 200, backgroundColor: 'white' }} cols={3} rowHeight={100}>
                 {Picktogram.map((item) => (
-                  <ImageListItem key={item.label}>
+                  <ImageListItem key={item.label} className="ImageListIem">
                     <div style={{ border: '1px solid lightgray' }} key={item.label}>
                       <img
                         key={item.cmd}

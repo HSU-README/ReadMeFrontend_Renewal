@@ -15,8 +15,8 @@ function DNDComponent(props: any) {
     });
   };
   return (
-    <Container style={{ marginLeft: '40px' }}>
-      <div className="parent">
+    <Container>
+      <div className="elementParent">
         <div className="itemBoxCss">
           <details>
             <summary>텍스트 상자</summary>
@@ -40,9 +40,9 @@ function DNDComponent(props: any) {
           <details>
             <summary>구분선</summary>
             <details>
-              <summary className="menu1">가로 구분선</summary>
+              <summary className="menu">가로 구분선</summary>
               <br />
-              <ImageList sx={{ width: 280, height: 100, overflow: 'hidden' }} cols={2}>
+              <ImageList sx={{ width: 180, height: 80, overflow: 'hidden' }} cols={2}>
                 {widthLine.map((item) => (
                   <ImageListItem key={item.label}>
                     <div>
@@ -64,9 +64,9 @@ function DNDComponent(props: any) {
               </ImageList>
             </details>
             <details>
-              <summary className="menu2">세로 구분선</summary>
+              <summary className="menu">세로 구분선</summary>
               <br />
-              <ImageList sx={{ width: 280, height: 100, overflow: 'hidden' }} cols={4} rowHeight={50}>
+              <ImageList sx={{ width: 180, height: 80, overflow: 'hidden' }} cols={4} rowHeight={50}>
                 {verticalLine.map((item) => (
                   <ImageListItem key={item.label}>
                     <div>
