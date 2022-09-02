@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactToPrint from 'react-to-print';
-import { FormControl, Input } from '@mui/material';
 import Container from 'pages/EditPortfolio/toolbar/styles';
 import { fontList, sizeList } from 'styles/fonts';
 import { IToolbar } from 'types/toolbar';
 import LikeButton from 'pages/EditPortfolio/toolbar/likeButton/index';
 import LoadDocument from './LoadDocument';
-import SaveDocumentDialog from './SaveDocumentDialog';
+import SaveDocumentDialog from './SaveDocument/SaveDocumentDialog';
+import TitleForm from './TitleForm';
 
 function Toolbar({
   isEditEnable,
@@ -100,32 +100,8 @@ function Toolbar({
             createPortfolio={createPortfolio}
           />
         )}
-        <FormControl variant="standard" style={{ marginLeft: '90px', width: '50%' }}>
-          <Input
-            value={title}
-            placeholder="제목을 입력해주세요."
-            style={{
-              backgroundColor: 'white',
-              border: '1px solid black',
-              borderRadius: '5px',
-              padding: '4px',
-              paddingLeft: '10px',
-            }}
-            onChange={(e) => {
-              if (isEditable) {
-                if (title.length <= 13) {
-                  setTitle(e.target.value);
-                } else {
-                  alert('제목은 최대 13글자까지 입력 가능합니다.');
-                  setTitle(title.substr(0, 12));
-                }
-              } else {
-                alert('미리보기에서는 변경할 수 없습니다.');
-              }
-            }}
-          />
-          <LikeButton isEditable={isEditable} userId={userId} docId={docId} />
-        </FormControl>
+        <TitleForm isEditable={isEditable} title={title} setTitle={setTitle} />
+        <LikeButton isEditable={isEditable} userId={userId} docId={docId} />
       </div>
     </Container>
   );

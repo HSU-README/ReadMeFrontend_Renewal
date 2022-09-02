@@ -49,7 +49,7 @@ function DNDComponent(props: any) {
                       <img
                         style={{
                           width: '100%',
-                          height: '30px',
+                          height: '1vh',
                         }}
                         src={item.val}
                         onClick={() => {
@@ -72,7 +72,7 @@ function DNDComponent(props: any) {
                     <div>
                       <img
                         src={item.val}
-                        style={{ width: '50%', objectFit: 'fill', height: '110px' }}
+                        style={{ width: '20%', objectFit: 'fill', height: '10vh' }}
                         onClick={() => {
                           createCommand(`IMOGE ${item.val}`);
                         }}
@@ -90,7 +90,7 @@ function DNDComponent(props: any) {
           <details>
             <summary>표</summary>
             <br />
-            <div style={{ border: '1px solid black', alignContent: 'center' }}>
+            <div style={{ border: '1px solid black', width: '170px', alignContent: 'center', padding: '3% 5% 1% 5%' }}>
               <DNDTableComponent setCreateElement={setCreateElement} />
             </div>
           </details>

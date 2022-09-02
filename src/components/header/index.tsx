@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import logo from 'assets/images/logo.jpg';
 import { Link } from 'react-router-dom';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { Container, headerFont } from './styles';
 
 export default function Header() {
@@ -37,17 +39,18 @@ export default function Header() {
             </div>
             <Link
               to="/"
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: 'none', margin: '0 5% 0 2%' }}
               onClick={() => {
                 setIsLoggedIn(false);
                 setUserInfo(undefined);
                 localStorage.clear();
               }}
             >
-              <div style={headerFont}>로그아웃</div>
+              <LogoutOutlinedIcon color="primary" />
             </Link>
             <Link to="/mypage" style={{ textDecoration: 'none' }}>
-              <div style={headerFont}>마이페이지</div>
+              {/* <div style={headerFont}>마이페이지</div> */}
+              <AccountCircleOutlinedIcon color="primary" />
             </Link>
           </>
         ) : (
