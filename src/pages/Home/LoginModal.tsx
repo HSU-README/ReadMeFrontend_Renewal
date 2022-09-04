@@ -3,8 +3,9 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { NavLink } from 'react-router-dom';
+import './styles.css';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -46,9 +47,9 @@ function LoginModal({ showLoginModal, setShowLoginModal }: loginModalProps): Rea
             <Typography id="transition-modal-title" variant="h6" component="h2">
               로그인 후 이용 가능한 서비스입니다.
             </Typography>
-            <Button onClick={handleClose} style={{ float: 'right' }}>
+            <NavLink to="/login" className="confirmBtn" onClick={handleClose}>
               확인
-            </Button>
+            </NavLink>
           </Box>
         </Fade>
       </Modal>

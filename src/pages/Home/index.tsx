@@ -129,7 +129,7 @@ function Home() {
             ),
         )}
       </Swiper>
-      <div className="sectionFont">학과별 포트폴리오</div>
+      <div className="sectionFont">구인 포지션</div>
       <Swiper
         slidesPerView={4}
         grid={{

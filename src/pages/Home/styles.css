@@ -99,3 +99,18 @@
   text-decoration-line: none;
   font-weight: 700;
 }
+
+.confirmBtn{
+  width: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  float: right;
+  margin-top: 15px;
+  color: blue;
+  font-weight: 600;
+}
+
+.confirmBtn:hover{
+  background-color: #d9d9d9;
+  border-radius: 7px;
+}

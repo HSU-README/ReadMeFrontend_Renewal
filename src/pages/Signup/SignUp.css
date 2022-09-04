@@ -64,3 +64,8 @@
 #sign_up_btn:hover{
     opacity:90%;
 }
+
+.emailVali{
+    color:blue;
+    font-weight: 800;
+}
