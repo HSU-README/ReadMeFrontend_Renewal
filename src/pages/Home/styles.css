@@ -25,13 +25,14 @@
 }
 .sectionFont {
   display: flex;
+  width: 90%;
   margin-top: 60px;
   margin-bottom: 0px;
   padding: 8px 8px 0px 8px;
   border-radius: 15px;
   margin-right: 200px;
   font-weight: bold;
-  margin-left: 10%;
+  margin-left: 2%;
   color: black;
   font-size: 35px;
   text-align: left;

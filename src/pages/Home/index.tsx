@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import colors from 'styles/colors';
 import MainSelectCard from 'components/mainSelectCard';
+import CompanySelectCard from 'components/companySelectCard';
 import Footer from 'components/footer';
 import { getMostLikePortfolio, getAllPortfolio, getMajorPortfolio } from 'apis/portfolioApi';
 import { DocumentType } from 'types/document';
@@ -107,7 +108,7 @@ function Home() {
             marginLeft: '18px',
           }}
         >
-          <h6 style={{ color: colors.gray, lineHeight: '40px' }}>+ 더보기 </h6>
+          <h6 style={{ color: colors.gray, lineHeight: '10px'}}>+ 더보기 </h6>
         </Link>
       </div>
       <Swiper
@@ -144,7 +145,7 @@ function Home() {
           (data: DocumentType) =>
             data.visibility === 'PUBLIC' && (
               <SwiperSlide>
-                <MainSelectCard key={data.docId} data={data} />
+                <CompanySelectCard />
               </SwiperSlide>
             ),
         )}
