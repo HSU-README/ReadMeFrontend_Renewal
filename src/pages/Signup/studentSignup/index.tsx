@@ -1,30 +1,23 @@
 import React, { useState, useCallback } from 'react';
-import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import API_ENDPOINT from 'apis/constant';
 import logo from 'assets/images/logo.jpg';
+import enrollUser from 'apis/signApi';
 
-function StudnentSignup() {
+function CompanySignup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [university, setUniversity] = useState('');
   const [major, setMajor] = useState('');
   const navigate = useNavigate();
+
   // validation 검증
   const [visibleNameValidationText, setVisibleNameValidationText] = useState(false);
   const [visibleEmailValidationText, setVisibleEmailValidationText] = useState(false);
   const [visiblePasswordValidationText, setVisiblePasswordValidationText] = useState(false);
   // 이메일 체크 정규식
   const regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-
-  const serverApi = axios.create({
-    baseURL: `${API_ENDPOINT}`,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
 
   function validationCheck(): boolean {
     let chk = false;
@@ -50,32 +43,11 @@ function StudnentSignup() {
     return !chk;
   }
 
-  const enrollUser = async () => {
-    await serverApi
-      .post('https://hsureadme.herokuapp.com/api/v1/member/new', {
-        name,
-        email,
-        password,
-        university,
-        major,
-      })
-      .then(() => {
-        navigate('/', {
-          state: {
-            isSignUpSuccess: true,
-          },
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (validationCheck()) {
-        enrollUser();
+        enrollUser(navigate, name, email, password, university, major);
       } else {
         console.log('걸림');
       }
@@ -161,4 +133,4 @@ function StudnentSignup() {
   );
 }
 
-export default StudnentSignup;
+export default CompanySignup;
