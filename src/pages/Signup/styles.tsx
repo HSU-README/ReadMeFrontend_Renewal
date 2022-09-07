@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const FormContainer = styled.div`
   border: 4px solid;
   border-radius: 15px;
-  border-color: #f24444;
+  border-color: ${colors.loginBorder};
   max-width: 900px;
   width: 60%;
   height: fit-content;
@@ -52,12 +52,16 @@ export const FormContainer = styled.div`
     margin-bottom: 3%;
   }
 
+  #businessSelectForm {
+    text-align: start;
+  }
+
   #sign_up_btn {
     margin-top: 10px;
     margin-bottom: 40px;
     width: 70%;
     height: 40px;
-    background-color: #f24444;
+    background-color: ${colors.primary};
     color: white;
     border: none;
     font-size: 20px;
@@ -80,11 +84,11 @@ export const FormContainer = styled.div`
   }
 `;
 
-export const SelectFormContainer = styled.div`
+export const SelectFormContainer = styled.div<{ isCompany: boolean }>`
   display: flex;
 
   border-top: 3px solid;
-  border-color: #f24444;
+  border-color: ${colors.primary};
   box-shadow: 25% 0px 20px 10px rgba(0, 0, 0, 0.2);
   height: 60px;
 
@@ -93,7 +97,7 @@ export const SelectFormContainer = styled.div`
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
-    color: #f24444;
+    color: ${colors.primary};
 
     .selectFormName {
       margin-top: 20px;
@@ -101,8 +105,17 @@ export const SelectFormContainer = styled.div`
 
     &:nth-child(1) {
       border-right: 3px solid;
-      border-color: #f24444;
+      border-color: ${colors.primary};
       box-shadow: 25% 0px 20px 10px rgba(0, 0, 0, 0.2);
+      background-color: ${(props) => (props.isCompany ? '' : colors.primary)};
+      color: ${(props) => (props.isCompany ? colors.primary : '#ffffff')};
+    }
+    &:nth-child(2) {
+      border-right: 3px solid;
+      border-color: ${colors.primary};
+      box-shadow: 25% 0px 20px 10px rgba(0, 0, 0, 0.2);
+      background-color: ${(props) => (props.isCompany ? colors.primary : '')};
+      color: ${(props) => (props.isCompany ? '#ffffff' : colors.primary)};
     }
   }
 `;
