@@ -1,10 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from 'components/footer';
 import Header from 'components/header';
-import API_ENDPOINT from '../../apis/constant';
+import { loginUser } from 'apis/signApi';
 import logo from '../../assets/images/logo.jpg';
 import './LoginPage.css';
 
@@ -13,34 +12,6 @@ function LoginPage() {
   const [password, setPassword] = useState<String>('');
   const [loginCheck, setLoginCheck] = useState<boolean>(false);
   const navigate = useNavigate();
-  const serverApi = axios.create({
-    baseURL: `${API_ENDPOINT}`,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  const login = async () => {
-    await serverApi
-      .post('https://hsureadme.herokuapp.com/api/v1/member/login', {
-        email,
-        password,
-      })
-      .then((response) => {
-        if (response.data.code === 'S200') {
-          const userInfo = JSON.stringify(response.data.result);
-          // const successMessage = JSON.stringify(response.data.message);
-
-          localStorage.setItem('readme_login', 'true');
-          localStorage.setItem('readme_userInfo', userInfo);
-
-          navigate('/', {
-            state: {
-              isLoginSuccess: true,
-            },
-          });
-        }
-      });
-  };
 
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
@@ -48,7 +19,7 @@ function LoginPage() {
       if (email === '' || password === '') {
         setLoginCheck(true);
       } else {
-        login();
+        loginUser(navigate, email, password);
       }
     },
     [email, password],
