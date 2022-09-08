@@ -82,14 +82,7 @@ function CompanySignup() {
             setEmail(e.target.value);
           }}
         />
-        {visibleEmailValidationText && (
-          <>
-            <p className="validationText">올바른 이메일을 입력과 이메일 인증을 진행해주세요.</p>
-            <button type="button" className="emailVali" onClick={() => alert('이메일 인증 테스트')}>
-              이메일 인증
-            </button>
-          </>
-        )}
+        {visibleEmailValidationText && <p className="validationText">@을 포함한 전체 이메일 주소를 입력해주세요.</p>}
       </div>
       <div style={{ marginBottom: '5%' }}>
         <TextField
