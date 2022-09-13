@@ -101,7 +101,7 @@ function MyPage() {
               setCurrentMyPage('pickPofol');
             }}
           >
-            Pick Pofol
+            스크랩 양식
           </PickPofolMenu>
           <MyPortfolioMenu
             currentMyPage={currentMyPage}

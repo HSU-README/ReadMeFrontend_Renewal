@@ -64,10 +64,12 @@ export const Container = styled.div`
 
   .button-wrapper {
     display: flex;
+    background-color: #ff6b6b;
+    font-weight: bold;
     justify-content: center;
-    margin: 0px auto;
-    padding: 30px 0px 20px 0px;
-    max-width: 800px;
+    margin: 200px auto;
+    max-width: 282px;
+    max-height: 50px;
     width: 100%;
   }
 `;

@@ -110,9 +110,9 @@ function UserInfo() {
           />
         </div>
       </div>
-      <div className="button-wrapper">
-        <Button onClick={onSubmit}>정보 수정</Button>
-      </div>
+      <Button className="button-wrapper" onClick={onSubmit}>
+        정보 수정
+      </Button>
     </Container>
   );
 }
