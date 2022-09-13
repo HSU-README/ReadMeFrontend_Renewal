@@ -42,7 +42,7 @@ function AllPositionPortfolio() {
     // swiper 익숙치 않아서 막 쓴 부분이 있음 보고 수정 부탁요.
     <Container>
       <Header />
-      <div className="titleFont">모든 구인 포지션</div>
+      <div className="titleFont">전체 구인 포지션</div>
       <div className="subFont">영업 / 기획</div>
       <div
         style={{
