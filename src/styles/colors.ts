@@ -1,6 +1,6 @@
 export default {
   primary: '#f24444',
-  background: '#f8f9fa',
+  background: 'white',
   loginButton: 'black',
   loginText: 'black',
   loginBorder: '#f24444',

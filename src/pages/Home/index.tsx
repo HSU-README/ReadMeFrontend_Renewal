@@ -108,7 +108,7 @@ function Home() {
             marginLeft: '18px',
           }}
         >
-          <h6 style={{ color: colors.gray, lineHeight: '10px'}}>+ 더보기 </h6>
+          <h6 style={{ color: colors.gray, lineHeight: '10px' }}>+ 더보기 </h6>
         </Link>
       </div>
       <Swiper
@@ -130,7 +130,21 @@ function Home() {
             ),
         )}
       </Swiper>
-      <div className="sectionFont">구인 포지션</div>
+      <div className="sectionFont">
+        구인 포지션
+        <Link
+          to="/allPositionpage"
+          style={{
+            textDecoration: 'none',
+            color: colors.gray,
+            fontSize: '20px',
+            lineHeight: '40px',
+            marginLeft: '18px',
+          }}
+        >
+          <h6 style={{ color: colors.gray, lineHeight: '10px' }}>+ 더보기 </h6>
+        </Link>
+      </div>
       <Swiper
         slidesPerView={4}
         grid={{

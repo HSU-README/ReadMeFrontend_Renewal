@@ -1,0 +1,16 @@
+/* 모든 구인 포지션 */
+.titleFont {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+/* 각 직군 별 텍스트 */
+.subFont {
+    text-align: left;
+    margin-left: 150px;
+    font-size: 28px;
+    font-weight: 600;
+}
