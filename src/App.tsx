@@ -12,6 +12,7 @@ const SelectPortfolio = loadable(() => import('pages/SelectPage'));
 const AllPortfolio = loadable(() => import('pages/AllPortfolio'));
 const DownloadPortfolio = loadable(() => import('pages/EditPortfolio/downloads/DownloadPortfolio'));
 const Preview = loadable(() => import('pages/EditPortfolio/preview'));
+const JopPosting = loadable(() => import('pages/jopPostingPage/index'))
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/preview" element={<Preview />} /> {/* 포트폴리오 미리보기 페이지 라우트 */}
             <Route path="/preview/:docId" element={<Preview />} /> {/* 특정 문서 미리보기 페이지 라우트 */}
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/posting" element={<JopPosting />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
