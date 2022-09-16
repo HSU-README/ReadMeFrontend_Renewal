@@ -16,7 +16,7 @@ function EnrollForm() {
             <form>
                 <div className="section">
                     <label className="sectionName">회사명</label>
-                    <Input placeholder="스마일게이트" disableUnderline={true} className="inputCompanyName" sx={{height: '6vh'}}/>
+                    <Input placeholder="카카오" disableUnderline={true} className="inputCompanyName" sx={{height: '6vh'}}/>
                 </div>
                 <div className="section">
                     <label className="sectionName" style={{top: '2rem'}}>구인 내용</label>
@@ -36,7 +36,7 @@ function EnrollForm() {
                 </div>
                 <div className="section">
                     <label className="sectionName">지원 링크</label>
-                    <Input placeholder="www.readme.com" disableUnderline={true} className="inputLink" sx={{height: '6vh'}}/>
+                    <Input placeholder="www.readme.com" disableUnderline={true} className="inputURL" sx={{height: '6vh'}}/>
                     <label className="sectionName">연봉(월급)</label>
                     <Input
                      placeholder="4000"
@@ -46,7 +46,10 @@ function EnrollForm() {
                 </div>
                 <div className="section">
                     <label className="sectionName">첨부 이미지</label>
-                    <UploadImages fileNames={fileNames} setFileNames={setFileNames}/>
+                    <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={0}/>
+                    <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={1}/>
+                    <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={2}/>
+                    <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={3}/>
                 </div>
             </form>
             <Button />

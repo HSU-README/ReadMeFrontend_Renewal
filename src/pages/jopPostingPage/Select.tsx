@@ -9,11 +9,6 @@ export type MenuItemDataProps = {
     setValue: Dispatch<SetStateAction<string>>,
     items: MenuItemType[],
 }
-const selectSx = {
-    bgcolor:'white',
-    marginRight:'10%',
-    borderRadius:'20px',
-}
 function SelectOption({value,setValue,items}:MenuItemDataProps) {
     useEffect(()=> {
         setValue(items[0].name);

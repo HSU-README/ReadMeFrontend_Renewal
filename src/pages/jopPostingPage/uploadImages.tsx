@@ -5,68 +5,43 @@ import { url } from 'inspector';
 export type uploadImageProps = {
    fileNames: string[],
    setFileNames: Dispatch<SetStateAction<string[]>>
+   idx:number;
 }
 
-function UploadImages({fileNames, setFileNames}:uploadImageProps) {
+function UploadImages({fileNames, setFileNames,idx}:uploadImageProps) {
 
     const onSelectFile = (event:React.ChangeEvent<HTMLInputElement>) =>{
         const selectedFiles = (event.target as HTMLInputElement).files;
         if(fileNames.length>0) setFileNames([])
         if(selectedFiles !== null){
             const selectedFilesArray = Array.from(selectedFiles);
-            const imageArray = selectedFilesArray.map((file)=> {
-                return URL.createObjectURL(file);
-            });
-            setFileNames((previousImages)=> previousImages.concat(imageArray));
+            const imageArray = URL.createObjectURL(selectedFilesArray[0]);
+            const tmpArray = [...fileNames];
+            tmpArray[idx] = imageArray;
+            setFileNames(tmpArray);
         }
     }
+    useEffect(() => {
+    },[fileNames]);
     return (
-        <div style={{display:"inline-block", width: '80%'}}>
-            <ImageBox>
-                <label>
+         <ImageBox background={fileNames[idx]}>
+             <label>
+                {!fileNames[idx] ?
+                <>
                     +Add image
                     <br />
                     <span>up to image</span>
-                    <input type="file" name="images" multiple onChange={onSelectFile} accept="image/png, image/jpeg, image/webp" />
-                </label>
-            </ImageBox>
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
-                    {fileNames.length>0 &&
-                    fileNames.length < 5 &&
-                    fileNames.map((image,index)=>{
-                        return(
-                            <div style={{
-                                width:'20%',
-                                margin: '0.5rem',
-                                position: 'relative',
-                                boxShadow: 'rgba(0,0,0,0.05) 0px 1px 2px 0px'
-                            }}>
-                                <img style={{
-                                    width: '100%'
-                                }}
-                                src={image}></img>
-                                <button
-                                style={{borderRadius:'15px',backgroundColor:'white'}}
-                                onClick={(evnet)=>{
-                                    evnet.preventDefault();
-                                    setFileNames(fileNames.filter((e)=>e !== image));
-                                }}
-                                >
-                                    x
-                                </button>
-                            </div>
-                        )
+                 </>
+                 :
+                 <>
+                    <br />
+                    <span></span>
+                 </>
+                }
 
-                    })
-                    }
-            </div>
-        </div>
+                 <input type="file" name="images" multiple onChange={onSelectFile} accept="image/png, image/jpeg, image/webp" />
+             </label>
+         </ImageBox>
     );
 }
 
