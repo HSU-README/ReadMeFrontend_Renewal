@@ -25,15 +25,19 @@ function AllPortfolio() {
 
   if (userLikePortfolio.length === 0) {
     return (
-      <div style={{ fontSize: '40px', margin: '220px 400px' }}>
-        <img
-          src={require('assets/icons/not_found_icon.png')}
-          style={{ width: '507px', height: '301px' }}
-          alt="not_found"
-        />
-        <br />
-        <strong>찾으시는 포트폴리오가 없어요!</strong>
-      </div>
+      <Container>
+        <Header />
+        <div style={{ fontSize: '40px', margin: '220px 400px' }}>
+          <img
+            src={require('assets/icons/not_found_icon.png')}
+            style={{ width: '507px', height: '301px' }}
+            alt="not_found"
+          />
+          <br />
+          <strong>찾으시는 포트폴리오가 없어요!</strong>
+        </div>
+        <Footer />
+      </Container>
     );
   }
 
@@ -46,15 +50,15 @@ function AllPortfolio() {
           width: '1600px',
           margin: '-30px 0px 50px 100px',
           height: '85vh',
-          padding: userLikePortfolio.length < 8 ? '10%' : '0%',
+          padding: userLikePortfolio.length < 10 ? '5%' : '0%',
         }}
       >
         <Swiper
           slidesPerView={5}
           grid={{
-            rows: userLikePortfolio.length < 8 ? 1 : 2,
+            rows: userLikePortfolio.length < 10 ? 1 : 0,
           }}
-          spaceBetween={40}
+          spaceBetween={35}
           pagination={{
             clickable: true,
           }}
