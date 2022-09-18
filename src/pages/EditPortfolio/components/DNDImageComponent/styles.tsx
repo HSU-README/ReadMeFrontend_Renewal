@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-left: 2%;
-  width: 20%;
+  margin-left: 7.5%;
   margin-top: 5%;
   .beforeImage {
     text-align: 'center';
@@ -23,7 +22,23 @@ const Container = styled.div`
     padding: 10% 5% 0 5%;
   }
   .itemBoxCss {
+    background-color: white;
+    padding: 5%;
+    border: 2px solid black;
     cursor: pointer;
+  }
+
+  .itemBoxCss2 {
+    background-color: white;
+    padding: 5%;
+    margin-top: 15%;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+
+  .elementParent {
+    background-color: #e9ecef;
+    width: 350px;
   }
 `;
 

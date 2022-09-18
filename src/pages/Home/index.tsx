@@ -58,7 +58,7 @@ function Home() {
   }, []);
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
-    <div style={{ position: 'relative', backgroundColor: '#F8F9FA' }}>
+    <div style={{ position: 'relative', backgroundColor: 'white' }}>
       {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} />}
       <Header />
       <hr className="hrLine" />

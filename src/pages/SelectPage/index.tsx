@@ -23,7 +23,7 @@ function SelectPortfolio() {
         style={{
           width: '100%',
           height: '170vh',
-          backgroundColor: '#f8f9fa',
+          backgroundColor: 'white',
         }}
       >
         <Swiper

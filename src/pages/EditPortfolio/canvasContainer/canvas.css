@@ -22,7 +22,10 @@ table {
 }
 
 .ql-toolbar.ql-snow {
+  margin-top: -16px;
   border: none;
+  background-color: #fff;
+  margin-bottom: 16px;
 }
 
 .canvas-container {

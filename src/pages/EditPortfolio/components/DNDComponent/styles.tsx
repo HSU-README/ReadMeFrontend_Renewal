@@ -18,15 +18,28 @@ const Container = styled.div`
     object-fit: fill;
     border: 1px solid black;
   }
-  .imogeParent {
-    border: 1px solid black;
-    width: 100%;
-  }
+
   .ImageListIem {
     padding: 10% 5% 0 5%;
   }
   .itemBoxCss {
+    background-color: white;
+    padding: 5%;
+    border: 2px solid black;
     cursor: pointer;
+  }
+
+  .itemBoxCss2 {
+    background-color: white;
+    padding: 5%;
+    margin-top: 15%;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+
+  .elementParent {
+    background-color: #e9ecef;
+    width: 220px;
   }
 `;
 

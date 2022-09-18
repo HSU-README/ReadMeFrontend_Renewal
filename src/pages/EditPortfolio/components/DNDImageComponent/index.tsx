@@ -15,7 +15,7 @@ function DNDImageComponent(props: any) {
   };
   return (
     <Container>
-      <div className="imogeParent">
+      <div className="elementParent">
         <div className="itemBoxCss">
           <details>
             <summary>로컬 이미지 업로드</summary>
@@ -34,9 +34,10 @@ function DNDImageComponent(props: any) {
           </details>
         </div>
 
-        <div className="itemBoxCss">
+        <div className="itemBoxCss2">
           <details>
             <summary>이모티콘</summary>
+            <br />
             <br />
             <details>
               <summary className="menu">상상부기</summary>
@@ -88,7 +89,6 @@ function DNDImageComponent(props: any) {
                 ))}
               </ImageList>
             </details>
-
             <br />
             <details>
               <summary className="menu">픽토그램</summary>

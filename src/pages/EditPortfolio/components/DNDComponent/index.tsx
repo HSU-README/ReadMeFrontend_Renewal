@@ -36,9 +36,10 @@ function DNDComponent(props: any) {
             <br /> <br />
           </details>
         </div>
-        <div className="itemBoxCss">
+        <div className="itemBoxCss2">
           <details>
             <summary>구분선</summary>
+            <br />
             <details>
               <summary className="menu">가로 구분선</summary>
               <br />
@@ -63,6 +64,7 @@ function DNDComponent(props: any) {
                 ))}
               </ImageList>
             </details>
+            <br />
             <details>
               <summary className="menu">세로 구분선</summary>
               <br />
@@ -86,7 +88,7 @@ function DNDComponent(props: any) {
             </details>
           </details>
         </div>
-        <div className="itemBoxCss">
+        <div className="itemBoxCss2">
           <details>
             <summary>표</summary>
             <br />
