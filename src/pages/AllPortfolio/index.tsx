@@ -44,7 +44,7 @@ function AllPortfolio() {
   return (
     <Container>
       <Header />
-      <div className="sectionFont">전체 포트폴리오</div>
+      <div className="titleAllFont">전체 포트폴리오</div>
       <div
         style={{
           width: '1600px',

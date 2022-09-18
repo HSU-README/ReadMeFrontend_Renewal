@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'pages/AllPortfolio/styles';
+import { Container } from 'pages/AllPositionPortfolio/styles';
 import MainSelectCard from 'components/mainSelectCard';
 import { getAllPortfolio } from 'apis/portfolioApi';
 
