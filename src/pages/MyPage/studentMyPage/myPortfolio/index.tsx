@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'pages/MyPage/myPortfolio/styles';
+import { Container } from 'pages/MyPage/studentMyPage/myPortfolio/styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Pagination } from 'swiper';
 import 'swiper/css';

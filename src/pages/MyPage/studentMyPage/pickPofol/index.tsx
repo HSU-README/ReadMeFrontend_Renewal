@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'pages/MyPage/pickPofol/styles';
+import { Container } from 'pages/MyPage/studentMyPage/pickPofol/styles';
 import MainSelectCard from 'components/mainSelectCard';
 import { getUserLikePortfolio } from 'apis/likeApi';
 

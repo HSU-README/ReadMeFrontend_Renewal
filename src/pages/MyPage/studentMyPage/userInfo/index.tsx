@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect, useRef } from 'react';
 import 'antd/dist/antd.css';
 import { Avatar } from 'antd';
 import useInput from 'hooks/useInput';
-import { Container, Button } from 'pages/MyPage/userInfo/styles';
+import { Container, Button } from 'pages/MyPage/studentMyPage/userInfo/styles';
 import { getUser, updateUser } from 'apis/userApi';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';

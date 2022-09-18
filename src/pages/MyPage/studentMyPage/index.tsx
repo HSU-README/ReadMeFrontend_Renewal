@@ -7,10 +7,10 @@ import {
   UserInfoMenu,
   PickPofolMenu,
   MyPortfolioMenu,
-} from 'pages/MyPage/styles';
+} from 'pages/MyPage/studentMyPage/styles';
 import Footer from 'components/footer';
 import Header from 'components/header';
-import UserInfo from 'pages/MyPage/userInfo';
+import UserInfo from 'pages/MyPage/studentMyPage/userInfo';
 import { deletePortfolio, getUserPortfolio } from 'apis/portfolioApi';
 import { Dialog, DialogContent, DialogActions, DialogContentText, Button } from '@mui/material';
 import { deletePofolState, deletePofolDocIdState, userPortfolioState, openDialogState } from 'recoil/atoms';

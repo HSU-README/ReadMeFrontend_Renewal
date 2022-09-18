@@ -7,7 +7,7 @@ const Home = loadable(() => import('pages/Home'));
 const SearchPage = loadable(() => import('./pages/Search/index'));
 const SignUp = loadable(() => import('pages/Signup'));
 const Login = loadable(() => import('pages/Login/LoginPage'));
-const MyPage = loadable(() => import('pages/MyPage'));
+const MyPage = loadable(() => import('pages/MyPage/studentMyPage'));
 const SelectPortfolio = loadable(() => import('pages/SelectPage'));
 const AllPortfolio = loadable(() => import('pages/AllPortfolio'));
 const DownloadPortfolio = loadable(() => import('pages/EditPortfolio/downloads/DownloadPortfolio'));
