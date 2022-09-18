@@ -137,11 +137,12 @@ function SaveDocumentDialog({ openDialog, setOpenDialog, title, canvasData, user
       {generateState ? (
         <Dialog open onClose={handleClose} PaperProps={{ sx: { textAlign: 'center', width: '19%', height: '20%' } }}>
           <DialogContent>
-            <DialogContentText style={{ color: 'black', fontSize: '40px', fontWeight: 'bold', marginBottom: '40px' }}>
+            <DialogContentText style={{ color: 'black', fontSize: '28px', fontWeight: 'bold', marginBottom: '20px' }}>
               저장 중..
+              <hr />
             </DialogContentText>
             <DialogContentText>
-              <CircularProgress size={80} />
+              <CircularProgress size={65} />
             </DialogContentText>
           </DialogContent>
         </Dialog>
