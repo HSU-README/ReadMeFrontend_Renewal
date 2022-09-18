@@ -38,7 +38,7 @@ function PickPofol() {
 
   return (
     <Container>
-      <div style={{ width: '1400px', margin: '100px 0px 100px 90px', overflow: 'auto', display: 'flex' }}>
+      <div style={{ width: '1400px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
         <Swiper
           slidesPerView={5}
           grid={{
