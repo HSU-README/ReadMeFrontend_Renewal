@@ -61,6 +61,7 @@ function Home() {
     <div style={{ position: 'relative', backgroundColor: '#F8F9FA' }}>
       {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} />}
       <Header />
+      <hr className="hrLine" />
       <Banner />
       <br />
       <div className="pofolBtnHeader">

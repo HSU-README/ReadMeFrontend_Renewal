@@ -115,3 +115,9 @@
   background-color: #d9d9d9;
   border-radius: 7px;
 }
+
+/* hr Line Style */
+.hrLine {
+  height: 2px;
+  background-color: #F24444;
+}
