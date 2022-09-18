@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'pages/MyPage/pickPofol/styles';
+import { Container } from 'pages/MyPage/studentMyPage/pickPofol/styles';
 import MainSelectCard from 'components/mainSelectCard';
 import { getUserLikePortfolio } from 'apis/likeApi';
 
@@ -38,7 +38,7 @@ function PickPofol() {
 
   return (
     <Container>
-      <div style={{ width: '1400px', margin: '100px 0px 100px 90px', overflow: 'auto', display: 'flex' }}>
+      <div style={{ width: '1400px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
         <Swiper
           slidesPerView={5}
           grid={{

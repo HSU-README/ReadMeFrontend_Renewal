@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect, useRef } from 'react';
 import 'antd/dist/antd.css';
 import { Avatar } from 'antd';
 import useInput from 'hooks/useInput';
-import { Container, Button } from 'pages/MyPage/userInfo/styles';
+import { Container, Button } from 'pages/MyPage/studentMyPage/userInfo/styles';
 import { getUser, updateUser } from 'apis/userApi';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
@@ -89,7 +89,7 @@ function UserInfo() {
       <div className="section-update">
         <div className="inputBorder university">
           <div>
-            <span className="inputName">학교명 : </span>
+            <span className="inputName">기업명 : </span>
             <input
               value={university || ''}
               onChange={onChangeUniversity}
@@ -97,12 +97,12 @@ function UserInfo() {
             />
           </div>
           <div>
-            <span className="inputName">전공 : </span>
+            <span className="inputName">업종 : </span>
             <input value={major} onChange={onChangeMajor} style={{ backgroundColor: '#f8f9fa', fontWeight: 'bold' }} />
           </div>
         </div>
         <div className="inputBorder">
-          <span className="inputName">관심분야 : </span>
+          <span className="inputName">요구사항 : </span>
           <input
             value={interests || ''}
             onChange={onChangeInterests}

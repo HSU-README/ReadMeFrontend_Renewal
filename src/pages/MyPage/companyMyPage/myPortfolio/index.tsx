@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'pages/MyPage/myPortfolio/styles';
+import { Container } from 'pages/MyPage/studentMyPage/myPortfolio/styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Pagination } from 'swiper';
 import 'swiper/css';
@@ -28,7 +28,7 @@ function MyPortfolio() {
 
   return (
     <Container>
-      <div style={{ width: '1600px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
+      <div style={{ width: '1400px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
         <Swiper
           slidesPerView={5}
           grid={{

@@ -64,7 +64,7 @@ export default function DeleteSelectCard({ data }: { data: DocumentType }) {
             height: '45px',
 
             position: 'absolute',
-            left: '230px',
+            left: '190px',
             top: '10px',
             float: 'right',
             zIndex: '999',
