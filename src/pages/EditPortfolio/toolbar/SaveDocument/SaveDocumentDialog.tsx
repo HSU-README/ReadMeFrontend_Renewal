@@ -48,10 +48,11 @@ function SaveDocumentDialog({ openDialog, setOpenDialog, title, canvasData, user
   };
 
   const captureToFirebase = async () => {
-    const storageRef = ref(storage, imageName.name);
+    if (imageName !== undefined) {
+      const storageRef = ref(storage, imageName.name);
+      console.log(`img name:${imageName}`);
+      // upload the file
 
-    // upload the file
-    if (imageName !== '') {
       const uploadTask = await uploadBytesResumable(storageRef, imageName);
       const url = await getDownloadURL(uploadTask.ref);
       return url;
