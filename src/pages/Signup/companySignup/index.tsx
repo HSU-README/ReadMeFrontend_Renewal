@@ -90,9 +90,9 @@ function CompanySignup() {
         {visibleEmailValidationText && (
           <>
             <p className="validationText">올바른 이메일을 입력과 이메일 인증을 진행해주세요.</p>
-            <button type="button" className="emailVali" onClick={() => alert('이메일 인증 테스트')}>
+            {/* <button type="button" className="emailVali" onClick={() => alert('이메일 인증 테스트')}>
               이메일 인증
-            </button>
+            </button> */}
           </>
         )}
       </div>
