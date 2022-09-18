@@ -5,20 +5,18 @@ import {
   MenuContainer,
   ViewContainer,
   UserInfoMenu,
-  PickPofolMenu,
   MyPortfolioMenu,
-} from 'pages/MyPage/studentMyPage/styles';
+} from 'pages/MyPage/companyMyPage/styles';
 import Footer from 'components/footer';
 import Header from 'components/header';
-import UserInfo from 'pages/MyPage/studentMyPage/userInfo';
+import UserInfo from 'pages/MyPage/companyMyPage/userInfo';
 import { deletePortfolio, getUserPortfolio } from 'apis/portfolioApi';
 import { Dialog, DialogContent, DialogActions, DialogContentText, Button } from '@mui/material';
 import { deletePofolState, deletePofolDocIdState, userPortfolioState, openDialogState } from 'recoil/atoms';
 import { useRecoilState } from 'recoil';
-import PickPofol from './pickPofol';
 import MyPortfolio from './myPortfolio';
 
-function StudentMyPage() {
+function CompanyMyPage() {
   const readmeUserInfo = localStorage.getItem('readme_userInfo');
   const [currentMyPage, setCurrentMyPage] = useState('userInfo');
   const userId = readmeUserInfo !== null ? JSON.parse(readmeUserInfo).id : null;
@@ -94,15 +92,6 @@ function StudentMyPage() {
           >
             사용자 정보
           </UserInfoMenu>
-          <PickPofolMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('pickPofol');
-            }}
-          >
-            스크랩 양식
-          </PickPofolMenu>
           <MyPortfolioMenu
             currentMyPage={currentMyPage}
             className="myPageSelect"
@@ -110,12 +99,11 @@ function StudentMyPage() {
               setCurrentMyPage('myPortfolio');
             }}
           >
-            나의 포트폴리오
+            채용 공고 관리
           </MyPortfolioMenu>
         </MenuContainer>
         <ViewContainer>
           {currentMyPage === 'userInfo' && <UserInfo />}
-          {currentMyPage === 'pickPofol' && <PickPofol />}
           {currentMyPage === 'myPortfolio' && <MyPortfolio />}
         </ViewContainer>
       </MyPageContainer>
@@ -124,4 +112,4 @@ function StudentMyPage() {
   );
 }
 
-export default StudentMyPage;
+export default CompanyMyPage;
