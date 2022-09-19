@@ -64,6 +64,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy":"https://hsureadme.herokuapp.com/",
   "devDependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
