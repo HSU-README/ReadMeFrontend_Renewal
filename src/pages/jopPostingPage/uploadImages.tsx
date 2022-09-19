@@ -26,19 +26,15 @@ function UploadImages({fileNames, setFileNames,idx}:uploadImageProps) {
     return (
          <ImageBox background={fileNames[idx]}>
              <label>
-                {!fileNames[idx] ?
-                <>
+                <div 
+                    style={{
+                        visibility : `${fileNames[idx] ? 'hidden' : 'visible'}`
+                    }}
+                >
                     +Add image
                     <br />
                     <span>up to image</span>
-                 </>
-                 :
-                 <>
-                    <br />
-                    <span></span>
-                 </>
-                }
-
+                 </div>
                  <input type="file" name="images" multiple onChange={onSelectFile} accept="image/png, image/jpeg, image/webp" />
              </label>
          </ImageBox>

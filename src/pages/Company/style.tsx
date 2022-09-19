@@ -19,16 +19,26 @@ const Container = styled.div`
     }
     form {
         width: 65rem;
-        margin: 4% 11.4rem;
+        margin: 4% 11rem;
         background-color: #d9d9d9;
         padding-right: 2rem;
         border-radius: 20px;
-        padding-top: 3%;
         padding-bottom: 3%;
     }
     .inputCompanyName {
         width: 80%;
-        padding-left: 1rem;
+        height: 2vh;
+        display: inline-block;
+        padding: 1rem;
+        border-radius: 15px;
+        background-color: white;
+        border: none;
+      }
+      .inputCompanyName2 {
+        display:inline-block;
+        width: 20rem;
+        height: 2vh;
+        padding: 1rem;
         border-radius: 15px;
         background-color: white;
         border: none;
@@ -55,10 +65,9 @@ type ImageBoxProps = {
   background?: string | undefined
 }
 export const ImageBox= styled.section<ImageBoxProps>`
-      width: 11rem;
+      width: 16.6rem;
       height: 10rem;
       display: inline-block;
-      margin-right:2rem;
       ${(props)=> {return props.background ?
          (
           `background:url(${props.background}) no-repeat center;
@@ -69,27 +78,6 @@ export const ImageBox= styled.section<ImageBoxProps>`
          :
         (null)
        }};
-      label{
-        cursor: pointer;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1px dotted black;
-        border-radius: 20px;
-        width: 11rem;
-        height:10rem;
-        font-size: large;
-      }
-      label span{
-        font-weight: lighter;
-        font-size:small;
-        padding-top: 0.5rem;
-      }
-      input {
-        display: none;
-      }
 `
 
 export default Container;
