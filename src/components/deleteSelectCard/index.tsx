@@ -7,7 +7,8 @@ import { DocumentType, TagType } from 'types/document';
 import { Container } from './styles';
 
 export default function DeleteSelectCard({ data }: { data: DocumentType }) {
-  const [documentId, setDocumentId] = useRecoilState(deletePofolDocIdState);
+  const [documentId, setDocumentId] = useState(0);
+  const [, setDeletePofolDocId] = useRecoilState(deletePofolDocIdState);
   const [userName, setUserName] = useState('');
   const [profileImg, setProfileImg] = useState(
     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
@@ -70,7 +71,7 @@ export default function DeleteSelectCard({ data }: { data: DocumentType }) {
             zIndex: '999',
           }}
           onClick={() => {
-            setDocumentId(documentId);
+            setDeletePofolDocId(documentId);
             setDeleteState(true);
             setOpenDialog(true);
           }}
