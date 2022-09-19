@@ -32,6 +32,7 @@ const enrollUser = async (
   password: String,
   university: String,
   major: String,
+  memberType: String,
 ) => {
   await serverApi
     .post('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/new', {
@@ -40,6 +41,7 @@ const enrollUser = async (
       password,
       university,
       major,
+      memberType,
     })
     .then(() => {
       navigate('/', {
