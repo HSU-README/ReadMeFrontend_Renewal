@@ -19,7 +19,7 @@ export const employmentNotification = async (
   applyLink: string,
   salary: string,
 ) => {
-  const response: any = await serverApi.post('api/v1/recruit_post/new', {
+  const response: any = await serverApi.post('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/recruit_post/new', {
     companyName,
     content,
     skillStack,
@@ -40,7 +40,7 @@ export const employmentNotification = async (
 
 // 모든 채용 정보 불러오기
 export const getAllReacuitData = () => {
-  const response = serverApi.get('api/v1/recruit_posts');
+  const response = serverApi.get('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/recruit_posts');
   try {
     return response;
   } catch (error) {
