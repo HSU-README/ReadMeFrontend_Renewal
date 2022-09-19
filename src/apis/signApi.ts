@@ -8,7 +8,7 @@ const serverApi = axios.create({
 });
 
 export const loginUser = async (navigate: any, email: String, password: String) => {
-  await serverApi.post('https://hsureadme.herokuapp.com/api/v1/member/login', { email, password }).then((response) => {
+  await serverApi.post('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/login', { email, password }).then((response) => {
     if (response.data.code === 'S200') {
       const userInfo = JSON.stringify(response.data.result);
       // const successMessage = JSON.stringify(response.data.message);
@@ -34,7 +34,7 @@ const enrollUser = async (
   major: String,
 ) => {
   await serverApi
-    .post('https://hsureadme.herokuapp.com/api/v1/member/new', {
+    .post('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/new', {
       name,
       email,
       password,
