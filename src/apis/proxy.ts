@@ -5,6 +5,7 @@ module.exports = (app:any): void => {
         '/api',
         createProxyMiddleware({
             target: 'https://hsureadme.herokuapp.com',
+            changeOrigin: true,
             pathRewrite: {
                 '^/api': '',
             },
