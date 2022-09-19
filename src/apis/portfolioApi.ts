@@ -39,7 +39,7 @@ export const getPortfolio = async (docId: string) => {
   if (parsedDocID === 1005) {
     return basicSelect.data[4].result;
   }
-  const response = await serverApi.get(`/v1/doc/${docId}`);
+  const response = await serverApi.get('api/v1/doc/${docId}');
   try {
     console.log('response', response.data.result);
     return response.data.result;
@@ -50,7 +50,7 @@ export const getPortfolio = async (docId: string) => {
 
 // 전체 문서 불러오기
 export const getAllPortfolio = async () => {
-  const response = await serverApi.get('/v1/home/docs/all');
+  const response = await serverApi.get('api/v1/home/docs/all');
   try {
     return response.data.result;
   } catch (error) {
