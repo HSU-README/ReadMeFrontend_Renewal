@@ -2,9 +2,9 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 module.exports = (app:any): void => {
     app.use(
-        '/v1/',
+        '/api/',
         createProxyMiddleware({
-            target: 'https://hsureadme.herokuapp.com/api',
+            target: 'https://hsureadme.herokuapp.com',
             changeOrigin: true,
         })
     );
