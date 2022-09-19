@@ -6,6 +6,7 @@ import MainSelectCard from 'components/mainSelectCard';
 import CompanySelectCard from 'components/companySelectCard';
 import Footer from 'components/footer';
 import { getMostLikePortfolio, getAllPortfolio, getMajorPortfolio } from 'apis/portfolioApi';
+import { getAllReacuitData } from 'apis/company';
 import { DocumentType } from 'types/document';
 import Banner from 'pages/Home/header/Banner';
 import Header from 'pages/Home/header/Header';
@@ -23,21 +24,12 @@ import 'slick-carousel/slick/slick-theme.css';
 function Home() {
   const [mostLikePortfolio, setMostLikePortfolio] = useState([]);
   const [allPortfolio, setAllPortfolio] = useState([]);
+  const [allRecruitData, setAllRecruitData]= useState([]);
   // null 이면 true
   const [showLoginModal, setShowLoginModal] = useState(false);
   const readmeUserInfo = localStorage.getItem('readme_userInfo');
   useEffect(() => {
-    // window.addEventListener('resize', () => {
-    //   if (window.outerWidth > 1320) {
-    //     setSliderCount(4);
-    //   } else if (window.outerWidth > 1000 && window.outerWidth <= 1320) {
-    //     setSliderCount(3);
-    //   } else if (window.outerWidth > 660 && window.outerWidth <= 1000) {
-    //     setSliderCount(2);
-    //   } else if (window.outerWidth <= 660) {
-    //     setSliderCount(1);
-    //   }
-    // });
+
     async function fetchMostLikePortfolioData() {
       const datas = await getMostLikePortfolio();
       setMostLikePortfolio(datas);
@@ -52,9 +44,14 @@ function Home() {
         await getMajorPortfolio(userId);
       }
     }
+    async function fetchAllrecruitData() {
+      const recruitDatas = await getAllReacuitData();
+      setAllRecruitData(recruitDatas?.data.result);
+    }
     fetchMostLikePortfolioData();
     fetchAllPortfolioData();
     fetchMajorPortfolioData();
+    fetchAllrecruitData();
   }, []);
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
@@ -132,7 +129,7 @@ function Home() {
         )}
       </Swiper>
       <div className="sectionFont">
-        구인 포지션
+        구인
         <Link
           to="/allPositionpage"
           style={{
@@ -156,13 +153,11 @@ function Home() {
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
-        {allPortfolio.map(
+        {allRecruitData.map(
           (data: DocumentType) =>
-            data.visibility === 'PUBLIC' && (
               <SwiperSlide>
-                <CompanySelectCard />
+                <CompanySelectCard data={data}/>
               </SwiperSlide>
-            ),
         )}
       </Swiper>
       <br />

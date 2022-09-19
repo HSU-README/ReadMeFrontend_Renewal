@@ -19,7 +19,7 @@ const Container = styled.div`
     }
     form {
         width: 65rem;
-        margin: 4% 11rem;
+        margin: 4% auto;
         background-color: #d9d9d9;
         padding-right: 2rem;
         border-radius: 20px;
