@@ -60,7 +60,7 @@ export const getAllPortfolio = async () => {
 
 // 인기 문서 불러오기
 export const getMostLikePortfolio = async () => {
-  const response = await serverApi.get('/api/v1/home/docs/mostLike');
+  const response = await serverApi.get('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/home/docs/mostLike');
   console.log(response);
   try {
     console.log('response', response.data.result);
