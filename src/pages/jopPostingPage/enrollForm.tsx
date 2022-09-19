@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Button, Input } from '@mui/material';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
@@ -60,12 +60,12 @@ function EnrollForm() {
     return true;
   };
 
-  useEffect(() => {
-    console.log(fileNames);
-  }, [fileNames]);
-
-  const captureToFirebase = () => {
-    // console.log('test');
+  const captureToFirebase = async () => {
+    console.log('Test good');
+    const urlArray:
+      | string[]
+      | 'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2' =
+      [];
     fileNames.map(async (imageName) => {
       if (imageName !== undefined) {
         const storageRef = ref(storage, imageName.name);
@@ -74,10 +74,10 @@ function EnrollForm() {
         const uploadTask = await uploadBytesResumable(storageRef, imageName);
         const url = await getDownloadURL(uploadTask.ref);
         console.log(url);
-        return url;
+        urlArray.push(url);
       }
-      return 'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2';
     });
+    return urlArray;
   };
 
   const postSubmit = useCallback(
@@ -86,7 +86,8 @@ function EnrollForm() {
       if (!validation()) {
         alert('양식을 정확히 기입해주세요');
       } else {
-        captureToFirebase();
+        const docUrl = await captureToFirebase();
+        await console.log(docUrl);
         employmentNotification(companyName, contents, tech, duty, location, companyURL, career, salary);
       }
     },
