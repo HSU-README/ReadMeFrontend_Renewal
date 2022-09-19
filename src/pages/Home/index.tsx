@@ -24,12 +24,11 @@ import 'slick-carousel/slick/slick-theme.css';
 function Home() {
   const [mostLikePortfolio, setMostLikePortfolio] = useState([]);
   const [allPortfolio, setAllPortfolio] = useState([]);
-  const [allRecruitData, setAllRecruitData]= useState([]);
+  const [allRecruitData, setAllRecruitData] = useState([]);
   // null 이면 true
   const [showLoginModal, setShowLoginModal] = useState(false);
   const readmeUserInfo = localStorage.getItem('readme_userInfo');
   useEffect(() => {
-
     async function fetchMostLikePortfolioData() {
       const datas = await getMostLikePortfolio();
       setMostLikePortfolio(datas);
@@ -153,12 +152,11 @@ function Home() {
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
-        {allRecruitData.map(
-          (data: DocumentType) =>
-              <SwiperSlide>
-                <CompanySelectCard data={data}/>
-              </SwiperSlide>
-        )}
+        {allRecruitData.map((data: DocumentType) => (
+          <SwiperSlide>
+            <CompanySelectCard data={data} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <br />
       <br />
