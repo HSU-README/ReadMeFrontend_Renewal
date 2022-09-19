@@ -51,7 +51,7 @@ export default function BasicSelectCard({ data }: { data: DocumentType }) {
         <div className="top-info-container">
           <div className="hashtag-container">
             {docTags.map((tag: TagType) => (
-              <Link to={`/search?searchtag=${tag.name.slice(1)}`} style={{ textDecoration: 'none', color: 'black' }}>
+              <Link to={`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/search?searchtag=${tag.name.slice(1)}`} style={{ textDecoration: 'none', color: 'black' }}>
                 <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px', fontWeight: '600' }} key={tag.name}>
                   {tag.name}
                 </div>
