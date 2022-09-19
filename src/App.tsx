@@ -33,7 +33,7 @@ function App() {
             <Route path="/preview" element={<Preview />} /> {/* 포트폴리오 미리보기 페이지 라우트 */}
             <Route path="/preview/:docId" element={<Preview />} /> {/* 특정 문서 미리보기 페이지 라우트 */}
             <Route path="/search" element={<SearchPage />} />
-            <Route path="/companyinfo/:companyid" element={<CompanyPage />} /> {/* 기업 정보 페이지 라우트 */}
+            <Route path="/companyinfo/:companyId" element={<CompanyPage />} /> {/* 기업 정보 페이지 라우트 */}
             <Route path="/allPositionpage" element={<AllPositionPortfolio />} /> {/* 전체 구인 포지션 페이지 라우트 */}
             <Route path="/posting" element={<JopPosting />} />
           </Routes>

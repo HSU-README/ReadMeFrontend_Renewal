@@ -9,7 +9,8 @@ export const Container = styled.div`
     border-radius: 10px;
     box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
-
+    cursor:pointer;
+    color:black;
     .companyLogo {
         width: 300px;
         height: 180px;
@@ -31,7 +32,7 @@ export const Container = styled.div`
     }
     .hashTags {
         font-size: 0.7rem;
-        color: #777777;
+        color: blue;
         
     }
 `;
