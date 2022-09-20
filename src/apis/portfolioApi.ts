@@ -72,7 +72,9 @@ export const getMostLikePortfolio = async () => {
 
 // 학과별 문서 불러오기
 export const getMajorPortfolio = async (memberId: string) => {
-  const response = await serverApi.get('https://hsureadme.herokuapp.com/api/v1/home/docs/major', { params: { memberId } });
+  const response = await serverApi.get('https://hsureadme.herokuapp.com/api/v1/home/docs/major', {
+    params: { memberId },
+  });
   console.log(response);
   try {
     console.log('response', response.data.result);
