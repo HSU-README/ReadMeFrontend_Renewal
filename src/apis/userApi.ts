@@ -9,7 +9,7 @@ const serverApi = axios.create({
 });
 
 export const getUser = async (userId: number) => {
-  const response = await serverApi.get(`api/v1/member/${userId}`);
+  const response = await serverApi.get(`https://hsureadme.herokuapp.com/api/v1/member/${userId}`);
   try {
     return response.data.result;
   } catch (error) {
@@ -25,7 +25,7 @@ export const updateUser = async (
   major: string,
   interests: string,
 ) => {
-  const response = await serverApi.put(`api/v1/member/${userId}`, {
+  const response = await serverApi.put(`https://hsureadme.herokuapp.com/api/v1/member/${userId}`, {
     name,
     profileUrl: image || '',
     university,
