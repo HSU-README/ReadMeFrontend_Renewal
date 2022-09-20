@@ -50,7 +50,7 @@ export const getPortfolio = async (docId: string) => {
 
 // 전체 문서 불러오기
 export const getAllPortfolio = async () => {
-  const response = await serverApi.get('https://hsureadme.herokuapp.com/api/v1/home/docs/all');
+  const response = await serverApi.get('v1/home/docs/all');
   try {
     return response.data.result;
   } catch (error) {
