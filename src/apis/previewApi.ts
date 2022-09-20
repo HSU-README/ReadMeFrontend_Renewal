@@ -8,7 +8,7 @@ const serverApi = axios.create({
 });
 
 const getPreview = async (docId: string) => {
-  const response = await serverApi.get(`https://hsureadme.herokuapp.com/api/v1/doc/${docId}/preview`);
+  const response = await serverApi.get(`api/v1/doc/${docId}/preview`);
   console.log('response :', response);
   try {
     return response.data.result;
