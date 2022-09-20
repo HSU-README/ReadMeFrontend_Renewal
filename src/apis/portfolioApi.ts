@@ -13,7 +13,9 @@ const serverApi = axios.create({
 
 // 유저의 문서들 불러오기
 export const getUserPortfolio = async (userId: string) => {
-  const response = await serverApi.get(`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}/docs`);
+  const response = await serverApi.get(
+    `https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}/docs`,
+  );
   try {
     return response.data.result;
   } catch (error) {
@@ -39,6 +41,7 @@ export const getPortfolio = async (docId: string) => {
   if (parsedDocID === 1005) {
     return basicSelect.data[4].result;
   }
+  // eslint-disable-next-line no-template-curly-in-string
   const response = await serverApi.get('https://hsureadme.herokuapp.com/api/v1/doc/${docId}');
   try {
     console.log('response', response.data.result);
@@ -60,7 +63,9 @@ export const getAllPortfolio = async () => {
 
 // 인기 문서 불러오기
 export const getMostLikePortfolio = async () => {
-  const response = await serverApi.get('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/home/docs/mostLike');
+  const response = await serverApi.get(
+    'https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/home/docs/mostLike',
+  );
   console.log(response);
   try {
     console.log('response', response.data.result);
@@ -72,7 +77,10 @@ export const getMostLikePortfolio = async () => {
 
 // 학과별 문서 불러오기
 export const getMajorPortfolio = async (memberId: string) => {
-  const response = await serverApi.get('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/home/docs/major', { params: { memberId } });
+  const response = await serverApi.get(
+    'https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/home/docs/major',
+    { params: { memberId } },
+  );
   console.log(response);
   try {
     console.log('response', response.data.result);
@@ -94,7 +102,9 @@ export const getSearchPortfolio = async (searchText: string) => {
   if (searchText === '기본 양식') {
     return basicSelect.data[2].result;
   }
-  const response = await serverApi.get(`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/doc/search?where=${searchText}`);
+  const response = await serverApi.get(
+    `https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/doc/search?where=${searchText}`,
+  );
 
   try {
     return response.data.result;

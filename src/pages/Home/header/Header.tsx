@@ -15,18 +15,6 @@ function Header() {
     left: keywordBoxLeft,
     top: keywordBoxTop,
   };
-  // const keywordTag = {
-  //   backgroundColor: '#E8E8E8',
-  //   borderRadius: '30px',
-  //   width: '100px',
-  //   fontSize: '15px',
-  //   fontWeight: '900',
-  //   font: 'bold',
-  //   marginLeft: '25px',
-  //   color: 'black',
-  //   marginTop: '13px',
-  //   marginBottom: '13px',
-  // };
 
   useEffect(() => {
     // 로그인&유저정보 state에 저장
@@ -38,21 +26,6 @@ function Header() {
       // signIn();
     }
   }, []);
-
-  // const dummeyKeywords = [
-  //   '인문',
-  //   '사회',
-  //   '공학',
-  //   '자연',
-  //   '예술',
-  //   '교육',
-  //   '심플',
-  //   '모던',
-  //   '밝은',
-  //   '어두운',
-  //   '세련된',
-  //   '고딕',
-  // ];
 
   return (
     <div className="headerMain">

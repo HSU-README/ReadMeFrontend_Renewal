@@ -8,21 +8,26 @@ const serverApi = axios.create({
 });
 
 export const loginUser = async (navigate: any, email: String, password: String) => {
-  await serverApi.post('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/login', { email, password }).then((response) => {
-    if (response.data.code === 'S200') {
-      const userInfo = JSON.stringify(response.data.result);
-      // const successMessage = JSON.stringify(response.data.message);
+  await serverApi
+    .post('https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/login', {
+      email,
+      password,
+    })
+    .then((response) => {
+      if (response.data.code === 'S200') {
+        const userInfo = JSON.stringify(response.data.result);
+        // const successMessage = JSON.stringify(response.data.message);
 
-      localStorage.setItem('readme_login', 'true');
-      localStorage.setItem('readme_userInfo', userInfo);
+        localStorage.setItem('readme_login', 'true');
+        localStorage.setItem('readme_userInfo', userInfo);
 
-      navigate('/', {
-        state: {
-          isLoginSuccess: true,
-        },
-      });
-    }
-  });
+        navigate('/', {
+          state: {
+            isLoginSuccess: true,
+          },
+        });
+      }
+    });
 };
 
 const enrollUser = async (
@@ -51,7 +56,11 @@ const enrollUser = async (
       });
     })
     .catch((err) => {
-      console.error(err);
+      if (err.response.data.errorCode === 'SI001') {
+        alert('이미 존재하는 이름입니다');
+      } else if (err.response.data.errorCode === 'SI002') {
+        alert('이미 존재하는 이메일입니다.');
+      }
     });
 };
 

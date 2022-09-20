@@ -25,7 +25,7 @@ function Banner() {
       className="mySwiper"
     >
       {dummyImages.map((item, index) => (
-        <SwiperSlide>
+        <SwiperSlide key={item.src}>
           <img src={item.src} id={index.toString()} key={item.src} alt="배너" />
         </SwiperSlide>
       ))}

@@ -154,7 +154,7 @@ function Home() {
       >
         {allRecruitData.map((data: DocumentType) => (
           <SwiperSlide>
-            <CompanySelectCard data={data} />
+            <CompanySelectCard data={data} key={data.docId} />
           </SwiperSlide>
         ))}
       </Swiper>

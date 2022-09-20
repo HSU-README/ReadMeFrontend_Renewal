@@ -9,7 +9,9 @@ const serverApi = axios.create({
 });
 
 export const getUser = async (userId: number) => {
-  const response = await serverApi.get(`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}`);
+  const response = await serverApi.get(
+    `https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}`,
+  );
   try {
     return response.data.result;
   } catch (error) {
@@ -25,13 +27,16 @@ export const updateUser = async (
   major: string,
   interests: string,
 ) => {
-  const response = await serverApi.put(`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}`, {
-    name,
-    profileUrl: image || '',
-    university,
-    major,
-    interests: interests || '',
-  });
+  const response = await serverApi.put(
+    `https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}`,
+    {
+      name,
+      profileUrl: image || '',
+      university,
+      major,
+      interests: interests || '',
+    },
+  );
   try {
     console.log(name);
     const successMessage = JSON.stringify(response.data.message);
