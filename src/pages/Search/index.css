@@ -1,53 +1,51 @@
+.sectionSelect {
+  background-color: green;
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-  
-  .sectionSelect {
-    background-color: green;
-    width: 90%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .slick {
-    margin: 30px 300px;
-  }
-  .arrow {
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    margin: auto auto;
-  }
+.slick {
+  margin: 30px 300px;
+}
+.arrow {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: auto auto;
+}
 
-  .cardView{
-    width:100%;
-  }
-  .SwiperSection {
-    height:100vh;
-  }
-  .slide-item {
-    background-color: rebeccapurple;
-    color: aqua;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 200px;
-    border: 1px solid white;
-  }
-  .notFound {
-    width:100%;
-    height:100vh;
-    text-align: center;
-    padding-top: 10%;
-  }
-  .notFoundIcon{
-    width:30%;
-  }
-  .notFoundText{
-    font-size: 30px;
-    font-weight: 600;
-  }
+.cardView {
+  width: 100%;
+}
+.SwiperSection {
+  height: 100vh;
+}
+.slide-item {
+  background-color: rebeccapurple;
+  color: aqua;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+  border: 1px solid white;
+}
+.notFound {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding-top: 10%;
+}
+.notFoundIcon {
+  width: 30%;
+}
+.notFoundText {
+  font-size: 30px;
+  font-weight: 600;
+}
 
 body {
   background: #eee;
@@ -82,10 +80,4 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* hr Line Style */
-.hrLine {
-  height: 2px;
-  background-color: #F24444;
 }

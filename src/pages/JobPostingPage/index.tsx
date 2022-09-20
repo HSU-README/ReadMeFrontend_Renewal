@@ -7,7 +7,6 @@ function JopPosting() {
   return (
     <>
       <Header />
-      <hr style={{ backgroundColor: '#f24444', height: '1px' }} />
       <EnrollForm />
       <Footer />
     </>

@@ -30,7 +30,6 @@ function SearchPage() {
   return (
     <div className="cardView">
       <Header />
-      <hr className="hrLine" />
       <div
         style={{
           height: '100vh',

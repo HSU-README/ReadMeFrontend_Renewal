@@ -48,7 +48,7 @@
 }
 
 .pofolBtn {
-  background-color: #F22222;
+  background-color: #f22222;
   color: white;
   font-weight: 600;
   font: bold;
@@ -94,14 +94,14 @@
 }
 
 .headerMypage {
-  color: #F24444;
+  color: #f24444;
   margin-top: '9%';
   font-size: '18px';
   text-decoration-line: none;
   font-weight: 700;
 }
 
-.confirmBtn{
+.confirmBtn {
   width: 50px;
   font-size: 20px;
   text-decoration: none;
@@ -111,13 +111,7 @@
   font-weight: 600;
 }
 
-.confirmBtn:hover{
+.confirmBtn:hover {
   background-color: #d9d9d9;
   border-radius: 7px;
-}
-
-/* hr Line Style */
-.hrLine {
-  height: 2px;
-  background-color: #F24444;
 }
