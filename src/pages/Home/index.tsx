@@ -28,6 +28,7 @@ function Home() {
   // null 이면 true
   const [showLoginModal, setShowLoginModal] = useState(false);
   const readmeUserInfo = localStorage.getItem('readme_userInfo');
+
   useEffect(() => {
     async function fetchMostLikePortfolioData() {
       const datas = await getMostLikePortfolio();
@@ -53,20 +54,26 @@ function Home() {
     fetchAllrecruitData();
   }, []);
   return (
-    // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div style={{ position: 'relative', backgroundColor: 'white' }}>
       {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} />}
       <Header />
-      <hr className="hrLine" />
       <Banner />
       <br />
       <div className="pofolBtnHeader">
         {readmeUserInfo ? (
-          <NavLink className="pofolBtn" to="/select" style={{ textDecoration: 'none', color: 'white' }}>
-            <button type="button" className="pofolBtn">
-              포트폴리오 만들기
-            </button>
-          </NavLink>
+          JSON.parse(readmeUserInfo!).memberType === 'student' ? (
+            <NavLink className="pofolBtn" to="/select" style={{ textDecoration: 'none', color: 'white' }}>
+              <button type="button" className="pofolBtn">
+                포트폴리오 만들기
+              </button>
+            </NavLink>
+          ) : (
+            <NavLink className="pofolBtn" to="/posting" style={{ textDecoration: 'none', color: 'white' }}>
+              <button type="button" className="pofolBtn">
+                채용 공고 만들기
+              </button>
+            </NavLink>
+          )
         ) : (
           <button type="button" className="pofolBtn" onClick={() => setShowLoginModal(true)}>
             포트폴리오 만들기
