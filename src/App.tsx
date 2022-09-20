@@ -13,7 +13,7 @@ const AllPortfolio = loadable(() => import('pages/AllPortfolio'));
 const DownloadPortfolio = loadable(() => import('pages/EditPortfolio/downloads/DownloadPortfolio'));
 const Preview = loadable(() => import('pages/EditPortfolio/preview'));
 const AllPositionPortfolio = loadable(() => import('pages/AllPositionPortfolio'));
-const JopPosting = loadable(() => import('pages/jopPostingPage/index'));
+const JobPosting = loadable(() => import('pages/JobPostingPage/index'));
 const CompanyPage = loadable(() => import('pages/Company/index'));
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
             <Route path="/search" element={<SearchPage />} />
             <Route path="/companyinfo/:companyId" element={<CompanyPage />} /> {/* 기업 정보 페이지 라우트 */}
             <Route path="/allPositionpage" element={<AllPositionPortfolio />} /> {/* 전체 구인 포지션 페이지 라우트 */}
-            <Route path="/posting" element={<JopPosting />} />
+            <Route path="/posting" element={<JobPosting />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

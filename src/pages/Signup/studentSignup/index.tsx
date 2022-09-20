@@ -10,7 +10,6 @@ function CompanySignup() {
   const [password, setPassword] = useState('');
   const [university, setUniversity] = useState('');
   const [major, setMajor] = useState('');
-  const [memberType, setMemberType] = useState('');
   const navigate = useNavigate();
 
   // validation 검증
@@ -48,12 +47,12 @@ function CompanySignup() {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (validationCheck()) {
-        enrollUser(navigate, name, email, password, university, major, memberType);
+        enrollUser(navigate, name, email, password, university, major, 'student');
       } else {
         console.log('걸림');
       }
     },
-    [name, email, password, university, major, memberType],
+    [name, email, password, university, major],
   );
 
   return (
@@ -117,17 +116,6 @@ function CompanySignup() {
           value={major}
           onChange={(e) => {
             setMajor(e.target.value);
-          }}
-        />
-      </div>
-      <div style={{ marginBottom: '5%' }}>
-        <TextField
-          variant="outlined"
-          className="inputForm"
-          label="회원 유형"
-          value={memberType}
-          onChange={(e) => {
-            setMemberType(e.target.value);
           }}
         />
       </div>
