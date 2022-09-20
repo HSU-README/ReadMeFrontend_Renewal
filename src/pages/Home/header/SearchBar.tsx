@@ -19,7 +19,7 @@ function Searchbar() {
         size="small"
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            document.location.href = `api/search?where=${searchText}`;
+            document.location.href = `v1/doc/search?where=${searchText}`;
           }
         }}
         InputProps={{
