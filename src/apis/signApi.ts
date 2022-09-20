@@ -51,7 +51,11 @@ const enrollUser = async (
       });
     })
     .catch((err) => {
-      console.error(err);
+      if (err.response.data.errorCode === 'SI001') {
+        alert('이미 존재하는 이름입니다');
+      } else if (err.response.data.errorCode === 'SI002') {
+        alert('이미 존재하는 이메일입니다.');
+      }
     });
 };
 
