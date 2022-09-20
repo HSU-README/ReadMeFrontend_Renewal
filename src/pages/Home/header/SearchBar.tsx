@@ -19,7 +19,7 @@ function Searchbar() {
         size="small"
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            document.location.href = `https://hsureadme.herokuapp.com/search?where=${searchText}`;
+            document.location.href = `search?where=${searchText}`;
           }
         }}
         InputProps={{
