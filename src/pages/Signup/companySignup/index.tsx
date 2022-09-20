@@ -1,13 +1,15 @@
 import React, { useState, useCallback } from 'react';
 import { TextField, Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from 'assets/images/logo.jpg';
+import enrollUser from 'apis/signApi';
 
 function CompanySignup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [business, setBusiness] = useState('');
+  const navigate = useNavigate();
 
   // const navigate = useNavigate();
 
@@ -50,7 +52,7 @@ function CompanySignup() {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (validationCheck()) {
-        // enrollUser(navigate, name, email, password, major);
+        enrollUser(navigate, name, email, password, name, business, 'company');
       } else {
         console.log('걸림');
       }
