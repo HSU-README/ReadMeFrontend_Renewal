@@ -6,7 +6,7 @@ import MainSelectCard from 'components/mainSelectCard';
 import CompanySelectCard from 'components/companySelectCard';
 import Footer from 'components/footer';
 import { getMostLikePortfolio, getAllPortfolio, getMajorPortfolio } from 'apis/portfolioApi';
-import { getAllReacuitData } from 'apis/company';
+import { getAllRecruitment } from 'apis/companyApi';
 import { DocumentType } from 'types/document';
 import Banner from 'pages/Home/header/Banner';
 import Header from 'pages/Home/header/Header';
@@ -45,7 +45,7 @@ function Home() {
       }
     }
     async function fetchAllrecruitData() {
-      const recruitDatas = await getAllReacuitData();
+      const recruitDatas = await getAllRecruitment();
       setAllRecruitData(recruitDatas?.data.result);
     }
     fetchMostLikePortfolioData();

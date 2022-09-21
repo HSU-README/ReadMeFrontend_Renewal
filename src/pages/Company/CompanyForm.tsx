@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import Container, { ImageBox } from './style';
-import { getAllReacuitData } from '../../apis/company';
+import { getAllRecruitment } from '../../apis/companyApi';
 import Banner from '../../assets/images/banner1.png';
 
 function CompanyForm() {
@@ -15,7 +15,7 @@ function CompanyForm() {
   const [career, setCareer] = useState('');
   useEffect(() => {
     async function fetchAllrecruitData() {
-      const recruitDatas = await getAllReacuitData();
+      const recruitDatas = await getAllRecruitment();
       const id = Number(window.location.pathname.split('/')[2]);
 
       recruitDatas?.data.result.map((d: any) => {

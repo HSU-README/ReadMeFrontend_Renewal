@@ -2,10 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { Button, Input } from '@mui/material';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { useNavigate } from 'react-router-dom';
 import Container from './style';
 import SelectOption, { MenuItemType } from './Select';
 import UploadImages from './uploadImages';
-import { employmentNotification } from '../../apis/company';
+import { employmentNotification } from '../../apis/companyApi';
 
 const dutys: MenuItemType[] = [{ name: '영업/기획' }, { name: '개발' }, { name: '디자인' }, { name: '인턴/계약직' }];
 const locations: MenuItemType[] = [
@@ -40,6 +41,7 @@ function EnrollForm() {
   const [duty, setDuty] = useState('');
   const [location, setLocation] = useState('');
   const [career, setCareer] = useState('');
+  const navigate = useNavigate();
 
   const textChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunction: Function) => {
     setFunction(e.target.value);
@@ -88,7 +90,9 @@ function EnrollForm() {
       } else {
         const docUrl = await captureToFirebase();
         await console.log(docUrl);
-        employmentNotification(companyName, contents, tech, duty, location, companyURL, career, salary);
+        employmentNotification(companyName, contents, tech, duty, location, companyURL, career, salary).then(() => {
+          navigate('/');
+        });
       }
     },
     [companyName, contents, tech, companyURL, salary, duty, location, career],
