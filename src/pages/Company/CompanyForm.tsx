@@ -36,7 +36,6 @@ function CompanyForm() {
           setFunction(d);
         }
       });
-      navigate('/');
     }
     fetchAllrecruitData();
   }, []);
@@ -45,6 +44,7 @@ function CompanyForm() {
     if (selectedFiles !== null) {
       const selectedFilesArray = Array.from(selectedFiles);
       setPofolName(selectedFilesArray[0].name);
+      navigate('/');
     }
   };
   return (
