@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { ToastError, ToastSuccess } from 'hooks/toastHook';
 import { RecruitmentType } from 'types/recruitment';
-import API_ENDPOINT from './constant';
 
 const serverApi = axios.create({
   baseURL: process.env.REACT_APP_SERVER_URL,
@@ -65,7 +64,7 @@ export const getUserRecruitment = async (companyName: String) => {
 // 특정 채용공고 삭제
 export const deleteRecruitment = async (recruitmentId: number) => {
   const response: any = await serverApi
-    .post(`${API_ENDPOINT}api/v1/doc/delete/${recruitmentId}`, {
+    .post(`https://hsureadme.herokuapp.com/api/v1/doc/delete/${recruitmentId}`, {
       recruitmentId,
     })
     .catch(() => console.log(recruitmentId));

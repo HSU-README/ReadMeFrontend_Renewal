@@ -34,24 +34,25 @@ export default function Header() {
       <div className="section-login">
         {isLoggedIn ? (
           <>
-            <div style={{ marginRight: '15px', color: '#1B262C', fontSize: '16px' }}>
+            <div style={{ marginRight: '15px', color: '#1B262C', fontSize: '18px', fontWeight: 'bold' }}>
               <p>{JSON.parse(userInfo).name}님</p>
             </div>
-            <Link
-              to="/"
-              style={{ textDecoration: 'none', margin: '0 5% 0 2%' }}
-              onClick={() => {
-                setIsLoggedIn(false);
-                setUserInfo(undefined);
-                localStorage.clear();
-              }}
-            >
-              <LogoutOutlinedIcon color="primary" />
-            </Link>
-            <Link to="/mypage" style={{ textDecoration: 'none' }}>
-              {/* <div style={headerFont}>마이페이지</div> */}
-              <AccountCircleOutlinedIcon color="primary" />
-            </Link>
+            <div style={{ display: 'flex', height: '22px' }}>
+              <Link
+                to="/"
+                style={{ textDecoration: 'none', margin: '0px 10px 0px 10px' }}
+                onClick={() => {
+                  setIsLoggedIn(false);
+                  setUserInfo(undefined);
+                  localStorage.clear();
+                }}
+              >
+                <LogoutOutlinedIcon color="primary" />
+              </Link>
+              <Link to="/mypage" style={{ textDecoration: 'none' }}>
+                <AccountCircleOutlinedIcon color="primary" />
+              </Link>
+            </div>
           </>
         ) : (
           <>

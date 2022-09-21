@@ -3,7 +3,8 @@ import maxWidth from 'styles/mixin';
 import colors from 'styles/colors';
 
 export const headerFont = {
-  fontSize: '16px',
+  fontSize: '18px',
+  fontWeight: 'bold',
   color: 'black',
   marginRight: '15px',
   cursor: 'pointer',
@@ -13,7 +14,7 @@ export const Container = styled.div`
   ${maxWidth}
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 19.5px 20px;
   gap: 20px;
   border-bottom: 1px solid;
   border-color: ${colors.footerLine};
@@ -24,8 +25,8 @@ export const Container = styled.div`
   }
 
   .logo {
-    width: 85px;
-    height: 36px;
+    width: 110px;
+    height: 46px;
     margin-left: 80px;
   }
 
