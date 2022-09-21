@@ -1,9 +1,13 @@
 import React from 'react';
 import StudentMyPage from './studentMyPage';
-// import CompanyMyPage from './companyMyPage';
+import CompanyMyPage from './companyMyPage';
 
 function MyPage() {
-  return <StudentMyPage />;
+  const readmeUserInfo = localStorage.getItem('readme_userInfo');
+  if (JSON.parse(readmeUserInfo!).memberType === 'student') {
+    return <StudentMyPage />;
+  }
+  return <CompanyMyPage />;
 }
 
 export default MyPage;
