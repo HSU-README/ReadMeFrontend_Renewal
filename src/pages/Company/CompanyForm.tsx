@@ -136,6 +136,7 @@ function CompanyForm() {
           marginLeft: '43rem',
           marginBottom: '3em',
           height: '3rem',
+          left: '7.5%',
         }}
       >
         신청하기

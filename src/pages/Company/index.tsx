@@ -7,7 +7,6 @@ function CompanyPage() {
   return (
     <div>
       <Header />
-      <hr />
       <CompanyForm />
       <Footer />
     </div>
