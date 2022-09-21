@@ -20,7 +20,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import NaverLogo from '../../assets/images/naver_logo.png';
+import KaKaoLogo from '../../assets/images/kakaoLogo.jpeg';
+import LineLogo from '../../assets/images/LineLogo.png';
+import CoupangLogo from '../../assets/images/coupangLogo.png';
+import DeliveryLogo from '../../assets/images/deliveryLogo.jpeg';
+import CaretLogo from '../../assets/images/caretLogo.png';
+import TossLogo from '../../assets/images/tossLogo.jpeg';
 
+const companyLogo = [NaverLogo, KaKaoLogo, LineLogo, CoupangLogo, DeliveryLogo, CaretLogo, TossLogo];
 function Home() {
   const [mostLikePortfolio, setMostLikePortfolio] = useState([]);
   const [allPortfolio, setAllPortfolio] = useState([]);
@@ -46,7 +54,7 @@ function Home() {
     }
     async function fetchAllrecruitData() {
       const recruitDatas = await getAllRecruitment();
-      setAllRecruitData(recruitDatas?.data.result);
+      setAllRecruitData(recruitDatas?.data.result.slice(0, 8));
     }
     fetchMostLikePortfolioData();
     fetchAllPortfolioData();
@@ -159,9 +167,9 @@ function Home() {
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
-        {allRecruitData.map((data: DocumentType) => (
+        {allRecruitData.map((data: DocumentType, index: number) => (
           <SwiperSlide>
-            <CompanySelectCard data={data} key={data.docId} />
+            <CompanySelectCard logo={companyLogo[index]} data={data} key={data.docId} />
           </SwiperSlide>
         ))}
       </Swiper>

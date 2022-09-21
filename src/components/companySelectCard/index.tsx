@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from './style';
-import NaverLogo from '../../assets/images/naver_logo.png';
 
 type companyCardProps = {
   data: {
     [key: string]: any;
   };
+  logo: string;
 };
 
-function CompanySelectCard({ data }: companyCardProps) {
+function CompanySelectCard({ data, logo }: companyCardProps) {
   return (
     <Link to={`/companyInfo/${data.id}`} style={{ textDecoration: 'none' }}>
       <Container>
-        <img src={NaverLogo} className="companyLogo" alt="" />
+        <img src={logo} className="companyLogo" alt="" />
         <div className="companyInfo">
           <div>{data.companyName}</div>
           <div className="title">
