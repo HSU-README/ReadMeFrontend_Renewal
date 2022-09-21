@@ -15,6 +15,7 @@ import { deletePortfolio, getUserPortfolio } from 'apis/portfolioApi';
 import { Dialog, DialogContent, DialogActions, DialogContentText, Button } from '@mui/material';
 import { deletePofolState, deletePofolDocIdState, userPortfolioState, openDialogState } from 'recoil/atoms';
 import { useRecoilState } from 'recoil';
+import { ToastContainer } from 'react-toastify';
 import PickPofol from './pickPofol';
 import MyPortfolio from './myPortfolio';
 
@@ -119,6 +120,7 @@ function StudentMyPage() {
           {currentMyPage === 'myPortfolio' && <MyPortfolio />}
         </ViewContainer>
       </MyPageContainer>
+      <ToastContainer />
       <Footer />
     </Container>
   );
