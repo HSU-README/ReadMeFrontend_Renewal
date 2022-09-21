@@ -58,6 +58,12 @@ const Container = styled.div`
     background-color: white;
     border: none;
   }
+  .fileName {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+  }
 `;
 type ImageBoxProps = {
   background?: string | undefined;

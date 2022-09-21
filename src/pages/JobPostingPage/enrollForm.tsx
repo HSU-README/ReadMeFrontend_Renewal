@@ -88,7 +88,7 @@ function EnrollForm() {
       } else {
         const docUrl = await captureToFirebase();
         await console.log(docUrl);
-        employmentNotification(companyName, contents, tech, duty, location, companyURL, career, salary);
+        employmentNotification(companyName, contents, tech, duty, location, career, companyURL, salary);
       }
     },
     [companyName, contents, tech, companyURL, salary, duty, location, career],

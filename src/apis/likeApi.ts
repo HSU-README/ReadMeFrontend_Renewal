@@ -40,13 +40,7 @@ export const unlikePortfolio = async (userId: number, docId: number) => {
 
 // 유저가 좋아요한 문서들 불러오기
 export const getUserLikePortfolio = async (userId: number) => {
-<<<<<<< HEAD
-  const response = await serverApi.get(
-    `https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}/docs/like`,
-  );
-=======
   const response = await serverApi.get(`https://hsureadme.herokuapp.com/api/v1/member/${userId}/docs/like`);
->>>>>>> origin/main
   try {
     return response.data.result;
   } catch (error) {
