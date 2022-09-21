@@ -11,7 +11,7 @@ const serverApi = axios.create({
 // 좋아요 추가
 export const likePortfolio = async (userId: number, docId: number) => {
   await serverApi
-    .post(`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/doc/${docId}/like`, {
+    .post(`https://hsureadme.herokuapp.com/api/v1/doc/${docId}/like`, {
       memberId: userId,
     })
     .catch(() => console.log(docId));
@@ -26,7 +26,7 @@ export const likePortfolio = async (userId: number, docId: number) => {
 // 좋아요 취소
 export const unlikePortfolio = async (userId: number, docId: number) => {
   await serverApi
-    .post(`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/doc/${docId}/unlike`, {
+    .post(`https://hsureadme.herokuapp.com/api/v1/doc/${docId}/unlike`, {
       memberId: userId,
     })
     .catch(() => console.log(docId));
@@ -40,9 +40,13 @@ export const unlikePortfolio = async (userId: number, docId: number) => {
 
 // 유저가 좋아요한 문서들 불러오기
 export const getUserLikePortfolio = async (userId: number) => {
+<<<<<<< HEAD
   const response = await serverApi.get(
     `https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/api/v1/member/${userId}/docs/like`,
   );
+=======
+  const response = await serverApi.get(`https://hsureadme.herokuapp.com/api/v1/member/${userId}/docs/like`);
+>>>>>>> origin/main
   try {
     return response.data.result;
   } catch (error) {

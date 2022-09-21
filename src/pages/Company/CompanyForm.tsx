@@ -7,7 +7,6 @@ import { getAllReacuitData } from '../../apis/company';
 import Banner from '../../assets/images/banner1.png';
 
 function CompanyForm() {
-  // const [fileNames, setFileNames] = useState<string[]>([]);
   const [companyName, setCompanyName] = useState('');
   const [contents, setContents] = useState('');
   const [tech, setTech] = useState('');
@@ -20,7 +19,7 @@ function CompanyForm() {
     async function fetchAllrecruitData() {
       const recruitDatas = await getAllReacuitData();
       const id = Number(window.location.pathname.split('/')[2]);
-      // eslint-disable-next-line array-callback-return
+
       recruitDatas?.data.result.map((d: any) => {
         if (id === d.id) {
           setCompanyName(d.companyName);
@@ -54,11 +53,15 @@ function CompanyForm() {
             <ImageBox background={Banner} />
           </div>
           <div className="section">
-            <label className="sectionName">회사명</label>
+            <label className="sectionName" htmlFor="inputCompanyName">
+              회사명
+            </label>
             <div className="inputCompanyName">{companyName}</div>
           </div>
           <div className="section">
-            <label className="sectionName">구인 내용</label>
+            <label className="sectionName" htmlFor="inputCompanyName">
+              구인 내용
+            </label>
             <div
               placeholder="스마일게이트"
               style={{
@@ -70,28 +73,38 @@ function CompanyForm() {
             </div>
           </div>
           <div className="section">
-            <label className="sectionName">기술 스택</label>
+            <label className="sectionName" htmlFor="inputCompanyName">
+              기술 스택
+            </label>
             <div className="inputCompanyName">{tech}</div>
           </div>
           <div className="section">
-            <label className="sectionName">직무</label>
+            <label className="sectionName" htmlFor="inputCompanyName2">
+              직무
+            </label>
             <div className="inputCompanyName2">{duty}</div>
-            <label className="sectionName">구분</label>
+            <label className="sectionName" htmlFor="inputCompanyName2">
+              구분
+            </label>
             <div className="inputCompanyName2">{career}</div>
           </div>
           <div className="section">
-            <label className="sectionName">지역</label>
+            <label className="sectionName" htmlFor="inputCompanyName2">
+              지역
+            </label>
             <div className="inputCompanyName2">{location}</div>
-            <label className="sectionName">연봉(월급)</label>
+            <label className="sectionName" htmlFor="inputCompanyName2">
+              연봉(월급)
+            </label>
             <div className="inputCompanyName2">{salary} 만원</div>
           </div>
           <div className="section">
-            <label className="sectionName">지원 링크</label>
-            <a>
-              <div className="inputCompanyName" style={{ color: 'blue' }}>
-                {companyURL}
-              </div>
-            </a>
+            <label className="sectionName" htmlFor="inputCompanyName">
+              지원 링크
+            </label>
+            <div className="inputCompanyName" style={{ color: 'blue', cursor: 'pointer' }}>
+              {companyURL}
+            </div>
           </div>
         </form>
       </Container>

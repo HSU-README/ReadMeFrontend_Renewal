@@ -79,10 +79,14 @@ export default function DeleteSelectCard({ data }: { data: DocumentType }) {
         />
       )}
 
+<<<<<<< HEAD
       <Link
         to={`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/preview/${documentId}`}
         style={{ textDecoration: 'none', color: 'black', width: '300px' }}
       >
+=======
+      <Link to={`preview/${documentId}`} style={{ textDecoration: 'none', color: 'black', width: '300px' }}>
+>>>>>>> origin/main
         <div className="pofol-thumbnail-container">
           <img style={{ width: '100%', height: '100%' }} className="pofol-thumbnail" src={thumbnail} alt="thumbnail" />
         </div>
@@ -90,12 +94,16 @@ export default function DeleteSelectCard({ data }: { data: DocumentType }) {
         <div className="top-info-container">
           <div className="hashtag-container">
             {docTags.map((tag: TagType) => (
+<<<<<<< HEAD
               <Link
                 to={`https://cors-anywhere.herokuapp.com/https://hsureadme.herokuapp.com/search?searchtag=${tag.name.slice(
                   1,
                 )}`}
                 style={{ textDecoration: 'none', color: 'black' }}
               >
+=======
+              <Link to={`search?searchtag=${tag.name.slice(1)}`} style={{ textDecoration: 'none', color: 'black' }}>
+>>>>>>> origin/main
                 <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }} key={tag.name}>
                   {tag.name}
                 </div>
