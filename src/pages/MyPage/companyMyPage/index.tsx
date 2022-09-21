@@ -10,39 +10,39 @@ import {
 import Footer from 'components/footer';
 import Header from 'components/header';
 import UserInfo from 'pages/MyPage/companyMyPage/userInfo';
-import { deletePortfolio, getUserPortfolio } from 'apis/portfolioApi';
+import { deleteRecruitment, getUserRecruitment } from 'apis/companyApi';
 import { Dialog, DialogContent, DialogActions, DialogContentText, Button } from '@mui/material';
-import { deletePofolState, deletePofolDocIdState, userPortfolioState, openDialogState } from 'recoil/atoms';
+import { deleteRecruitmentState, deleteRecruitmentIdState, userRecruitmentState, openDialogState } from 'recoil/atoms';
 import { useRecoilState } from 'recoil';
 import { ToastContainer } from 'react-toastify';
-import MyPortfolio from './myPortfolio';
+import MyRecruitment from './myRecruitment';
 
 function CompanyMyPage() {
   const readmeUserInfo = localStorage.getItem('readme_userInfo');
   const [currentMyPage, setCurrentMyPage] = useState('userInfo');
-  const userId = readmeUserInfo !== null ? JSON.parse(readmeUserInfo).id : null;
+  const companyName = readmeUserInfo !== null ? JSON.parse(readmeUserInfo).name : null;
 
-  const [userPortfolio, setUserPortfolio] = useRecoilState(userPortfolioState);
-  const [deleteState, setDeleteState] = useRecoilState(deletePofolState);
-  const [deletePofolDocId, setDeletePofolDocId] = useRecoilState(deletePofolDocIdState);
+  const [userRecruitment, setUserRecruitment] = useRecoilState(userRecruitmentState);
+  const [deleteState, setDeleteState] = useRecoilState(deleteRecruitmentState);
+  const [deleteRecruitmentId, setDeleteRecruitmentId] = useRecoilState(deleteRecruitmentIdState);
   const [openDialog, setOpenDialog] = useRecoilState(openDialogState);
 
   const handleClose = () => {
     setOpenDialog(false);
     setDeleteState(false);
-    setDeletePofolDocId(0);
+    setDeleteRecruitmentId(0);
   };
 
-  const changeUserPortfolio = (docId: number) => {
-    setUserPortfolio(userPortfolio.filter((data: any) => data.docId !== docId));
+  const changeUserRecruitment = (id: number) => {
+    setUserRecruitment(userRecruitment.filter((data: any) => data.id !== id));
   };
 
   useEffect(() => {
-    async function fetchUserPortfolioData() {
-      const datas = await getUserPortfolio(userId);
-      setUserPortfolio(datas);
+    async function fetchUserRecruitmentData() {
+      const datas = await getUserRecruitment(companyName);
+      setUserRecruitment(datas);
     }
-    fetchUserPortfolioData();
+    fetchUserRecruitmentData();
   }, []);
 
   return (
@@ -69,8 +69,8 @@ function CompanyMyPage() {
               style={{ backgroundColor: 'black', color: 'white' }}
               onClick={async () => {
                 handleClose();
-                changeUserPortfolio(deletePofolDocId);
-                await deletePortfolio(deletePofolDocId);
+                changeUserRecruitment(deleteRecruitmentId);
+                await deleteRecruitment(deleteRecruitmentId);
               }}
             >
               확인
@@ -105,7 +105,7 @@ function CompanyMyPage() {
         </MenuContainer>
         <ViewContainer>
           {currentMyPage === 'userInfo' && <UserInfo />}
-          {currentMyPage === 'myPortfolio' && <MyPortfolio />}
+          {currentMyPage === 'myPortfolio' && <MyRecruitment />}
         </ViewContainer>
       </MyPageContainer>
       <ToastContainer />
