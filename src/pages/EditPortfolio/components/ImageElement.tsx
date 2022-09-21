@@ -91,7 +91,7 @@ function ImageElement(props: ICanvasComponent) {
     <div
       style={{
         backgroundImage: `url(${content})`,
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         width: '100%',
         height: '100%',
         backgroundRepeat: 'no-repeat',
