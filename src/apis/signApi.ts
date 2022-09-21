@@ -12,10 +12,8 @@ export const loginUser = async (navigate: any, email: String, password: String) 
     if (response.data.code === 'S200') {
       const userInfo = JSON.stringify(response.data.result);
       // const successMessage = JSON.stringify(response.data.message);
-
       localStorage.setItem('readme_login', 'true');
       localStorage.setItem('readme_userInfo', userInfo);
-
       navigate('/', {
         state: {
           isLoginSuccess: true,

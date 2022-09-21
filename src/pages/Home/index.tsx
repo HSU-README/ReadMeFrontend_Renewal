@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import colors from 'styles/colors';
@@ -161,7 +161,7 @@ function Home() {
       >
         {allRecruitData.map((data: DocumentType) => (
           <SwiperSlide>
-            <CompanySelectCard data={data} />
+            <CompanySelectCard data={data} key={data.docId} />
           </SwiperSlide>
         ))}
       </Swiper>

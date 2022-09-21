@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import Container, { ImageBox } from './style';
 import { getAllRecruitment } from '../../apis/companyApi';
 import Banner from '../../assets/images/banner1.png';
@@ -13,26 +14,39 @@ function CompanyForm() {
   const [duty, setDuty] = useState('');
   const [location, setLocation] = useState('');
   const [career, setCareer] = useState('');
+  const [pofolName, setPofolName] = useState('');
+  const navigate = useNavigate();
+  const setFunction = (d: any): void => {
+    setCompanyName(d.companyName);
+    setContents(d.content);
+    setTech(d.skillStack);
+    setSalary(d.salary);
+    setLocation(d.region);
+    setCompanyURL(d.applyLink);
+    setDuty(d.jobOpening);
+    setCareer(d.divison);
+  };
+
   useEffect(() => {
     async function fetchAllrecruitData() {
       const recruitDatas = await getAllRecruitment();
       const id = Number(window.location.pathname.split('/')[2]);
-
-      recruitDatas?.data.result.map((d: any) => {
+      recruitDatas?.data.result.forEach((d: any): void => {
         if (id === d.id) {
-          setCompanyName(d.companyName);
-          setContents(d.content);
-          setTech(d.skillStack);
-          setSalary(d.salary);
-          setLocation(d.region);
-          setCompanyURL(d.applyLink);
-          setDuty(d.jobOpening);
-          setCareer(d.divison);
+          setFunction(d);
         }
       });
+      navigate('/');
     }
     fetchAllrecruitData();
   }, []);
+  const fileLoad = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFiles = (e.target as HTMLInputElement).files;
+    if (selectedFiles !== null) {
+      const selectedFilesArray = Array.from(selectedFiles);
+      setPofolName(selectedFilesArray[0].name);
+    }
+  };
   return (
     <>
       <Container>
@@ -104,9 +118,14 @@ function CompanyForm() {
               {companyURL}
             </div>
           </div>
+          <div className="fileName">
+            업로드 파일 : &nbsp;
+            {pofolName}
+          </div>
         </form>
       </Container>
       <Button
+        component="label"
         style={{
           backgroundColor: '#FF6B6B',
           color: 'white',
@@ -120,6 +139,7 @@ function CompanyForm() {
         }}
       >
         신청하기
+        <input type="file" hidden onChange={fileLoad} />
       </Button>
     </>
   );

@@ -16,8 +16,6 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
   const [docTags, setDocTags] = useState<TagType[]>([]);
 
   useEffect(() => {
-    console.log('here');
-    console.log(data);
     const { docId, title, docDate, tags, likeCnt, docUrl, designer, designerUrl } = data;
     const date = docDate;
     const year = date.substring(0, 4);
