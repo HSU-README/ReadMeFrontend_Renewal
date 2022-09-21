@@ -5,14 +5,14 @@ import { Grid, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import DeleteSelectCard from 'components/deleteSelectCard';
-import { userPortfolioState } from 'recoil/atoms';
+import DeleteCompanySelectCard from 'components/deleteCompanySelectCard';
+import { userRecruitmentState } from 'recoil/atoms';
 import { useRecoilState } from 'recoil';
 
-function MyPortfolio() {
-  const [userPortfolio] = useRecoilState(userPortfolioState);
+function MyPosting() {
+  const [userRecruitment] = useRecoilState(userRecruitmentState);
 
-  if (userPortfolio.length === 0) {
+  if (userRecruitment.length === 0) {
     return (
       <div style={{ fontSize: '40px', margin: '220px auto' }}>
         <img
@@ -28,7 +28,7 @@ function MyPortfolio() {
 
   return (
     <Container>
-      <div style={{ width: '1400px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
+      <div style={{ width: '1500px', margin: '100px 0px 100px 140px', overflow: 'auto', display: 'flex' }}>
         <Swiper
           slidesPerView={5}
           grid={{
@@ -41,9 +41,9 @@ function MyPortfolio() {
           modules={[Grid, Pagination]}
           className="mySwiper"
         >
-          {userPortfolio.map((data) => (
+          {userRecruitment.map((data) => (
             <SwiperSlide>
-              <DeleteSelectCard key={data} data={data} />
+              <DeleteCompanySelectCard key={data} data={data} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -52,4 +52,4 @@ function MyPortfolio() {
   );
 }
 
-export default MyPortfolio;
+export default MyPosting;
