@@ -42,7 +42,7 @@ export const MenuContainer = styled.div`
 
 export const ViewContainer = styled.div`
   display: flex;
-  flex: 5;
+  flex: 6;
 `;
 
 export const UserInfoMenu = styled.div<{ currentMyPage: string }>`

@@ -24,7 +24,7 @@ function PickPofol() {
 
   if (userLikePortfolio.length === 0) {
     return (
-      <div style={{ fontSize: '40px', margin: '220px auto' }}>
+      <div style={{ fontSize: '40px', margin: '220px 500px' }}>
         <img
           src={require('assets/icons/not_found_icon.png')}
           style={{ width: '500px', height: '300px' }}
@@ -38,7 +38,7 @@ function PickPofol() {
 
   return (
     <Container>
-      <div style={{ width: '1400px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
+      <div style={{ width: '1500px', margin: '100px 0px 100px 140px', overflow: 'auto', display: 'flex' }}>
         <Swiper
           slidesPerView={5}
           grid={{

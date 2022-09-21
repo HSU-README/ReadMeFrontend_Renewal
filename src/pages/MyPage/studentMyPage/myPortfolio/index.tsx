@@ -28,7 +28,7 @@ function MyPortfolio() {
 
   return (
     <Container>
-      <div style={{ width: '1400px', margin: '100px 0px 100px 190px', overflow: 'auto', display: 'flex' }}>
+      <div style={{ width: '1500px', margin: '100px 0px 100px 140px', overflow: 'auto', display: 'flex' }}>
         <Swiper
           slidesPerView={5}
           grid={{
