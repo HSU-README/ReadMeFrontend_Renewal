@@ -24,9 +24,27 @@ export const deletePofolDocIdState = atom({
   default: 0,
 });
 
+// 채용공고 삭제 state
+export const deleteRecruitmentState = atom({
+  key: 'deleteRecruitmentState',
+  default: false,
+});
+
+// 삭제 채용공고 ID state
+export const deleteRecruitmentIdState = atom({
+  key: 'deleteRecruitmentIdState',
+  default: 0,
+});
+
 // 나의 포트폴리오 state
 export const userPortfolioState = atom({
   key: 'userPortfolioState',
+  default: [],
+});
+
+// 나의 채용공고 state
+export const userRecruitmentState = atom({
+  key: 'userRecruitmentState',
   default: [],
 });
 
