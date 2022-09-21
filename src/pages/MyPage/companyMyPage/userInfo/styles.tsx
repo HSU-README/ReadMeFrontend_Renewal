@@ -6,9 +6,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8% 50px 0px 30%;
+  margin: 8% 50px 0px 23%;
 
   input {
+    background-color: white;
     border: none;
     border-top: 0px;
     border-right: 0px;
@@ -67,7 +68,7 @@ export const Container = styled.div`
     background-color: #ff6b6b;
     font-weight: bold;
     justify-content: center;
-    margin: 200px auto;
+    margin: 50px auto;
     max-width: 282px;
     max-height: 50px;
     width: 100%;

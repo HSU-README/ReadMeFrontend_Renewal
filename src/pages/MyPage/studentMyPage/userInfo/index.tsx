@@ -80,34 +80,22 @@ function UserInfo() {
         ref={fileInput}
       />
       <div className="nickName">
-        <input
-          value={name || ''}
-          onChange={onChangeName}
-          style={{ width: '180px', fontWeight: 'bold', backgroundColor: '#f8f9fa' }}
-        />
+        <input value={name || ''} onChange={onChangeName} style={{ width: '180px', fontWeight: 'bold' }} />
       </div>
       <div className="section-update">
         <div className="inputBorder university">
           <div>
             <span className="inputName">학교명 : </span>
-            <input
-              value={university || ''}
-              onChange={onChangeUniversity}
-              style={{ backgroundColor: '#f8f9fa', fontWeight: 'bold' }}
-            />
+            <input value={university || ''} onChange={onChangeUniversity} style={{ fontWeight: 'bold' }} />
           </div>
           <div>
             <span className="inputName">전공 : </span>
-            <input value={major} onChange={onChangeMajor} style={{ backgroundColor: '#f8f9fa', fontWeight: 'bold' }} />
+            <input value={major} onChange={onChangeMajor} style={{ fontWeight: 'bold' }} />
           </div>
         </div>
         <div className="inputBorder">
           <span className="inputName">관심분야 : </span>
-          <input
-            value={interests || ''}
-            onChange={onChangeInterests}
-            style={{ width: '350px', fontWeight: 'bold', backgroundColor: '#f8f9fa' }}
-          />
+          <input value={interests || ''} onChange={onChangeInterests} style={{ width: '350px', fontWeight: 'bold' }} />
         </div>
       </div>
       <Button className="button-wrapper" onClick={onSubmit}>
