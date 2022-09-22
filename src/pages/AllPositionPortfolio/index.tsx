@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'pages/AllPositionPortfolio/styles';
-import MainSelectCard from 'components/mainSelectCard';
+import CompanySelectCard from 'components/companySelectCard';
 import { getAllPortfolio } from 'apis/portfolioApi';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
@@ -10,18 +9,46 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import Header from 'components/header';
 import Footer from 'components/footer';
-import { DocumentType } from 'types/document';
+import { getAllRecruitment } from '../../apis/companyApi';
 import './styles.css';
+import NaverLogo from '../../assets/images/naver_logo.png';
+import KaKaoLogo from '../../assets/images/kakaoLogo.jpeg';
+import LineLogo from '../../assets/images/LineLogo.png';
+import CoupangLogo from '../../assets/images/coupangLogo.png';
+import DeliveryLogo from '../../assets/images/deliveryLogo.jpeg';
+import CaretLogo from '../../assets/images/caretLogo.png';
+import TossLogo from '../../assets/images/tossLogo.jpeg';
+
+const companyLogo = [NaverLogo, KaKaoLogo, LineLogo, CoupangLogo, DeliveryLogo, CaretLogo, TossLogo];
+
+type recruitTypes = {
+  id: number;
+  companyName: string;
+  content: string;
+  skillStack: string;
+  jobOpening: string;
+  region: string;
+  salary: string;
+};
 
 function AllPositionPortfolio() {
   const [userLikePortfolio, setUserLikePortfolio] = useState([]);
-
+  const [recuitDatas, setRecruitDatas] = useState<recruitTypes[]>([]);
+  let idx1 = 0;
+  let idx2 = 0;
+  let idx3 = 0;
+  let idx4 = 0;
   useEffect(() => {
     async function fetchUserLikePortfolioData() {
       const datas = await getAllPortfolio();
       setUserLikePortfolio(datas);
     }
+    async function fetchAllrecruitData() {
+      const recruitDatas = await getAllRecruitment();
+      setRecruitDatas(recruitDatas?.data.result.slice(0, 8));
+    }
     fetchUserLikePortfolioData();
+    fetchAllrecruitData();
   }, []);
 
   if (userLikePortfolio.length === 0) {
@@ -67,11 +94,11 @@ function AllPositionPortfolio() {
           modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"
         >
-          {userLikePortfolio.map(
-            (data: DocumentType) =>
-              data.visibility === 'PUBLIC' && (
+          {recuitDatas.map(
+            (data: recruitTypes) =>
+              data.jobOpening === '영업/기획' && (
                 <SwiperSlide>
-                  <MainSelectCard data={data} />
+                  <CompanySelectCard logo={companyLogo[idx1++]} data={data} key={data.id} />
                 </SwiperSlide>
               ),
           )}
@@ -97,11 +124,11 @@ function AllPositionPortfolio() {
           modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"
         >
-          {userLikePortfolio.map(
-            (data: DocumentType) =>
-              data.visibility === 'PUBLIC' && (
+          {recuitDatas.map(
+            (data: recruitTypes) =>
+              data.jobOpening === '개발' && (
                 <SwiperSlide>
-                  <MainSelectCard data={data} />
+                  <CompanySelectCard logo={companyLogo[idx2++]} data={data} key={data.id} />
                 </SwiperSlide>
               ),
           )}
@@ -127,11 +154,11 @@ function AllPositionPortfolio() {
           modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"
         >
-          {userLikePortfolio.map(
-            (data: DocumentType) =>
-              data.visibility === 'PUBLIC' && (
+          {recuitDatas.map(
+            (data: recruitTypes) =>
+              data.jobOpening === '디자인' && (
                 <SwiperSlide>
-                  <MainSelectCard data={data} />
+                  <CompanySelectCard logo={companyLogo[idx3++]} data={data} key={data.id} />
                 </SwiperSlide>
               ),
           )}
@@ -157,11 +184,11 @@ function AllPositionPortfolio() {
           modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"
         >
-          {userLikePortfolio.map(
-            (data: DocumentType) =>
-              data.visibility === 'PUBLIC' && (
+          {recuitDatas.map(
+            (data: recruitTypes) =>
+              data.jobOpening === '인턴/계약직' && (
                 <SwiperSlide>
-                  <MainSelectCard data={data} />
+                  <CompanySelectCard logo={companyLogo[idx4++]} data={data} key={data.id} />
                 </SwiperSlide>
               ),
           )}

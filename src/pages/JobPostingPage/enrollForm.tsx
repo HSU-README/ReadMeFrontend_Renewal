@@ -199,6 +199,7 @@ function EnrollForm() {
           marginLeft: '38rem',
           marginBottom: '3em',
           height: '3rem',
+          left: '12%',
         }}
         onClick={postSubmit}
       >
