@@ -26,18 +26,19 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
   const [, setOpenDialog] = useRecoilState(openDialogState);
 
   useEffect(() => {
-    const { id, companyName, content, skill, devision, region, applyLink } = data;
+    const { id, companyName, content, skillStack, devision, region, jobOpening } = data;
     setRecruitmentId(id);
     setUserName(companyName);
     // if (designerUrl !== '') {
     //   setProfileImg(designerUrl);
     // }
-    setRecruitmentSkill(skill);
+    setRecruitmentSkill(skillStack);
     setRecruitmentContent(content);
-    setRecruitmentDevision(devision);
+    setRecruitmentDevision(jobOpening);
     setRecruitmentRegion(region);
-    setRecruitementCareer(applyLink);
+    setRecruitementCareer(devision);
     // setThumbnail(docUrl);
+    console.log(data);
   }, [data]);
 
   return (

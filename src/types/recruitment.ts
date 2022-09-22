@@ -3,7 +3,7 @@ export type RecruitmentType = {
   id: number;
   companyName: string;
   content: string;
-  skill: string;
+  skillStack: string;
   jobOpening: string;
   region: string;
   devision: string;
