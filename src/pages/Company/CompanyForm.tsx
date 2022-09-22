@@ -20,6 +20,7 @@ function CompanyForm() {
   const [pofolName, setPofolName] = useState('');
   const navigate = useNavigate();
   const setFunction = (d: any): void => {
+    console.log(d);
     setCompanyName(d.companyName);
     setContents(d.content);
     setTech(d.skillStack);
@@ -27,7 +28,7 @@ function CompanyForm() {
     setLocation(d.region);
     setCompanyURL(d.applyLink);
     setDuty(d.jobOpening);
-    setCareer(d.divison);
+    setCareer(d.division);
   };
 
   useEffect(() => {

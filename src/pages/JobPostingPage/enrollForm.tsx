@@ -89,13 +89,13 @@ function EnrollForm() {
         alert('양식을 정확히 기입해주세요');
       } else {
         const docUrl = await captureToFirebase();
-        await console.log(docUrl);
-        employmentNotification(companyName, contents, tech, duty, location, companyURL, career, salary).then(() => {
+        console.log(docUrl);
+        employmentNotification(companyName, contents, tech, duty, location, career, companyURL, salary).then(() => {
           navigate('/');
         });
       }
     },
-    [companyName, contents, tech, companyURL, salary, duty, location, career],
+    [companyName, contents, tech, career, salary, duty, location, companyURL],
   );
 
   return (
