@@ -3,7 +3,10 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Container, { ImageBox } from './style';
 import { getAllRecruitment } from '../../apis/companyApi';
-import Banner from '../../assets/images/banner1.png';
+import Banner1 from '../../assets/images/data1.png';
+import Banner2 from '../../assets/images/data2.png';
+import Banner3 from '../../assets/images/data3.jpg';
+import Banner4 from '../../assets/images/data4.jpg';
 
 function CompanyForm() {
   const [companyName, setCompanyName] = useState('');
@@ -59,10 +62,10 @@ function CompanyForm() {
               marginBottom: '3%',
             }}
           >
-            <ImageBox background={Banner} />
-            <ImageBox background={Banner} />
-            <ImageBox background={Banner} />
-            <ImageBox background={Banner} />
+            <ImageBox background={Banner1} />
+            <ImageBox background={Banner2} />
+            <ImageBox background={Banner3} />
+            <ImageBox background={Banner4} />
           </div>
           <div className="section">
             <label className="sectionName" htmlFor="inputCompanyName">

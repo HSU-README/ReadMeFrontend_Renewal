@@ -3,7 +3,7 @@ import { Container } from 'pages/AllPositionPortfolio/styles';
 import CompanySelectCard from 'components/companySelectCard';
 import { getAllPortfolio } from 'apis/portfolioApi';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination, Navigation } from 'swiper';
+import { Grid, FreeMode, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -116,12 +116,11 @@ function AllPositionPortfolio() {
         <Swiper
           slidesPerView={4}
           grid={{
-            rows: userLikePortfolio.length < 4 ? 1 : 1,
+            rows: 1,
           }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[FreeMode, Pagination, Navigation]}
+          navigation
+          spaceBetween={40}
+          modules={[Grid, Pagination, Navigation]}
           className="mySwiper"
         >
           {recuitDatas.map(
