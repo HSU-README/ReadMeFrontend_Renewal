@@ -15,7 +15,7 @@ function CompanySelectCard({ data, logo }: companyCardProps) {
       <Container>
         <img src={logo} className="companyLogo" alt="" />
         <div className="companyInfo">
-          <div>{data.companyName}</div>
+          <div className="companyName">{data.companyName}</div>
           <div className="title">
             {data.content.length > 10 ? <span>{data.content.slice(0, 10)} ...</span> : <span>{data.content}</span>}
           </div>

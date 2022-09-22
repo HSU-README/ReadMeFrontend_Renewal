@@ -40,7 +40,7 @@ export const Container = styled.div`
   .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: cover;
   }
 `;

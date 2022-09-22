@@ -11,10 +11,6 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
   const [, setDeleteRecruitmentId] = useRecoilState(deleteRecruitmentIdState);
   const [userName, setUserName] = useState('');
   const [recruitmentContent, setRecruitmentContent] = useState('');
-  const [recruitmentDevision, setRecruitmentDevision] = useState('');
-  const [recruitmentSkill, setRecruitmentSkill] = useState('');
-  const [recruitmentRegion, setRecruitmentRegion] = useState('');
-  const [recruitementCareer, setRecruitementCareer] = useState('');
 
   const [thumbnail] = useState(
     'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/companyDefaultImage.jpeg?alt=media&token=33dddfd1-b803-4768-ac6b-9b41f2646bf6',
@@ -26,17 +22,14 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
   const [, setOpenDialog] = useRecoilState(openDialogState);
 
   useEffect(() => {
-    const { id, companyName, content, skillStack, devision, region, jobOpening } = data;
+    const { id, companyName, content } = data;
     setRecruitmentId(id);
     setUserName(companyName);
     // if (designerUrl !== '') {
     //   setProfileImg(designerUrl);
     // }
-    setRecruitmentSkill(skillStack);
     setRecruitmentContent(content);
-    setRecruitmentDevision(jobOpening);
-    setRecruitmentRegion(region);
-    setRecruitementCareer(devision);
+
     // setThumbnail(docUrl);
     console.log(data);
   }, [data]);
@@ -84,21 +77,11 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
         </div>
         <div className="company-title">{userName}</div>
         <div className="recruitment-content">
-          {recruitmentContent.length > 10 ? (
-            <span>{recruitmentContent.slice(0, 10)} ...</span>
+          {recruitmentContent.length > 15 ? (
+            <span>{recruitmentContent.slice(0, 17)} ...</span>
           ) : (
             <span>recruitmentContent</span>
           )}
-        </div>
-        <div className="top-info-container">
-          <div className="hashtag-container" style={{ marginTop: '14px' }}>
-            <div style={{ color: '#f24444', marginRight: '5px', fontSize: '14px' }}>#{recruitmentDevision}</div>
-            <div style={{ color: '#f24444', marginRight: '5px', fontSize: '14px' }}>#{recruitmentSkill}</div>
-          </div>
-          <div className="hashtag-container">
-            <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }}>#{recruitmentRegion}</div>
-            <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }}>#{recruitementCareer}</div>
-          </div>
         </div>
       </Link>
     </Container>

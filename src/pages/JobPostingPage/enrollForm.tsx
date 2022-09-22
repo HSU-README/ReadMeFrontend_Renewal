@@ -108,7 +108,7 @@ function EnrollForm() {
             </label>
             <Input
               onChange={(e) => textChange(e, setCompanyName)}
-              placeholder="카카오"
+              placeholder="카카오 엔터프라이즈"
               disableUnderline
               className="inputCompanyName"
               sx={{ height: '6vh' }}
@@ -123,7 +123,7 @@ function EnrollForm() {
               onChange={(e) => textChange(e, setContents)}
               multiline
               rows={7}
-              placeholder="스마일게이트"
+              placeholder="카카오 엔터프라이즈의 보안 플랫폼을 개발하고 운영하는 조직입니다. "
               disableUnderline
               className="inputCompanyName"
               id="content"
@@ -135,7 +135,7 @@ function EnrollForm() {
             </label>
             <Input
               onChange={(e) => textChange(e, setTech)}
-              placeholder="Java, C++, ES6, React..."
+              placeholder="Python, Go, Java, C++..."
               disableUnderline
               className="inputCompanyName"
               sx={{ height: '6vh' }}
@@ -162,7 +162,7 @@ function EnrollForm() {
             </label>
             <Input
               onChange={(e) => textChange(e, setCompanyURL)}
-              placeholder="www.readme.com"
+              placeholder="https://readme-pro.netlify.app/"
               disableUnderline
               className="inputURL"
               sx={{ height: '6vh' }}
@@ -172,7 +172,7 @@ function EnrollForm() {
             </label>
             <Input
               onChange={(e) => textChange(e, setSalary)}
-              placeholder="4000"
+              placeholder="4500"
               disableUnderline
               sx={{ height: '6vh', bgcolor: 'white', borderRadius: '15px', paddingLeft: '2%', width: '10%' }}
             />

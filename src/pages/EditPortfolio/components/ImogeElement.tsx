@@ -15,8 +15,8 @@ function ImogeElement(props: ICanvasComponent) {
       id,
       content,
       dimension: {
-        width: '64px',
-        height: '64px',
+        width: '100px',
+        height: '100px',
       },
     });
   }, [imogeRef]);
