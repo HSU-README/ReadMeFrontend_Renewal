@@ -1,5 +1,6 @@
 // 문서 타입
 export type DocumentType = {
+  jobOpenning: string;
   docId: number;
   title: string;
   docDate: String;
