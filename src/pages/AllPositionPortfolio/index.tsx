@@ -67,7 +67,7 @@ function AllPositionPortfolio() {
             alt="not_found"
           />
           <br />
-          <strong>찾으시는 포트폴리오가 없어요!</strong>
+          <strong>찾으시는 채용공고 없어요!</strong>
         </div>
         <Footer />
       </Container>

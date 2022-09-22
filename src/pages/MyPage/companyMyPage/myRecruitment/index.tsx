@@ -21,7 +21,7 @@ function MyPosting() {
           alt="not_found"
         />
         <br />
-        <strong>찾으시는 포트폴리오가 없어요!</strong>
+        <strong>작성하신 채용공고가 없습니다.</strong>
       </div>
     );
   }

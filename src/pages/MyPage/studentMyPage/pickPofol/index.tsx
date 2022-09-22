@@ -31,7 +31,7 @@ function PickPofol() {
           alt="not_found"
         />
         <br />
-        <strong>찾으시는 포트폴리오가 없어요!</strong>
+        <strong>스크랩한 포트폴리오가 없어요!</strong>
       </div>
     );
   }
