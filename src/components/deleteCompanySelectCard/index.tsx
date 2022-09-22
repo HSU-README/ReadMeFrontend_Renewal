@@ -83,7 +83,13 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
           <img style={{ width: '100%', height: '100%' }} className="pofol-thumbnail" src={thumbnail} alt="thumbnail" />
         </div>
         <div className="company-title">{userName}</div>
-        <div className="recruitment-content">{recruitmentContent}</div>
+        <div className="recruitment-content">
+          {recruitmentContent.length > 10 ? (
+            <span>{recruitmentContent.slice(0, 10)} ...</span>
+          ) : (
+            <span>recruitmentContent</span>
+          )}
+        </div>
         <div className="top-info-container">
           <div className="hashtag-container" style={{ marginTop: '14px' }}>
             <div style={{ color: '#f24444', marginRight: '5px', fontSize: '14px' }}>#{recruitmentDevision}</div>
