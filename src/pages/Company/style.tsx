@@ -65,6 +65,8 @@ const Container = styled.div`
     vertical-align: middle;
   }
 `;
+
+/* 마지막 베너 */
 type ImageBoxProps = {
   background?: string | undefined;
 };
@@ -76,7 +78,39 @@ export const ImageBox = styled.section<ImageBoxProps>`
     props.background &&
     `background:url(${props.background}) no-repeat center;
           background-size: cover;
-          border-radius:20px;
+          border-radius:0px 20px 0px 0px;
+          `};
+`;
+
+/* 2,3 번째 베너 */
+type ImageBoxProps2 = {
+  background?: string | undefined;
+};
+export const ImageBox2 = styled.section<ImageBoxProps2>`
+  width: 16.6rem;
+  height: 10rem;
+  display: inline-block;
+  ${(props) =>
+    props.background &&
+    `background:url(${props.background}) no-repeat center;
+          background-size: cover;
+          border-radius:0px 0px 0px 0px;
+          `};
+`;
+
+/* 첫 번째 베너 */
+type ImageBoxProps3 = {
+  background?: string | undefined;
+};
+export const ImageBox3 = styled.section<ImageBoxProps3>`
+  width: 16.6rem;
+  height: 10rem;
+  display: inline-block;
+  ${(props) =>
+    props.background &&
+    `background:url(${props.background}) no-repeat center;
+          background-size: cover;
+          border-radius:20px 0px 0px 0px;
           `};
 `;
 

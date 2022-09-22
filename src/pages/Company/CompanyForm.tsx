@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Container, { ImageBox } from './style';
+import Container, { ImageBox, ImageBox2, ImageBox3 } from './style';
 import { getAllRecruitment } from '../../apis/companyApi';
 import Banner1 from '../../assets/images/data1.png';
 import Banner2 from '../../assets/images/data2.png';
@@ -57,16 +57,16 @@ function CompanyForm() {
         <form>
           <div
             style={{
-              border: '1px solid black',
               borderRadius: '20px',
               width: '67rem',
               marginBottom: '3%',
             }}
           >
-            <ImageBox background={Banner1} />
-            <ImageBox background={Banner2} />
-            <ImageBox background={Banner3} />
+            <ImageBox3 background={Banner1} />
+            <ImageBox2 background={Banner2} />
+            <ImageBox2 background={Banner3} />
             <ImageBox background={Banner4} />
+            <hr />
           </div>
           <div className="section">
             <label className="sectionName" htmlFor="inputCompanyName">

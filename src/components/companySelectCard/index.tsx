@@ -17,7 +17,7 @@ function CompanySelectCard({ data, logo }: companyCardProps) {
         <div className="companyInfo">
           <div className="companyName">{data.companyName}</div>
           <div className="title">
-            {data.content.length > 10 ? <span>{data.content.slice(0, 10)} ...</span> : <span>{data.content}</span>}
+            {data.content.length > 13 ? <span>{data.content.slice(0, 12)} ...</span> : <span>{data.content}</span>}
           </div>
           {data.skillStack.split(',').map((d: any) => (
             <span className="hashTags">#{d} </span>

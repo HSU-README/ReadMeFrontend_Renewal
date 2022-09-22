@@ -11,15 +11,20 @@ import Header from 'components/header';
 import Footer from 'components/footer';
 import { getAllRecruitment } from '../../apis/companyApi';
 import './styles.css';
-import NaverLogo from '../../assets/images/naver_logo.png';
-import KaKaoLogo from '../../assets/images/kakaoLogo.jpeg';
-import LineLogo from '../../assets/images/LineLogo.png';
-import CoupangLogo from '../../assets/images/coupangLogo.png';
-import DeliveryLogo from '../../assets/images/deliveryLogo.jpeg';
-import CaretLogo from '../../assets/images/caretLogo.png';
-import TossLogo from '../../assets/images/tossLogo.jpeg';
+// import NaverLogo from '../../assets/images/naver_logo.png';
+// import KaKaoLogo from '../../assets/images/kakaoLogo.jpeg';
+// import LineLogo from '../../assets/images/LineLogo.png';
+// import CoupangLogo from '../../assets/images/coupangLogo.png';
+// import DeliveryLogo from '../../assets/images/deliveryLogo.jpeg';
+// import CaretLogo from '../../assets/images/caretLogo.png';
+// import TossLogo from '../../assets/images/tossLogo.jpeg';
+import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
+import DevLogo from '../../assets/images/companyDefault/devImg.gif';
+import HackingLogo from '../../assets/images/companyDefault/hacking.jpg';
+import CodingLogo from '../../assets/images/companyDefault/coding.gif';
 
-const companyLogo = [NaverLogo, KaKaoLogo, LineLogo, CoupangLogo, DeliveryLogo, CaretLogo, TossLogo];
+// const companyLogo = [NaverLogo, KaKaoLogo, LineLogo, CoupangLogo, DeliveryLogo, CaretLogo, TossLogo];
+const companyLogo = [PangyoLogo, DevLogo, HackingLogo, CodingLogo];
 
 type recruitTypes = {
   id: number;
@@ -45,7 +50,7 @@ function AllPositionPortfolio() {
     }
     async function fetchAllrecruitData() {
       const recruitDatas = await getAllRecruitment();
-      setRecruitDatas(recruitDatas?.data.result.slice(0, 8));
+      setRecruitDatas(recruitDatas?.data.result.slice(0, 12));
     }
     fetchUserLikePortfolioData();
     fetchAllrecruitData();
