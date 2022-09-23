@@ -79,7 +79,7 @@ function CompanyForm() {
               구인 내용
             </label>
             <div
-              placeholder="스마일게이트"
+              placeholder="구인 내용을 입력해주세요."
               style={{
                 height: ' 6rem',
               }}
