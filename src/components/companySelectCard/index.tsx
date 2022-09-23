@@ -22,6 +22,9 @@ function CompanySelectCard({ data, logo }: companyCardProps) {
           {data.skillStack.split(',').map((d: any) => (
             <span className="hashTags">#{d} </span>
           ))}
+          <p className="hashTags">
+            <span style={{ marginRight: '10px' }}>#연봉 {data.salary}</span> <span>#{data.region}</span>
+          </p>
         </div>
       </Container>
     </Link>

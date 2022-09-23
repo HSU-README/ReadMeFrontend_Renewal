@@ -11,7 +11,7 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
   const [, setDeleteRecruitmentId] = useRecoilState(deleteRecruitmentIdState);
   const [userName, setUserName] = useState('');
   const [recruitmentContent, setRecruitmentContent] = useState('');
-  const [recruitmentSkill, setRecruitmentSkill] = useState('');
+  // const [recruitmentSkill, setRecruitmentSkill] = useState('');
   const [recruitmentRegion, setRecruitmentRegion] = useState('');
   const [recruitementCareer, setRecruitementCareer] = useState('');
   const [thumbnail] = useState(
@@ -23,18 +23,13 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
   const [, setOpenDialog] = useRecoilState(openDialogState);
 
   useEffect(() => {
-    const { id, companyName, content, skillStack, devision, region } = data;
+    const { id, companyName, content, devision, region } = data;
     setRecruitmentId(id);
     setUserName(companyName);
-    // if (designerUrl !== '') {
-    //   setProfileImg(designerUrl);
-    // }
-    setRecruitmentSkill(skillStack);
+    // setRecruitmentSkill(skillStack);
     setRecruitmentContent(content);
     setRecruitmentRegion(region);
     setRecruitementCareer(devision);
-
-    // setThumbnail(docUrl);
     console.log(data);
   }, [data]);
 
@@ -88,9 +83,9 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
           )}
         </div>
         <div className="top-info-container">
-          <div className="hashtag-container" style={{ marginTop: '14px' }}>
+          {/* <div className="hashtag-container" style={{ marginTop: '14px' }}>
             <div style={{ color: '#f24444', marginRight: '5px', fontSize: '14px' }}>#{recruitmentSkill}</div>
-          </div>
+          </div> */}
           <div className="hashtag-container">
             <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }}>#{recruitmentRegion}</div>
             <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }}>#{recruitementCareer}</div>
