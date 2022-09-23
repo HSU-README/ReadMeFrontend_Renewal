@@ -68,6 +68,7 @@ function CompanyMyPage() {
             <Button
               style={{ backgroundColor: 'black', color: 'white' }}
               onClick={async () => {
+                console.log(deleteRecruitmentId);
                 handleClose();
                 changeUserRecruitment(deleteRecruitmentId);
                 await deleteRecruitment(deleteRecruitmentId);
