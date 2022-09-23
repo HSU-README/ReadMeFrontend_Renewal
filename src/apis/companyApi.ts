@@ -64,7 +64,7 @@ export const getUserRecruitment = async (companyName: String) => {
 // 특정 채용공고 삭제
 export const deleteRecruitment = async (recruitmentId: number) => {
   const response: any = await serverApi
-    .post(`https://hsureadme.herokuapp.com/api/v1/doc/delete/${recruitmentId}`, {
+    .post(`https://hsureadme.herokuapp.com/api/v1/recruit_posts/delete/${recruitmentId}`, {
       recruitmentId,
     })
     .catch(() => console.log(recruitmentId));
