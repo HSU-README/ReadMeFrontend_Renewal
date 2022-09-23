@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   height: 330px;
-  width: 350px;
+  width: 400px;
   margin: 50px auto;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
