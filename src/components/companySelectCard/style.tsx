@@ -10,9 +10,9 @@ const Container = styled.div`
   cursor: pointer;
   color: black;
   .companyLogo {
-    width: 350px;
+    width: 400px;
     height: 180px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* 회사 카드 뷰 박스 */
