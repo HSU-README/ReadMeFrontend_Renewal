@@ -4,6 +4,8 @@ import { InputAdornment } from '@mui/material';
 import { TextField } from '@material-ui/core';
 import Search from '@mui/icons-material/Search';
 
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 function Searchbar() {
   const [searchText, setSearchText] = useState('');
   const [placeHolder] = useState('제목을 입력해주세요.');
@@ -19,7 +21,7 @@ function Searchbar() {
         size="small"
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            document.location.href = `search?where=${searchText}`;
+            document.location.href = `${PROXY}search?where=${searchText}`;
           }
         }}
         InputProps={{
