@@ -85,5 +85,6 @@
     "prettier": "^2.7.1",
     "react-app-rewired": "^2.2.1",
     "styled-components": "^5.3.5"
-  }
+  },
+  "proxy": "https://hsureadme.herokuapp.com"
 }

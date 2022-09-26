@@ -1,5 +1,5 @@
 [[redirects]]
-    from= '/api/*'
+    from= '/proxy/*'
     to = 'https://hsureadme.herokuapp.com/:splat'
     status = 200
     force = true

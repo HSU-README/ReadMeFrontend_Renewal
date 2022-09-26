@@ -14,13 +14,15 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './index.css';
 
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 function SearchPage() {
   const [searchPortfolio, setSearchPortfolio] = useState<DocumentType[]>([]);
 
   useEffect(() => {
     async function getSearhResult() {
       const searchParams = new URLSearchParams(window.location.search);
-      const text = searchParams.get('where');
+      const text = searchParams.get(`${PROXY}where`);
       const datas: [DocumentType] = await getSearchPortfolio(`${text}`);
       setSearchPortfolio(datas);
     }
