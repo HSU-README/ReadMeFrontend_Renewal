@@ -21,7 +21,7 @@ function Searchbar() {
         size="small"
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            document.location.href = `${PROXY}search?where=${searchText}`;
+            document.location.href = `${PROXY}/search?where=${searchText}`;
           }
         }}
         InputProps={{
