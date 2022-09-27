@@ -3,66 +3,97 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   text-align: left;
-  .section {
-    margin-bottom: 5%;
-  }
-  .sectionName {
-    width: 9rem;
-    display: inline-block;
-    position: relative;
-    margin-right: 1rem;
-    text-align: end;
-    font-size: 1.3rem;
-    font-weight: 700;
+  hr {
+    border 0.7px solid #B3B3B3;
   }
   form {
-    width: 65rem;
-    margin: 4% auto;
-    background-color: #d9d9d9;
+    width: 60%;
+    height: 90vh;
+    overflow: scroll;
+    margin: 3% auto 3% auto;
+    border: 1px solid black;
+    padding-top: 2%;
     padding-right: 2rem;
     border-radius: 20px;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
   }
-  .inputCompanyName {
-    width: 80%;
-    height: 2vh;
-    display: inline-block;
-    padding: 1rem;
-    border-radius: 15px;
-    background-color: white;
-    border: none;
+  .nameSection {
+    font-size: 2rem;
+    padding: 1% 5% 1% 5%;
   }
-  .inputCompanyName2 {
-    display: inline-block;
-    width: 20rem;
-    height: 2vh;
-    padding: 1rem;
-    border-radius: 15px;
-    background-color: white;
-    border: none;
-  }
-  .inputURL {
-    width: 26rem;
-    padding-left: 1rem;
-    margin-right: 2rem;
-    border-radius: 15px;
-    background-color: white;
-    border: none;
-  }
-  .menuItems {
-    width: content-fit;
-    height: 6vh;
+  .name {
+    font-weight: 800;
     padding-left: 2%;
-    padding-right: 2%;
-    border-radius: 15px;
-    background-color: white;
-    border: none;
   }
-  .fileName {
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-align: center;
-    vertical-align: middle;
+  .recruitInfoHeaderSection {
+    padding: 0% 5% 3% 5%;
+    margin-top: 1%;
+  }
+  .infoHeader{
+    font-size: 1.2em;
+    font-weight: 800;
+    padding-left: 2%;
+  }
+  .recruitInfoDatas{
+    display: grid;
+    height: 200px;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    gap: 20px 0;
+  }
+  .infoSection {
+    display: flex;
+    border-bottom: 1px solid #838383;
+    margin-left: 10%;
+    padding: 1.5% 3% 1.5% 3%;
+    font-size: 1rem;
+  }
+  .infoSectionRight {
+    display: flex;
+    border-bottom: 1px solid #838383;
+    padding: 1.5% 3% 1.5% 3%;
+    margin-right: 10%;
+    font-size: 1rem;
+    
+  }
+  .icon {
+    width: 6%;
+    height: 90%;
+  }
+  .sectionName {
+    margin: 1% 3% 1% 3%;
+    color:#838383;
+  }
+  .infoData {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .stackAndLinkSection {
+    display: flex;
+    border-bottom: 1px solid #838383;
+    grid-column: 1/3;
+    padding-left: 1%;
+    margin-left: 5%;
+    margin-right:5%;
+  }
+  .stackAndLinkSectionIcon {
+    width:4%;
+    height: 80%;
+  }
+  .stackAndLinkSectionName {
+    margin: 1% 3% 1% 0.9%;
+    color:#838383;
+  }
+  .companyImg {
+    width: 22%;
+    border: 1px solid black;
+    margin-right: 2%;
+  }
+  .recruitInfoHeaderSection > .ImageHeader{
+    font-size: 1.2em;
+    font-weight: 800;
+    padding-left: 2%;
+    margin-top: 5%;
+    margin-bottom: 1%;
   }
 `;
 
