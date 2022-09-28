@@ -3,7 +3,7 @@ import { Container } from 'pages/AllPositionPortfolio/styles';
 import CompanySelectCard from 'components/companySelectCard';
 import { getAllPortfolio } from 'apis/portfolioApi';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Grid, FreeMode, Pagination, Navigation } from 'swiper';
+import { FreeMode, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -11,12 +11,6 @@ import Header from 'components/header';
 import Footer from 'components/footer';
 import { getAllRecruitment } from '../../apis/companyApi';
 import './styles.css';
-// import NaverLogo from '../../assets/images/naver_logo.png';
-// import KaKaoLogo from '../../assets/images/kakaoLogo.jpeg';
-// import LineLogo from '../../assets/images/LineLogo.png';
-// import CoupangLogo from '../../assets/images/coupangLogo.png';
-// import DeliveryLogo from '../../assets/images/deliveryLogo.jpeg';
-// import CaretLogo from '../../assets/images/caretLogo.png';
 // import TossLogo from '../../assets/images/tossLogo.jpeg';
 import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
 import DevLogo from '../../assets/images/companyDefault/devImg.gif';
@@ -80,24 +74,25 @@ function AllPositionPortfolio() {
       <Header />
       <div className="titleFont">전체 구인 포지션</div>
       <div className="subFont">영업 / 기획</div>
-      <div
-        style={{
-          width: '85%',
-          margin: '0 auto',
-          height: '80vh',
-          padding: userLikePortfolio.length < 4 ? '10%' : '0%',
-        }}
-      >
+      <div className="swiperSection">
         <Swiper
           slidesPerView={4}
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
+          }}
           grid={{
             rows: userLikePortfolio.length < 4 ? 1 : 1,
           }}
-          pagination={{
-            clickable: true,
-          }}
           modules={[FreeMode, Pagination, Navigation]}
-          className="mySwiper"
         >
           {recuitDatas.map(
             (data: recruitTypes) =>
@@ -110,22 +105,25 @@ function AllPositionPortfolio() {
         </Swiper>
       </div>
       <div className="subFont">개발</div>
-      <div
-        style={{
-          width: '85%',
-          margin: '0 auto',
-          height: '80vh',
-          padding: userLikePortfolio.length < 4 ? '10%' : '0%',
-        }}
-      >
+      <div className="swiperSection">
         <Swiper
           slidesPerView={4}
-          grid={{
-            rows: 1,
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
           }}
-          navigation
-          spaceBetween={40}
-          modules={[Grid, Pagination, Navigation]}
+          grid={{
+            rows: userLikePortfolio.length < 4 ? 1 : 1,
+          }}
+          modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"
         >
           {recuitDatas.map(
@@ -139,21 +137,23 @@ function AllPositionPortfolio() {
         </Swiper>
       </div>
       <div className="subFont">디자인</div>
-      <div
-        style={{
-          width: '85%',
-          margin: '0 auto',
-          height: '80vh',
-          padding: userLikePortfolio.length < 4 ? '10%' : '0%',
-        }}
-      >
+      <div className="swiperSection">
         <Swiper
           slidesPerView={4}
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
+          }}
           grid={{
             rows: userLikePortfolio.length < 4 ? 1 : 1,
-          }}
-          pagination={{
-            clickable: true,
           }}
           modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"
@@ -169,21 +169,23 @@ function AllPositionPortfolio() {
         </Swiper>
       </div>
       <div className="subFont">인턴 / 계약직</div>
-      <div
-        style={{
-          width: '85%',
-          margin: '0 auto',
-          height: '80vh',
-          padding: userLikePortfolio.length < 4 ? '10%' : '0%',
-        }}
-      >
+      <div className="swiperSection">
         <Swiper
           slidesPerView={4}
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
+          }}
           grid={{
             rows: userLikePortfolio.length < 4 ? 1 : 1,
-          }}
-          pagination={{
-            clickable: true,
           }}
           modules={[FreeMode, Pagination, Navigation]}
           className="mySwiper"

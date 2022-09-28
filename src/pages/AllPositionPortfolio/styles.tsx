@@ -43,6 +43,12 @@ export const Container = styled.div`
     height: 50%;
     object-fit: cover;
   }
+
+  .swiperSection {
+    width: 85%;
+    height: fit-content;
+    margin: 2% 5% 5% 5%;
+  }
 `;
 
 export const Input = styled.input`

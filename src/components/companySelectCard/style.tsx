@@ -2,17 +2,20 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: relative;
-  height: 330px;
-  width: 400px;
-  margin: 50px auto;
+  height: 300px;
+  width: 300px;
+  margin: 40px 10% 20% 0;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
-  cursor: pointer;
   color: black;
   .companyLogo {
-    width: 400px;
-    height: 180px;
+    width: 100%;
+    height: 150px;
     object-fit: cover;
+  }
+
+  .companyLogo {
+    width: 100%;
   }
 
   /* 회사 카드 뷰 박스 */
