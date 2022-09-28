@@ -6,7 +6,7 @@ import { Grid, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import Header from '../Home/header/Header';
+import Header from 'components/header';
 import { DocumentType } from '../../types/document';
 import { getSearchPortfolio } from '../../apis/portfolioApi';
 import notFoundIcon from '../../assets/icons/not_found_icon.png';

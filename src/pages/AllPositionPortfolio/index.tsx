@@ -11,13 +11,11 @@ import Header from 'components/header';
 import Footer from 'components/footer';
 import { getAllRecruitment } from '../../apis/companyApi';
 import './styles.css';
-// import TossLogo from '../../assets/images/tossLogo.jpeg';
 import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
 import DevLogo from '../../assets/images/companyDefault/devImg.gif';
 import HackingLogo from '../../assets/images/companyDefault/hacking.jpg';
 import CodingLogo from '../../assets/images/companyDefault/coding.gif';
 
-// const companyLogo = [NaverLogo, KaKaoLogo, LineLogo, CoupangLogo, DeliveryLogo, CaretLogo, TossLogo];
 const companyLogo = [PangyoLogo, DevLogo, HackingLogo, CodingLogo];
 
 type recruitTypes = {

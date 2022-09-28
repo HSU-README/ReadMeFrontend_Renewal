@@ -1,8 +1,6 @@
 import React, { useCallback, useState, useEffect, useRef } from 'react';
-import 'antd/dist/antd.css';
-import { Avatar } from 'antd';
 import useInput from 'hooks/useInput';
-import { Container, Button } from 'pages/MyPage/studentMyPage/userInfo/styles';
+import { Container, Button, Avatar } from 'pages/MyPage/studentMyPage/userInfo/styles';
 import { getUser, updateUser } from 'apis/userApi';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
@@ -68,7 +66,7 @@ function UserInfo() {
   return (
     <Container>
       <div onClick={() => fileInput.current.click()} aria-hidden="true">
-        <Avatar src={image} style={{ margin: '20px', cursor: 'pointer' }} size={170} aria-hidden="true" />
+        <Avatar bgImg={image} />
       </div>
 
       <input

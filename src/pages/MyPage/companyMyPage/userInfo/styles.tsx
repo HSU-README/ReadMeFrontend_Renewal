@@ -109,3 +109,16 @@ export const Button = styled.button`
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 `;
+
+export const Avatar = styled.div<{ bgImg: string }>`
+  width: 170px;
+  height: 170px;
+  border: 1px solid;
+  border-color: white;
+  border-radius: 100px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${(props) => props.bgImg});
+  margin-bottom: 20px;
+  cursor: pointer;
+`;
