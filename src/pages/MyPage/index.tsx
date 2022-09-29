@@ -1,5 +1,5 @@
 import React from 'react';
-import StudentMyPage from './studentMyPage';
+import StudentMyPage from './studentMyPageNew';
 import CompanyMyPage from './companyMyPage';
 
 function MyPage() {
