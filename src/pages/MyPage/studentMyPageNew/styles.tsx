@@ -17,10 +17,12 @@ export const MyPageContainer = styled.div`
 
 export const MenuContainer = styled.div`
   display: flex;
+  position: absolute;
   flex-direction: column;
   align-items: center;
   background-color: ${colors.primary};
   width: 13%;
+  height: 100%;
   min-width: 180px;
   border-color: white;
 
@@ -56,7 +58,9 @@ export const MenuContainer = styled.div`
 
 export const ViewContainer = styled.div`
   display: flex;
-  flex: 6;
+  position: relative;
+  width: 100%;
+  min-width: 960px;
 `;
 
 export const UserInfoMenu = styled.div<{ currentMyPage: string }>`

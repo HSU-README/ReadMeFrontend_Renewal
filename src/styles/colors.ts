@@ -5,5 +5,6 @@ export default {
   loginText: 'black',
   loginBorder: '#f24444',
   footerLine: '#f24444',
-  gray: '#707070',
+  gray: '#595959',
+  fontGray: '#595959',
 };
