@@ -5,7 +5,7 @@ import {
   MenuContainer,
   ViewContainer,
   UserInfoMenu,
-  MyPortfolioMenu,
+  MyRecruitmentMenu,
 } from 'pages/MyPage/companyMyPage/styles';
 import Footer from 'components/footer';
 import Header from 'components/header';
@@ -83,30 +83,31 @@ function CompanyMyPage() {
       )}
       <Header />
       <MyPageContainer>
-        <MenuContainer>
-          <div className="myPageTitle">마이페이지</div>
-          <UserInfoMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('userInfo');
-            }}
-          >
-            사용자 정보
-          </UserInfoMenu>
-          <MyPortfolioMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('myPortfolio');
-            }}
-          >
-            채용 공고 관리
-          </MyPortfolioMenu>
-        </MenuContainer>
         <ViewContainer>
+          <MenuContainer>
+            <div className="myPageTitle">마이페이지</div>
+            <UserInfoMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('userInfo');
+              }}
+            >
+              사용자 정보
+            </UserInfoMenu>
+            <MyRecruitmentMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('myRecruitment');
+              }}
+            >
+              채용 공고 관리
+            </MyRecruitmentMenu>
+          </MenuContainer>
+
           {currentMyPage === 'userInfo' && <UserInfo />}
-          {currentMyPage === 'myPortfolio' && <MyRecruitment />}
+          {currentMyPage === 'myRecruitment' && <MyRecruitment />}
         </ViewContainer>
       </MyPageContainer>
       <ToastContainer />

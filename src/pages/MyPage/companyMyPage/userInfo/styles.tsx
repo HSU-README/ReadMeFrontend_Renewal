@@ -2,14 +2,15 @@ import styled from 'styled-components';
 import colors from 'styles/colors';
 
 export const Container = styled.div`
-  max-width: 840px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8% 50px 0px 23%;
+  justify-content: center;
+  margin: 0px auto;
+  padding-top: 1.5%;
+  width: 40%;
 
   input {
-    background-color: white;
     border: none;
     border-top: 0px;
     border-right: 0px;
@@ -29,49 +30,65 @@ export const Container = styled.div`
     border: 3px solid ${colors.primary};
     background-image: url('../images/profile.jpg');
     background-size: cover;
-
     margin: 20px 30px;
   }
 
   .nickName {
+    display: flex;
     width: 180px;
     border-bottom: 1px solid;
-    border-color: black;
+    border-color: ${colors.gray};
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    margin-left: 10px;
+    margin-right: 55px;
+  }
+
+  .contentInput {
+    border-bottom: 1px solid;
+    border-color: ${colors.gray};
+    width: 50%;
+    margin-left: 10px;
+    line-height: 25px;
+    padding: 0px 0px;
+  }
+
+  .section-updateName {
     display: flex;
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 
   .section-update {
     color: black;
+    text-align: left;
   }
 
   .inputBorder {
-    border: 2px solid;
-    border-radius: 4px;
-    border-color: black;
     padding: 5px 20px 5px 20px;
     margin: 30px 0px 30px 0px;
   }
-  .university {
+  .company {
     display: flex;
+    padding-left: 40px;
   }
 
   .inputName {
-    color: black;
-    font-size: 24px;
+    color: ${colors.fontGray};
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
   }
 
   .button-wrapper {
     display: flex;
+    width: 40%;
     background-color: #ff6b6b;
     font-weight: bold;
     justify-content: center;
     margin: 50px auto;
-    max-width: 282px;
     max-height: 50px;
-    width: 100%;
   }
 `;
 
@@ -94,13 +111,10 @@ export const Input = styled.input`
 export const Button = styled.button`
   margin-bottom: 12px;
   width: 40%;
-
-  max-width: 540px;
-  max-height: 80px;
   color: #fff;
   background-color: black;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   padding: 5px 16px 5px 16px;
   transition: all 80ms linear;
   user-select: none;
@@ -108,6 +122,7 @@ export const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  line-height: 30px;
 `;
 
 export const Avatar = styled.div<{ bgImg: string }>`

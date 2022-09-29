@@ -33,7 +33,6 @@ export const updateUser = async (
     interests: interests || '',
   });
   try {
-    console.log(name);
     const successMessage = JSON.stringify(response.data.message);
     ToastSuccess(successMessage);
   } catch (error: any) {
