@@ -10,12 +10,12 @@ import {
 } from 'pages/MyPage/studentMyPage/styles';
 import Footer from 'components/footer';
 import Header from 'components/header';
-import UserInfo from 'pages/MyPage/studentMyPage/userInfo';
 import { deletePortfolio, getUserPortfolio } from 'apis/portfolioApi';
 import { Dialog, DialogContent, DialogActions, DialogContentText, Button } from '@mui/material';
 import { deletePofolState, deletePofolDocIdState, userPortfolioState, openDialogState } from 'recoil/atoms';
 import { useRecoilState } from 'recoil';
 import { ToastContainer } from 'react-toastify';
+import UserInfo from './userInfo';
 import PickPofol from './pickPofol';
 import MyPortfolio from './myPortfolio';
 
@@ -84,37 +84,38 @@ function StudentMyPage() {
       )}
       <Header />
       <MyPageContainer>
-        <MenuContainer>
-          <div className="myPageTitle">마이페이지</div>
-          <UserInfoMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('userInfo');
-            }}
-          >
-            사용자 정보
-          </UserInfoMenu>
-          <PickPofolMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('pickPofol');
-            }}
-          >
-            스크랩 양식
-          </PickPofolMenu>
-          <MyPortfolioMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('myPortfolio');
-            }}
-          >
-            나의 포트폴리오
-          </MyPortfolioMenu>
-        </MenuContainer>
         <ViewContainer>
+          <MenuContainer>
+            <div className="myPageTitle">마이페이지</div>
+            <UserInfoMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('userInfo');
+              }}
+            >
+              사용자 정보
+            </UserInfoMenu>
+            <PickPofolMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('pickPofol');
+              }}
+            >
+              스크랩 양식
+            </PickPofolMenu>
+            <MyPortfolioMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('myPortfolio');
+              }}
+            >
+              나의 포트폴리오
+            </MyPortfolioMenu>
+          </MenuContainer>
+
           {currentMyPage === 'userInfo' && <UserInfo />}
           {currentMyPage === 'pickPofol' && <PickPofol />}
           {currentMyPage === 'myPortfolio' && <MyPortfolio />}

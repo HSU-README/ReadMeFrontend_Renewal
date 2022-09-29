@@ -77,23 +77,32 @@ function UserInfo() {
         onChange={onChangeImage}
         ref={fileInput}
       />
-      <div className="nickName">
-        <input value={name || ''} onChange={onChangeName} style={{ width: '180px', fontWeight: 'bold' }} />
+      <div className="section-updateName">
+        <span className="inputName">이름</span>
+        <div className="nickName">
+          <input value={name || ''} onChange={onChangeName} style={{ width: '100%' }} />
+        </div>
       </div>
+
       <div className="section-update">
         <div className="inputBorder university">
           <div>
-            <span className="inputName">학교명 : </span>
-            <input value={university || ''} onChange={onChangeUniversity} style={{ fontWeight: 'bold' }} />
+            <span className="inputName">학교명</span>
+            <input className="contentInput" value={university || ''} onChange={onChangeUniversity} />
           </div>
           <div>
-            <span className="inputName">전공 : </span>
-            <input value={major} onChange={onChangeMajor} style={{ fontWeight: 'bold' }} />
+            <span className="inputName">전공</span>
+            <input className="contentInput" value={major} onChange={onChangeMajor} />
           </div>
         </div>
         <div className="inputBorder">
-          <span className="inputName">관심분야 : </span>
-          <input value={interests || ''} onChange={onChangeInterests} style={{ width: '350px', fontWeight: 'bold' }} />
+          <span className="inputName">관심분야</span>
+          <input
+            className="contentInput"
+            value={interests || ''}
+            onChange={onChangeInterests}
+            style={{ width: '70%', textAlign: 'left' }}
+          />
         </div>
       </div>
       <Button className="button-wrapper" onClick={onSubmit}>
