@@ -1,63 +1,45 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import colors from 'styles/colors';
 
-export const Container = styled.div<{ hide: boolean }>`
+export const Container = styled.div`
   position: relative;
-  height: 75%;
+  height: 100%;
   width: 75%;
   margin: 50px auto;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
 
-  .deleteImg {
-    width: 12%;
-    height: 12%;
-    position: absolute;
-    left: 86.5%;
-    top: 3%;
-    float: right;
-    z-index: 999;
-  }
-
   .pofol-thumbnail-container {
-    ${(props) =>
-      props.hide === false &&
-      css`
-        opacity: 0.5;
-      `}
     height: 50%;
     margin: 0px 0px 10px 0px;
   }
 
-  .company-title {
-    height: 10%;
-    padding: 0px 20px 0px 20px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #4d4d4d;
-    text-align: left;
+  .pofol-thumbnail {
+    width: 100%;
+    height: 100%;
   }
 
-  .recruitment-content {
+  .pofol-title {
     height: 10%;
-    padding: 4% 20px 0px 20px;
-    font-size: 21px;
-    font-weight: 700;
+    padding: 0px 20px 0px 20px;
+    font-size: 20px;
+    font-weight: bold;
     color: black;
     text-align: left;
   }
 
   .top-info-container {
-    height: 20%;
+    height: 16%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin: 5px 0px 0px 0px;
-    padding: 1% 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
   }
 
   .docDate {
-    margin-top: 10px;
+    margin-top: 6%;
+    margin-bottom: 5%;
     font-size: 13px;
     color: ${colors.gray};
     text-align: left;
@@ -65,26 +47,35 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .hashtag-container {
     display: flex;
-    margin-top: 10px;
+    margin-top: 2%;
   }
 
   .bottom-info-container {
-    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0px 20px 0px 20px;
-    margin-top: 10px;
+    padding: 3.2% 20px 20px;
+    margin-top: 4.5%;
+    border-top: 1px solid;
+    border-color: #f1f3f5;
   }
 
   .user-info-container {
     display: flex;
   }
 
+  .profile-image {
+    width: 70%;
+    height: 80%;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+  }
+
   .profile-image-container {
     position: relative;
     margin-right: 10px;
-    width: 30px;
+
     bottom: 3px;
   }
 
@@ -92,21 +83,38 @@ export const Container = styled.div<{ hide: boolean }>`
     font-size: 16px;
     font-weight: bold;
     color: black;
+    line-height: 24px;
+    margin-left: 5px;
   }
 
   .like-container {
     display: flex;
+    justify-content: flex-end;
     margin-top: 2px;
   }
 
   .like-img {
-    margin-right: 12px;
+    margin-right: 5px;
+    width: 100%;
+    height: 100%;
   }
 
   .likeCnt {
     position: relative;
-    bottom: 1px;
+    font-size: 16px;
+    bottom: 0.5px;
+    color: #595959;
   }
+`;
+
+export const ProfileImg = styled.div<{ bgImg: string }>`
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${(props) => props.bgImg});
+  cursor: pointer;
 `;
 
 export const OpacityBlack = styled.div`

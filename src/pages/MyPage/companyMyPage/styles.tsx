@@ -9,56 +9,78 @@ export const Container = styled.div`
 
 export const MyPageContainer = styled.div`
   display: flex;
-  height: 90vh;
+  height: 84vh;
   background: ${colors.background};
+  border-bottom: 8px solid;
+  border-color: white;
 `;
 
 export const MenuContainer = styled.div`
   display: flex;
+  position: absolute;
   flex-direction: column;
   align-items: center;
-  flex: 1;
-  border-right: 2px solid;
-  border-color: ${colors.primary};
+  background-color: ${colors.primary};
+  width: 13%;
+  height: 100%;
+  min-width: 180px;
+  border-color: white;
 
   .myPageTitle {
-    margin: 50px 0px 20px 0px;
+    width: 100%;
+    height: 17vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 36px;
     font-weight: bold;
+    border-top: 8px solid;
+    border-color: white;
+    color: white;
+  }
+
+  .myPageMenu {
   }
   .myPageSelect {
     width: 100%;
-    margin: 40px 0px 20px 0px;
-    text-align: center;
+    height: 17vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
-    color: black;
+    font-weight: bold;
+    color: white;
     :hover {
       cursor: pointer;
-      border-right: 5px solid;
-      border-color: ${colors.primary};
     }
   }
 `;
 
 export const ViewContainer = styled.div`
   display: flex;
-  flex: 6;
+  position: relative;
+  width: 100%;
+  min-width: 960px;
 `;
 
 export const UserInfoMenu = styled.div<{ currentMyPage: string }>`
   ${(props) =>
-    props.currentMyPage === 'userInfo' &&
-    css`
-      border-right: 5px solid;
-      border-color: ${colors.primary};
-    `}
+    props.currentMyPage === 'userInfo'
+      ? css`
+          box-shadow: inset 14px 0 0 0 white;
+        `
+      : css`
+          box-shadow: inset 14px 0 0 0 #fbc9c9;
+        `}
 `;
 
-export const MyPortfolioMenu = styled.div<{ currentMyPage: string }>`
+export const MyRecruitmentMenu = styled.div<{ currentMyPage: string }>`
   ${(props) =>
-    props.currentMyPage === 'myPortfolio' &&
-    css`
-      border-right: 5px solid;
-      border-color: ${colors.primary};
-    `}
+    props.currentMyPage === 'myRecruitment'
+      ? css`
+          box-shadow: inset 14px 0 0 0 white;
+        `
+      : css`
+          box-shadow: inset 14px 0 0 0 #fbc9c9;
+        `}
 `;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { DocumentType, TagType } from 'types/document';
 import { Container, ProfileImg } from './styles';
 
-export default function MainSelectCard({ data }: { data: DocumentType }) {
+export default function ScarpSelectCard({ data }: { data: DocumentType }) {
   const [documentId, setDocumentId] = useState(0);
   const [userName, setUserName] = useState('');
   const [profileImg, setProfileImg] = useState(
@@ -42,7 +42,7 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
         style={{ textDecoration: 'none', color: 'black', width: '300px' }}
       >
         <div className="pofol-thumbnail-container">
-          <img style={{ width: '100%', height: '100%' }} className="pofol-thumbnail" src={thumbnail} alt="thumbnail" />
+          <img className="pofol-thumbnail" src={thumbnail} alt="thumbnail" />
         </div>
         <div className="pofol-title">{docTitle}</div>
         <div className="top-info-container">
@@ -57,7 +57,6 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
           </div>
           <div className="docDate">{documentDate}</div>
         </div>
-
         <div className="bottom-info-container">
           <div className="user-info-container">
             <ProfileImg bgImg={profileImg} />

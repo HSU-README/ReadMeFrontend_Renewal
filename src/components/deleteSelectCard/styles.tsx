@@ -3,12 +3,21 @@ import colors from 'styles/colors';
 
 export const Container = styled.div<{ hide: boolean }>`
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 75%;
+  width: 75%;
   margin: 50px auto;
-  border-radius: 10px;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
+
+  .deleteImg {
+    width: 12%;
+    height: 14%;
+    position: absolute;
+    left: 85%;
+    top: 3%;
+    float: right;
+    z-index: 999;
+  }
 
   .pofol-thumbnail-container {
     ${(props) =>
@@ -18,11 +27,6 @@ export const Container = styled.div<{ hide: boolean }>`
       `}
     height: 50%;
     margin: 0px 0px 10px 0px;
-  }
-
-  .pofol-thumbnail {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
   }
 
   .pofol-title {
@@ -35,7 +39,6 @@ export const Container = styled.div<{ hide: boolean }>`
   }
 
   .top-info-container {
-    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -44,7 +47,8 @@ export const Container = styled.div<{ hide: boolean }>`
   }
 
   .docDate {
-    margin-top: 10px;
+    margin-top: 6%;
+    margin-bottom: 5%;
     font-size: 13px;
     color: ${colors.gray};
     text-align: left;
@@ -52,7 +56,7 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .hashtag-container {
     display: flex;
-    margin-top: 5px;
+    margin-top: 5%;
   }
 
   .bottom-info-container {
@@ -61,7 +65,7 @@ export const Container = styled.div<{ hide: boolean }>`
     flex-direction: row;
     justify-content: space-between;
     padding: 0px 20px 0px 20px;
-    margin-top: 10px;
+    margin-top: 4.5%;
   }
 
   .user-info-container {
@@ -71,8 +75,15 @@ export const Container = styled.div<{ hide: boolean }>`
   .profile-image-container {
     position: relative;
     margin-right: 10px;
-    width: 30px;
     bottom: 3px;
+  }
+
+  .profile-image {
+    width: 70%;
+    height: 80%;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
   }
 
   .user-name {
@@ -83,16 +94,21 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .like-container {
     display: flex;
+    justify-content: flex-end;
     margin-top: 2px;
   }
 
   .like-img {
-    margin-right: 12px;
+    margin-right: 5px;
+    width: 100%;
+    height: 100%;
   }
 
   .likeCnt {
     position: relative;
-    bottom: 1px;
+    font-size: 16px;
+    bottom: 0.5px;
+    color: #595959;
   }
 `;
 

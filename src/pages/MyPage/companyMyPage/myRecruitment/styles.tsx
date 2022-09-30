@@ -2,43 +2,26 @@ import styled from 'styled-components';
 import colors from 'styles/colors';
 
 export const Container = styled.div`
-  max-width: 1920px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: ${colors.background};
+  margin-left: 13%;
+  width: 87%;
 
   .swiper {
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: ${colors.background};
-    height: calc((100% - 50px) / 2) !important;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    height: 40%;
+    margin-left: 34px;
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
+  .swiper-wrapper {
+    margin-top: 4.5%;
+  }
+
+  .swiper-pagination {
+    display: none;
   }
 `;
 
