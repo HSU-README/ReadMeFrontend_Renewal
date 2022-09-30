@@ -1,32 +1,22 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import colors from 'styles/colors';
 
-export const Container = styled.div<{ hide: boolean }>`
+export const Container = styled.div`
   position: relative;
-  height: 75%;
+  height: 95%;
   width: 75%;
   margin: 50px auto;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
 
-  .deleteImg {
-    width: 12%;
-    height: 14%;
-    position: absolute;
-    left: 85%;
-    top: 3%;
-    float: right;
-    z-index: 999;
-  }
-
   .pofol-thumbnail-container {
-    ${(props) =>
-      props.hide === false &&
-      css`
-        opacity: 0.5;
-      `}
     height: 50%;
     margin: 0px 0px 10px 0px;
+  }
+
+  .pofol-thumbnail {
+    width: 100%;
+    height: 100%;
   }
 
   .pofol-title {
@@ -39,6 +29,7 @@ export const Container = styled.div<{ hide: boolean }>`
   }
 
   .top-info-container {
+    height: 16%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -47,7 +38,7 @@ export const Container = styled.div<{ hide: boolean }>`
   }
 
   .docDate {
-    margin-top: 6%;
+    margin-top: 4.5%;
     margin-bottom: 5%;
     font-size: 13px;
     color: ${colors.gray};
@@ -56,26 +47,21 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .hashtag-container {
     display: flex;
-    margin-top: 5%;
+    margin-top: 2%;
   }
 
   .bottom-info-container {
-    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0px 20px 0px 20px;
+    padding: 4px 20px 0px 20px;
     margin-top: 4.5%;
+    border-top: 1px solid;
+    border-color: #f1f3f5;
   }
 
   .user-info-container {
     display: flex;
-  }
-
-  .profile-image-container {
-    position: relative;
-    margin-right: 10px;
-    bottom: 3px;
   }
 
   .profile-image {
@@ -86,10 +72,18 @@ export const Container = styled.div<{ hide: boolean }>`
     background-position: center;
   }
 
+  .profile-image-container {
+    position: relative;
+    margin-right: 10px;
+    bottom: 3px;
+  }
+
   .user-name {
     font-size: 16px;
     font-weight: bold;
     color: black;
+    line-height: 24px;
+    margin-left: 5px;
   }
 
   .like-container {
@@ -110,6 +104,16 @@ export const Container = styled.div<{ hide: boolean }>`
     bottom: 0.5px;
     color: #595959;
   }
+`;
+
+export const ProfileImg = styled.div<{ bgImg: string }>`
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${(props) => props.bgImg});
+  cursor: pointer;
 `;
 
 export const OpacityBlack = styled.div`

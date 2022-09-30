@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 
   .swiper-wrapper {
-    margin-top: 3.5%;
+    margin-top: 5.5%;
   }
 
   .swiper-pagination {
