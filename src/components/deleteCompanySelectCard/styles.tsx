@@ -4,9 +4,8 @@ import colors from 'styles/colors';
 export const Container = styled.div<{ hide: boolean }>`
   position: relative;
   height: 75%;
-  width: 80%;
+  width: 75%;
   margin: 50px auto;
-  /* border-radius: 10px; */
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
 
@@ -14,7 +13,7 @@ export const Container = styled.div<{ hide: boolean }>`
     width: 12%;
     height: 12%;
     position: absolute;
-    left: 85%;
+    left: 86.5%;
     top: 3%;
     float: right;
     z-index: 999;
@@ -30,11 +29,6 @@ export const Container = styled.div<{ hide: boolean }>`
     margin: 0px 0px 10px 0px;
   }
 
-  .pofol-thumbnail {
-    /* border-top-left-radius: 10px;
-    border-top-right-radius: 10px; */
-  }
-
   .company-title {
     height: 10%;
     padding: 0px 20px 0px 20px;
@@ -46,7 +40,7 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .recruitment-content {
     height: 10%;
-    padding: 5px 20px 0px 20px;
+    padding: 4% 20px 0px 20px;
     font-size: 21px;
     font-weight: 700;
     color: black;
@@ -59,7 +53,7 @@ export const Container = styled.div<{ hide: boolean }>`
     flex-direction: column;
     justify-content: flex-start;
     margin: 5px 0px 0px 0px;
-    padding: 0px 20px 0px 20px;
+    padding: 1% 20px 0px 20px;
   }
 
   .docDate {

@@ -61,7 +61,7 @@ export default function DeleteSelectCard({ data }: { data: DocumentType }) {
         />
       )}
 
-      <Link to={`preview/${documentId}`} style={{ textDecoration: 'none', color: 'black', width: '300px' }}>
+      <Link to={`/preview/${documentId}`} style={{ textDecoration: 'none', color: 'black', width: '300px' }}>
         <div className="pofol-thumbnail-container">
           <img style={{ width: '100%', height: '100%' }} className="pofol-thumbnail" src={thumbnail} alt="thumbnail" />
         </div>
