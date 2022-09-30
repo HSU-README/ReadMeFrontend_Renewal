@@ -1,62 +1,79 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100rem;
+  width: 100%;
   text-align: left;
-  .section {
-    margin-bottom: 5%;
-  }
-  .sectionName {
-    width: 9rem;
-    display: inline-block;
-    position: relative;
-    margin-right: 1rem;
-    text-align: end;
-    font-size: 1.3rem;
-    font-weight: 700;
+  hr {
+    border 0.7px solid #B3B3B3;
   }
   form {
-    width: 65rem;
-    margin: 4% 11.4rem;
-    background-color: #d9d9d9;
-    padding-right: 2rem;
+    width: 60%;
+    height: 90vh;
+    overflow: scroll;
+    margin: 3% auto 3% auto;
+    border: 1px solid black;
+    padding-top: 2%;
+    padding-right: 2%;
     border-radius: 20px;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
+  }
+  .section {
+    margin-bottom: 5%;
+    margin-left: 3%;
+  }
+  .sectionName {
+    width: 11%;
+    display: inline-block;
+    position: relative;
+    margin-right: 1%;
+    text-align: end;
+    font-size: 1.2em;
+    font-weight: 700;
   }
   .inputCompanyName {
     width: 80%;
-    padding-left: 1rem;
+    padding-left: 1%;
     border-radius: 15px;
     background-color: white;
-    border: none;
+    border: 1px solid black;
   }
   .inputURL {
-    width: 26rem;
-    padding-left: 1rem;
-    margin-right: 2rem;
+    width: 60%;
+    height: 6vh;
+    padding-left: 1%;
+    margin-left: 5%;
+    margin-right: 2%;
     border-radius: 15px;
     background-color: white;
-    border: none;
+    border: 1px solid black;
   }
   .menuItems {
-    width: content-fit;
+    width: fit-content;
     height: 6vh;
     padding-left: 2%;
     padding-right: 2%;
     border-radius: 15px;
     background-color: white;
-    border: none;
+    border: 1px solid black;
+  }
+  .linkSectionName {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-left:2%;
+  }
+  .urlAndSalarySection {
+    margin-left: 4%;
+    margin-bottom: 3%;
+    display: flex;
   }
 `;
 type ImageBoxProps = {
   background?: string | undefined;
 };
 export const ImageBox = styled.section<ImageBoxProps>`
-  width: 11rem;
-  height: 10rem;
+  width: 20%;
   display: inline-block;
-  margin-right: 2rem;
+  margin-right: 2%;
   ${(props) =>
     props.background &&
     `background:url(${props.background}) no-repeat center;
@@ -72,8 +89,8 @@ export const ImageBox = styled.section<ImageBoxProps>`
     align-items: center;
     border: 1px dotted black;
     border-radius: 20px;
-    width: 11rem;
-    height: 10rem;
+    width: 100%;
+    height: 20vh;
     font-size: large;
   }
   label span {

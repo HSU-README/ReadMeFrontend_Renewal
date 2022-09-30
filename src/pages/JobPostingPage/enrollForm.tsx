@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, SetStateAction, Dispatch } from 'react';
 import { Button, Input } from '@mui/material';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
@@ -41,29 +41,27 @@ function EnrollForm() {
   const [duty, setDuty] = useState('');
   const [location, setLocation] = useState('');
   const [career, setCareer] = useState('');
+  const [companyNameError, setCompanyNameError] = useState(true);
+  const [contentsError, setContentsError] = useState(true);
+  const [techError, setTechError] = useState(true);
+  const [salaryError, setSalaryError] = useState(true);
+  const [companyURLError, setCompanyURLError] = useState(true);
   const navigate = useNavigate();
 
   const textChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunction: Function) => {
     setFunction(e.target.value);
   };
-  const validation = (): boolean => {
-    if (
-      companyName === '' ||
-      contents === '' ||
-      tech === '' ||
-      companyURL === '' ||
-      salary === '' ||
-      duty === '' ||
-      location === '' ||
-      career === ''
-    ) {
+  const validation = (text: string, validationErr: Dispatch<SetStateAction<boolean>>): boolean => {
+    if (text === '') {
+      // 입력값이 잘못 된 경우, true.
+      validationErr(false);
       return false;
     }
+    validationErr(true);
     return true;
   };
 
   const captureToFirebase = async () => {
-    console.log('Test good');
     const urlArray:
       | string[]
       | 'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2' =
@@ -85,9 +83,23 @@ function EnrollForm() {
   const postSubmit = useCallback(
     async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      if (!validation()) {
-        alert('양식을 정확히 기입해주세요');
-      } else {
+      let chk = true;
+      if (!validation(companyName, setCompanyNameError)) {
+        chk = false;
+      }
+      if (!validation(contents, setContentsError)) {
+        chk = false;
+      }
+      if (!validation(tech, setTechError)) {
+        chk = false;
+      }
+      if (!validation(companyURL, setCompanyURLError)) {
+        chk = false;
+      }
+      if (!validation(salary, setSalaryError)) {
+        chk = false;
+      }
+      if (chk) {
         const docUrl = await captureToFirebase();
         console.log(docUrl);
         employmentNotification(companyName, contents, tech, duty, location, career, companyURL, salary).then(() => {
@@ -100,6 +112,7 @@ function EnrollForm() {
 
   return (
     <>
+      <div style={{ marginLeft: '43%', fontSize: '2em', marginTop: '2%', fontWeight: '800' }}>채용공고 등록</div>
       <Container>
         <form>
           <div className="section">
@@ -114,6 +127,7 @@ function EnrollForm() {
               sx={{ height: '6vh' }}
               id="companyName"
             />
+            {!companyNameError && <div className="validationText">회사명을 입력해주세요.</div>}
           </div>
           <div className="section">
             <label className="sectionName" style={{ top: '2rem' }} htmlFor="content">
@@ -128,6 +142,7 @@ function EnrollForm() {
               className="inputCompanyName"
               id="content"
             />
+            {!contentsError && <div className="validationText">구인 내용을 입력해주세요.</div>}
           </div>
           <div className="section">
             <label className="sectionName" htmlFor="skill">
@@ -141,41 +156,55 @@ function EnrollForm() {
               sx={{ height: '6vh' }}
               id="skill"
             />
+            {!techError && <div className="validationText">필요한 기술을 입력해주세요.</div>}
           </div>
           <div className="section">
             <label className="sectionName" htmlFor="first-checkbox">
               직무
             </label>
             <SelectOption value={duty} setValue={setDuty} items={dutys} />
-            <label className="sectionName" htmlFor="region">
+            <label className="sectionName" htmlFor="region" style={{ marginLeft: '3%' }}>
               지역
             </label>
             <SelectOption value={location} setValue={setLocation} items={locations} />
-            <label className="sectionName" htmlFor="career">
+            <label className="sectionName" htmlFor="career" style={{ marginLeft: '9%' }}>
               구분
             </label>
             <SelectOption value={career} setValue={setCareer} items={careers} />
           </div>
-          <div className="section">
-            <label className="sectionName" htmlFor="companyLink">
-              지원 링크
-            </label>
-            <Input
-              onChange={(e) => textChange(e, setCompanyURL)}
-              placeholder="https://readme-pro.netlify.app/"
-              disableUnderline
-              className="inputURL"
-              sx={{ height: '6vh' }}
-            />
-            <label className="sectionName" htmlFor="salary">
-              연봉(월급)
-            </label>
-            <Input
-              onChange={(e) => textChange(e, setSalary)}
-              placeholder="4500"
-              disableUnderline
-              sx={{ height: '6vh', bgcolor: 'white', borderRadius: '15px', paddingLeft: '2%', width: '10%' }}
-            />
+          <div className="urlAndSalarySection">
+            <div style={{ display: 'inline', width: '50%' }}>
+              <label className="linkSectionName" htmlFor="companyLink">
+                지원 링크
+              </label>
+              <Input
+                onChange={(e) => textChange(e, setCompanyURL)}
+                placeholder="https://readme-pro.netlify.app/"
+                disableUnderline
+                className="inputURL"
+              />
+              {!companyURLError && (
+                <div className="validationText" style={{ paddingLeft: '11%' }}>
+                  지원 링크를 입력해주세요.
+                </div>
+              )}
+            </div>
+            <div style={{ display: 'inline', width: '50%' }}>
+              <label className="linkSectionName" htmlFor="salary">
+                연봉(월급)
+              </label>
+              <Input
+                onChange={(e) => textChange(e, setSalary)}
+                placeholder="4500"
+                disableUnderline
+                className="inputURL"
+              />
+              {!salaryError && (
+                <div className="validationText" style={{ marginLeft: '30%' }}>
+                  연봉을 입력해주세요.
+                </div>
+              )}
+            </div>
           </div>
           <div className="section">
             <label className="sectionName" htmlFor="companyImage">
@@ -192,14 +221,12 @@ function EnrollForm() {
         style={{
           backgroundColor: '#FF6B6B',
           color: 'white',
-          width: '15rem',
+          width: '15%',
           fontSize: '1.5em',
           fontWeight: '700',
           borderRadius: '20px',
-          marginLeft: '38rem',
-          marginBottom: '3em',
-          height: '3rem',
-          left: '12%',
+          marginLeft: '40%',
+          marginBottom: '3%',
         }}
         onClick={postSubmit}
       >
