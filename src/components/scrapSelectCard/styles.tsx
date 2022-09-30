@@ -3,7 +3,7 @@ import colors from 'styles/colors';
 
 export const Container = styled.div`
   position: relative;
-  height: 95%;
+  height: 100%;
   width: 75%;
   margin: 50px auto;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
@@ -38,7 +38,7 @@ export const Container = styled.div`
   }
 
   .docDate {
-    margin-top: 4.5%;
+    margin-top: 6%;
     margin-bottom: 5%;
     font-size: 13px;
     color: ${colors.gray};
@@ -54,7 +54,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 4px 20px 0px 20px;
+    padding: 3.2% 20px 20px;
     margin-top: 4.5%;
     border-top: 1px solid;
     border-color: #f1f3f5;
@@ -75,6 +75,7 @@ export const Container = styled.div`
   .profile-image-container {
     position: relative;
     margin-right: 10px;
+
     bottom: 3px;
   }
 

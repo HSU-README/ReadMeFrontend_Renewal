@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DocumentType, TagType } from 'types/document';
-import { Container } from './styles';
+import { Container, ProfileImg } from './styles';
 
 export default function MainSelectCard({ data }: { data: DocumentType }) {
   const [documentId, setDocumentId] = useState(0);
@@ -58,17 +58,9 @@ export default function MainSelectCard({ data }: { data: DocumentType }) {
           <div className="docDate">{documentDate}</div>
         </div>
 
-        <hr style={{ margin: '0px auto', color: 'lightgrey' }} />
         <div className="bottom-info-container">
           <div className="user-info-container">
-            <div className="profile-image-container">
-              <img
-                style={{ width: '30px', height: '30px', objectFit: 'contain', borderRadius: '50%' }}
-                className="profile-image"
-                src={profileImg}
-                alt="thumbnail"
-              />
-            </div>
+            <ProfileImg bgImg={profileImg} />
             <div className="user-name">{userName}</div>
           </div>
           <div className="like-container">

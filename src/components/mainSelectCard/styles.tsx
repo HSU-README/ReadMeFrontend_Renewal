@@ -6,18 +6,12 @@ export const Container = styled.div`
   height: 300px;
   width: 300px;
   margin: 50px auto;
-  border-radius: 10px;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
 
   .pofol-thumbnail-container {
     height: 50%;
     margin: 0px 0px 10px 0px;
-  }
-
-  .pofol-thumbnail {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
   }
 
   .pofol-title {
@@ -30,7 +24,7 @@ export const Container = styled.div`
   }
 
   .top-info-container {
-    height: 20%;
+    height: 18%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -39,7 +33,8 @@ export const Container = styled.div`
   }
 
   .docDate {
-    margin-top: 10px;
+    margin-top: 6%;
+    margin-bottom: 5%;
     font-size: 13px;
     color: ${colors.gray};
     text-align: left;
@@ -47,17 +42,19 @@ export const Container = styled.div`
 
   .hashtag-container {
     display: flex;
-    margin-top: 5px;
-    height: 21px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    height: 0px;
   }
 
   .bottom-info-container {
-    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0px 20px 0px 20px;
+    padding: 2.5% 20px 20px;
     margin-top: 10px;
+    border-top: 1px solid;
+    border-color: #f1f3f5;
   }
 
   .user-info-container {
@@ -67,7 +64,6 @@ export const Container = styled.div`
   .profile-image-container {
     position: relative;
     margin-right: 10px;
-    width: 30px;
     bottom: 3px;
   }
 
@@ -75,21 +71,38 @@ export const Container = styled.div`
     font-size: 16px;
     font-weight: bold;
     color: black;
+    line-height: 24px;
+    margin-left: 5px;
   }
 
   .like-container {
     display: flex;
+    justify-content: flex-end;
     margin-top: 2px;
   }
 
   .like-img {
-    margin-right: 12px;
+    margin-right: 5px;
+    width: 100%;
+    height: 100%;
   }
 
   .likeCnt {
     position: relative;
-    bottom: 1px;
+    font-size: 16px;
+    bottom: 0.5px;
+    color: #595959;
   }
+`;
+
+export const ProfileImg = styled.div<{ bgImg: string }>`
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${(props) => props.bgImg});
+  cursor: pointer;
 `;
 
 export const OpacityBlack = styled.div`
