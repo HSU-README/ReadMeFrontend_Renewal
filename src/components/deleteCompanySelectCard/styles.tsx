@@ -12,6 +12,7 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .deleteImg {
     width: 12%;
+    height: 12%;
     position: absolute;
     left: 85%;
     top: 3%;

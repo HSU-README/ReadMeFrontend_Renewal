@@ -30,7 +30,6 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
     setRecruitmentContent(content);
     setRecruitmentRegion(region);
     setRecruitementCareer(jobOpening);
-    console.log(data);
   }, [data]);
 
   return (

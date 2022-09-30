@@ -14,14 +14,14 @@ function MyPosting() {
 
   if (userRecruitment.length === 0) {
     return (
-      <div style={{ fontSize: '40px', margin: '220px auto' }}>
+      <div style={{ fontSize: '40px', margin: '10% auto' }}>
         <img
           src={require('assets/icons/not_found_icon.png')}
           style={{ width: '500px', height: '300px' }}
           alt="not_found"
         />
         <br />
-        <strong>작성하신 채용공고가 없습니다.</strong>
+        <strong>작성하신 채용공고가 없어요!</strong>
       </div>
     );
   }
