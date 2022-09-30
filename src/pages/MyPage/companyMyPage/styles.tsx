@@ -76,7 +76,7 @@ export const UserInfoMenu = styled.div<{ currentMyPage: string }>`
 
 export const MyRecruitmentMenu = styled.div<{ currentMyPage: string }>`
   ${(props) =>
-    props.currentMyPage === 'myPortfolio'
+    props.currentMyPage === 'myRecruitment'
       ? css`
           box-shadow: inset 14px 0 0 0 white;
         `

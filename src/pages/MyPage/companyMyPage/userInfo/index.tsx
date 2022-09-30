@@ -87,21 +87,11 @@ function UserInfo() {
         <div className="inputBorder company">
           <div>
             <span className="inputName">기업명</span>
-            <input
-              className="contentInput"
-              value={company || ''}
-              onChange={onChangeCompany}
-              style={{ fontWeight: 'bold' }}
-            />
+            <input className="contentInput" value={company || ''} onChange={onChangeCompany} />
           </div>
           <div>
             <span className="inputName">업종</span>
-            <input
-              className="contentInput"
-              value={business}
-              onChange={onChangeBusiness}
-              style={{ fontWeight: 'bold' }}
-            />
+            <input className="contentInput" value={business} onChange={onChangeBusiness} />
           </div>
         </div>
         <div className="inputBorder">

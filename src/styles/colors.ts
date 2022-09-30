@@ -7,4 +7,5 @@ export default {
   footerLine: '#f24444',
   gray: '#595959',
   fontGray: '#595959',
+  button: '#ff6b6b',
 };

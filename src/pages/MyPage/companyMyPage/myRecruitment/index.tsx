@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'pages/MyPage/studentMyPage/myPortfolio/styles';
+import { Container } from 'pages/MyPage/companyMyPage/myRecruitment/styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Pagination } from 'swiper';
 import 'swiper/css';
@@ -28,26 +28,22 @@ function MyPosting() {
 
   return (
     <Container>
-      <div style={{ width: '1500px', margin: '100px 0px 100px 140px', overflow: 'auto', display: 'flex' }}>
-        <Swiper
-          slidesPerView={5}
-          grid={{
-            rows: 2,
-          }}
-          spaceBetween={50}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Grid, Pagination]}
-          className="mySwiper"
-        >
-          {userRecruitment.map((data) => (
-            <SwiperSlide>
-              <DeleteCompanySelectCard key={data} data={data} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <Swiper
+        slidesPerView={4}
+        grid={{
+          rows: 2,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Grid, Pagination]}
+      >
+        {userRecruitment.map((data) => (
+          <SwiperSlide>
+            <DeleteCompanySelectCard key={data} data={data} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Container>
   );
 }

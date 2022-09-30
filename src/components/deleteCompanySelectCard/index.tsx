@@ -23,13 +23,13 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
   const [, setOpenDialog] = useRecoilState(openDialogState);
 
   useEffect(() => {
-    const { id, companyName, content, devision, region } = data;
+    const { id, companyName, content, jobOpening, region } = data;
     setRecruitmentId(id);
     setUserName(companyName);
     // setRecruitmentSkill(skillStack);
     setRecruitmentContent(content);
     setRecruitmentRegion(region);
-    setRecruitementCareer(devision);
+    setRecruitementCareer(jobOpening);
     console.log(data);
   }, [data]);
 
@@ -51,16 +51,6 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
           className="deleteImg"
           alt="delete"
           src={closeBtn}
-          style={{
-            width: '45px',
-            height: '45px',
-
-            position: 'absolute',
-            left: '205px',
-            top: '10px',
-            float: 'right',
-            zIndex: '999',
-          }}
           onClick={() => {
             setDeleteRecruitmentId(recruitmentId);
             setDeleteState(true);
@@ -79,13 +69,10 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
           {recruitmentContent.length > 15 ? (
             <span>{recruitmentContent.slice(0, 17)} ...</span>
           ) : (
-            <span>recruitmentContent</span>
+            <span>{recruitmentContent}</span>
           )}
         </div>
         <div className="top-info-container">
-          {/* <div className="hashtag-container" style={{ marginTop: '14px' }}>
-            <div style={{ color: '#f24444', marginRight: '5px', fontSize: '14px' }}>#{recruitmentSkill}</div>
-          </div> */}
           <div className="hashtag-container">
             <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }}>#{recruitmentRegion}</div>
             <div style={{ color: 'gray', marginRight: '5px', fontSize: '14px' }}>#{recruitementCareer}</div>
