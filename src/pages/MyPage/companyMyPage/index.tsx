@@ -5,7 +5,7 @@ import {
   MenuContainer,
   ViewContainer,
   UserInfoMenu,
-  MyPortfolioMenu,
+  MyRecruitmentMenu,
 } from 'pages/MyPage/companyMyPage/styles';
 import Footer from 'components/footer';
 import Header from 'components/header';
@@ -51,14 +51,14 @@ function CompanyMyPage() {
         <Dialog
           open={openDialog}
           onClose={handleClose}
-          PaperProps={{ sx: { textAlign: 'center', width: '20%', height: '16%', padding: '10px' } }}
+          PaperProps={{ sx: { textAlign: 'center', width: '300px', height: '130px', padding: '10px' } }}
         >
           <DialogContent>
-            <DialogContentText style={{ color: 'black', fontSize: '28px', fontWeight: 'bold' }}>
+            <DialogContentText style={{ color: 'black', fontSize: '22px', fontWeight: 'bold' }}>
               문서를 삭제하시겠습니까?
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
+          <DialogActions style={{ justifyContent: 'center' }}>
             <Button
               style={{ backgroundColor: 'black', color: 'white', marginRight: '10px', fontWeight: 'bold' }}
               onClick={handleClose}
@@ -83,30 +83,31 @@ function CompanyMyPage() {
       )}
       <Header />
       <MyPageContainer>
-        <MenuContainer>
-          <div className="myPageTitle">마이페이지</div>
-          <UserInfoMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('userInfo');
-            }}
-          >
-            사용자 정보
-          </UserInfoMenu>
-          <MyPortfolioMenu
-            currentMyPage={currentMyPage}
-            className="myPageSelect"
-            onClick={() => {
-              setCurrentMyPage('myPortfolio');
-            }}
-          >
-            채용 공고 관리
-          </MyPortfolioMenu>
-        </MenuContainer>
         <ViewContainer>
+          <MenuContainer>
+            <div className="myPageTitle">마이페이지</div>
+            <UserInfoMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('userInfo');
+              }}
+            >
+              사용자 정보
+            </UserInfoMenu>
+            <MyRecruitmentMenu
+              currentMyPage={currentMyPage}
+              className="myPageSelect"
+              onClick={() => {
+                setCurrentMyPage('myRecruitment');
+              }}
+            >
+              채용 공고 관리
+            </MyRecruitmentMenu>
+          </MenuContainer>
+
           {currentMyPage === 'userInfo' && <UserInfo />}
-          {currentMyPage === 'myPortfolio' && <MyRecruitment />}
+          {currentMyPage === 'myRecruitment' && <MyRecruitment />}
         </ViewContainer>
       </MyPageContainer>
       <ToastContainer />

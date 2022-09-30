@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'pages/MyPage/studentMyPage/pickPofol/styles';
-import MainSelectCard from 'components/mainSelectCard';
+import ScrapSelectCard from 'components/scrapSelectCard';
 import { getUserLikePortfolio } from 'apis/likeApi';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,7 +24,7 @@ function PickPofol() {
 
   if (userLikePortfolio.length === 0) {
     return (
-      <div style={{ fontSize: '40px', margin: '220px 500px' }}>
+      <div style={{ fontSize: '40px', margin: '10% auto' }}>
         <img
           src={require('assets/icons/not_found_icon.png')}
           style={{ width: '500px', height: '300px' }}
@@ -38,26 +38,22 @@ function PickPofol() {
 
   return (
     <Container>
-      <div style={{ width: '1500px', margin: '100px 0px 100px 140px', overflow: 'auto', display: 'flex' }}>
-        <Swiper
-          slidesPerView={5}
-          grid={{
-            rows: 2,
-          }}
-          spaceBetween={50}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Grid, Pagination]}
-          className="mySwiper"
-        >
-          {userLikePortfolio.map((data) => (
-            <SwiperSlide>
-              <MainSelectCard key={data} data={data} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <Swiper
+        slidesPerView={4}
+        grid={{
+          rows: 2,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Grid, Pagination]}
+      >
+        {userLikePortfolio.map((data) => (
+          <SwiperSlide>
+            <ScrapSelectCard key={data} data={data} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Container>
   );
 }

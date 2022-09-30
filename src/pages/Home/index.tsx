@@ -92,7 +92,6 @@ function Home() {
           rows: 1,
         }}
         navigation
-        spaceBetween={40}
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
@@ -126,7 +125,6 @@ function Home() {
           rows: 1,
         }}
         navigation
-        spaceBetween={40}
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
@@ -160,11 +158,6 @@ function Home() {
           rows: 1,
         }}
         navigation
-        style={{
-          width: '100%',
-          marginRight: '2%',
-        }}
-        spaceBetween={40}
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >

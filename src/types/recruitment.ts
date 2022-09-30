@@ -6,7 +6,7 @@ export type RecruitmentType = {
   skillStack: string;
   jobOpening: string;
   region: string;
-  devision: string;
+  division: string;
   applyLink: string;
   salary: string;
 };

@@ -14,7 +14,7 @@ function MyPortfolio() {
 
   if (userPortfolio.length === 0) {
     return (
-      <div style={{ fontSize: '40px', margin: '220px auto' }}>
+      <div style={{ fontSize: '40px', margin: '10% auto' }}>
         <img
           src={require('assets/icons/not_found_icon.png')}
           style={{ width: '500px', height: '300px' }}
@@ -28,26 +28,22 @@ function MyPortfolio() {
 
   return (
     <Container>
-      <div style={{ width: '1500px', margin: '100px 0px 100px 140px', overflow: 'auto', display: 'flex' }}>
-        <Swiper
-          slidesPerView={5}
-          grid={{
-            rows: 2,
-          }}
-          spaceBetween={50}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Grid, Pagination]}
-          className="mySwiper"
-        >
-          {userPortfolio.map((data) => (
-            <SwiperSlide>
-              <DeleteSelectCard key={data} data={data} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <Swiper
+        slidesPerView={4}
+        grid={{
+          rows: 2,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Grid, Pagination]}
+      >
+        {userPortfolio.map((data) => (
+          <SwiperSlide>
+            <DeleteSelectCard key={data} data={data} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Container>
   );
 }

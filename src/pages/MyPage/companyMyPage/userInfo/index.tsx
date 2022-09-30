@@ -13,9 +13,9 @@ function UserInfo() {
   const [file, setFile] = useState<any>({});
   const fileInput = useRef<any>();
   const [name, onChangeName, setName] = useInput('');
-  const [university, onChangeUniversity, setUniversity] = useInput('');
-  const [major, onChangeMajor, setMajor] = useInput('');
-  const [interests, onChangeInterests, setInterests] = useInput('');
+  const [company, onChangeCompany, setCompany] = useInput('');
+  const [business, onChangeBusiness, setBusiness] = useInput('');
+  const [skillStack, onChangeSkillStack, setSkillStack] = useInput('');
   const userId = readmeUserInfo !== null ? JSON.parse(readmeUserInfo).id : null;
   useEffect(() => {
     async function fetchUserData() {
@@ -26,9 +26,9 @@ function UserInfo() {
       } else {
         setImage(data.profileUrl);
       }
-      setUniversity(data.university);
-      setMajor(data.major);
-      setInterests(data.interests);
+      setCompany(data.university);
+      setBusiness(data.major);
+      setSkillStack(data.interests);
     }
     fetchUserData();
   }, []);
@@ -50,17 +50,17 @@ function UserInfo() {
     (e: any) => {
       e.preventDefault();
       if (file.name === undefined) {
-        updateUser(userId, name, image, university, major, interests);
+        updateUser(userId, name, image, company, business, skillStack);
       } else {
         // create a refernce to the file tp be uploaded
         const storageRef = ref(storage, file.name);
         // upload the file
         uploadBytesResumable(storageRef, file).then(() => {
-          getDownloadURL(storageRef).then((url) => updateUser(userId, name, url, university, major, interests));
+          getDownloadURL(storageRef).then((url) => updateUser(userId, name, url, company, business, skillStack));
         });
       }
     },
-    [file, image, interests, major, name, university, userId],
+    [file, image, skillStack, business, name, company, userId],
   );
 
   return (
@@ -77,23 +77,31 @@ function UserInfo() {
         onChange={onChangeImage}
         ref={fileInput}
       />
-      <div className="nickName">
-        <input value={name || ''} onChange={onChangeName} style={{ width: '180px', fontWeight: 'bold' }} />
+      <div className="section-updateName">
+        <span className="inputName">이름</span>
+        <div className="nickName">
+          <input value={name || ''} onChange={onChangeName} style={{ width: '100%' }} />
+        </div>
       </div>
       <div className="section-update">
-        <div className="inputBorder university">
+        <div className="inputBorder company">
           <div>
-            <span className="inputName">기업명 : </span>
-            <input value={university || ''} onChange={onChangeUniversity} style={{ fontWeight: 'bold' }} />
+            <span className="inputName">기업명</span>
+            <input className="contentInput" value={company || ''} onChange={onChangeCompany} />
           </div>
           <div>
-            <span className="inputName">업종 : </span>
-            <input value={major} onChange={onChangeMajor} style={{ fontWeight: 'bold' }} />
+            <span className="inputName">업종</span>
+            <input className="contentInput" value={business} onChange={onChangeBusiness} />
           </div>
         </div>
         <div className="inputBorder">
-          <span className="inputName">요구사항 : </span>
-          <input value={interests || ''} onChange={onChangeInterests} style={{ width: '350px', fontWeight: 'bold' }} />
+          <span className="inputName">요구사항</span>
+          <input
+            className="contentInput"
+            value={skillStack || ''}
+            onChange={onChangeSkillStack}
+            style={{ width: '70%', textAlign: 'left' }}
+          />
         </div>
       </div>
       <Button className="button-wrapper" onClick={onSubmit}>
