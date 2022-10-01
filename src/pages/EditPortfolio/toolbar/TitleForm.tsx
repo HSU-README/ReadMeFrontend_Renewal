@@ -13,7 +13,7 @@ function TitleForm({ isEditable, title, setTitle }: titleProps) {
       <Input
         value={title}
         placeholder="제목을 입력해주세요."
-        inputProps={{ style: { marginLeft: '29%' } }}
+        inputProps={{ style: { textAlign: 'center' } }}
         style={{
           backgroundColor: 'white',
           border: '1px solid black',

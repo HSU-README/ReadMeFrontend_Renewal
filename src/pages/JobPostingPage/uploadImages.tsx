@@ -1,31 +1,34 @@
-import React, { Dispatch, SetStateAction, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { recruitmentImagesState } from 'recoil/atoms';
+import { useRecoilState } from 'recoil';
 import { ImageBox } from './style';
 
 export type uploadImageProps = {
-  fileNames: string[];
-  setFileNames: Dispatch<SetStateAction<string[]>>;
   idx: number;
 };
 
-function UploadImages({ fileNames, setFileNames, idx }: uploadImageProps) {
+function UploadImages({ idx }: uploadImageProps) {
+  const [imagesState, setImagesState] = useRecoilState<any[]>(recruitmentImagesState);
+  const [imageThumbnail, setImageThumbnail] = useState('');
   const onSelectFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = (event.target as HTMLInputElement).files;
-    if (fileNames.length > 0) setFileNames([]);
+    if (imagesState.length > 0) setImagesState([]);
     if (selectedFiles !== null) {
       const selectedFilesArray = Array.from(selectedFiles);
-      const imageArray = URL.createObjectURL(selectedFilesArray[0]);
-      const tmpArray = [...fileNames];
+      const imageArray = selectedFilesArray[0];
+      setImageThumbnail(URL.createObjectURL(imageArray));
+      const tmpArray = [...imagesState];
       tmpArray[idx] = imageArray;
-      setFileNames(tmpArray);
+      setImagesState(tmpArray);
     }
   };
-  useEffect(() => {}, [fileNames]);
+  useEffect(() => {}, [imageThumbnail]);
   return (
-    <ImageBox background={fileNames[idx]}>
+    <ImageBox background={imageThumbnail}>
       <label>
         <div
           style={{
-            visibility: `${fileNames[idx] ? 'hidden' : 'visible'}`,
+            visibility: `${imageThumbnail ? 'hidden' : 'visible'}`,
           }}
         >
           +Add image

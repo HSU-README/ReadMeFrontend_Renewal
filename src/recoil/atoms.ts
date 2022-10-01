@@ -59,3 +59,9 @@ export const likeState = atom({
   key: 'likeState',
   default: false,
 });
+
+// 채용공고 등록시 첨부이미지 state
+export const recruitmentImagesState = atom({
+  key: 'recruitmentImagesState',
+  default: <any>[],
+});
