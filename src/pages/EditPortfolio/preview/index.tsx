@@ -10,12 +10,8 @@ function Preview() {
   return (
     <div>
       <Header />
-      <div style={{ backgroundColor: '#f8f9fa' }}>
-        <div style={{ display: 'flex', marginLeft: '30%' }}>
-          <div ref={canvasBox}>
-            <CanvasContainer isEditable={false} createElement={createElement} />
-          </div>
-        </div>
+      <div ref={canvasBox}>
+        <CanvasContainer isEditable={false} createElement={createElement} />
       </div>
       <Footer />
     </div>

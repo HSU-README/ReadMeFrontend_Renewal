@@ -72,7 +72,7 @@ function Toolbar({
             }}
             src={require('assets/icons/saveIcon.png')}
             alt="저장"
-            style={{ marginLeft: '1%', width: '35px', height: '35px', cursor: 'pointer' }}
+            style={{ marginLeft: '1%', marginTop: '2px', width: '32px', height: '34px', cursor: 'pointer' }}
             aria-hidden="true"
           />
         )}
@@ -81,7 +81,7 @@ function Toolbar({
             <img
               src={require('assets/icons/exportPdf.png')}
               alt="출력"
-              style={{ marginLeft: '3%', width: '35px', height: '35px', cursor: 'pointer' }}
+              style={{ marginLeft: '2%', width: '40px', height: '38px', cursor: 'pointer' }}
             />
           )}
           content={() => canvasBox.current}

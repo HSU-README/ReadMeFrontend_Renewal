@@ -281,8 +281,9 @@ function CanvasContainer({ isEditable, createElement }: IProps) {
   return (
     <div
       style={{
-        width: '210mm',
-        height: '330mm',
+        width: '800px',
+        height: '1250px',
+        margin: '20px auto',
       }}
     >
       <Toolbar

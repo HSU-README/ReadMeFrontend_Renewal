@@ -9,10 +9,11 @@ interface titleProps {
 
 function TitleForm({ isEditable, title, setTitle }: titleProps) {
   return (
-    <FormControl variant="standard" style={{ marginLeft: '90px', width: '50%' }}>
+    <FormControl variant="standard" style={{ marginLeft: '100px', width: '50%' }}>
       <Input
         value={title}
         placeholder="제목을 입력해주세요."
+        inputProps={{ style: { marginLeft: '29%' } }}
         style={{
           backgroundColor: 'white',
           border: '1px solid black',

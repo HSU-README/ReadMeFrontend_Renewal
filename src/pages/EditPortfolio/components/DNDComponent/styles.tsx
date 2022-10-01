@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-top: 5%;
+  margin-top: 6.2%;
   margin-right: 5%;
   .beforeImage {
     text-align: 'center';

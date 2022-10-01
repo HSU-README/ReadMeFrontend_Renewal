@@ -29,8 +29,9 @@ table {
 }
 
 .canvas-container {
-  width: 210mm;
-  height: 297mm;
+  width: 795px;
+  height: 1124px;
+
   background-color: white;
   position: relative;
   border: 1px solid black;

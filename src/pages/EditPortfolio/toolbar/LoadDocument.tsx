@@ -22,11 +22,11 @@ function LoadDocument({ openDialog, setOpenDialog, docId }: DialogProps) {
       PaperProps={{ sx: { textAlign: 'center', width: '20%', height: '16%', padding: '10px' } }}
     >
       <DialogContent>
-        <DialogContentText style={{ color: 'black', fontSize: '28px', fontWeight: 'bold' }}>
+        <DialogContentText style={{ color: 'black', fontSize: '22px', fontWeight: 'bold' }}>
           문서를 불러오시겠습니까?
         </DialogContentText>
       </DialogContent>
-      <DialogActions>
+      <DialogActions style={{ justifyContent: 'center' }}>
         <Button
           style={{ backgroundColor: 'black', color: 'white', marginRight: '10px', fontWeight: 'bold' }}
           onClick={handleClose}

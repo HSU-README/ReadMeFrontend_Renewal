@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-left: 7.5%;
-  margin-top: 5%;
+  margin-left: 5%;
+  margin-top: 6.2%;
   .beforeImage {
     text-align: 'center';
     width: 100%;
@@ -38,7 +38,7 @@ const Container = styled.div`
 
   .elementParent {
     background-color: #e9ecef;
-    width: 350px;
+    width: 220px;
   }
 `;
 

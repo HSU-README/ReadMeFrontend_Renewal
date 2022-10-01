@@ -30,6 +30,7 @@ export const Container = styled.div`
   }
 
   .searchbar {
+    margin-right: 2%;
     width: 25%;
   }
 

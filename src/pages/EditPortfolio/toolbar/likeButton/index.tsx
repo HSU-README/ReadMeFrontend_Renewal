@@ -47,7 +47,7 @@ export default function LikeButton({ isEditable, userId, docId }: IProps) {
           setLike(true);
           likePortfolio(userId, docId);
         }}
-        style={{ width: '35px', height: '35px', marginLeft: '100px' }}
+        style={{ width: '35px', height: '35px', marginLeft: '120px', marginTop: '4px' }}
         src={require('assets/icons/likeoff.png')}
         aria-hidden="true"
       />

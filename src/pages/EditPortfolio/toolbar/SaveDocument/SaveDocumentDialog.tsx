@@ -65,7 +65,7 @@ function SaveDocumentDialog({ openDialog, setOpenDialog, title, canvasData, user
       <Dialog
         open={openDialog}
         onClose={handleClose}
-        PaperProps={{ sx: { width: '30%', height: '70%', padding: '10px' } }}
+        PaperProps={{ sx: { width: '30%', height: '50%', padding: '10px' } }}
       >
         <DialogContent>
           <DialogContentText style={{ textAlign: 'center', fontSize: '30px', color: 'black', fontWeight: 'bold' }}>
@@ -88,7 +88,7 @@ function SaveDocumentDialog({ openDialog, setOpenDialog, title, canvasData, user
             </div>
           </DialogContentText>
 
-          <div style={{ width: '60%', height: '60%' }}>
+          <div style={{ width: '30%', height: '30%', margin: '30px auto' }}>
             <label htmlFor="fileSave">
               <img
                 alt="importImg"
@@ -111,7 +111,7 @@ function SaveDocumentDialog({ openDialog, setOpenDialog, title, canvasData, user
           </div>
         </DialogContent>
         <TagInput tagsArray={tagsArray} setTagsArray={setTagsArray} />
-        <DialogActions>
+        <DialogActions style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
           <Button
             style={{ backgroundColor: 'black', color: 'white', marginRight: '10px' }}
             onClick={() => {
