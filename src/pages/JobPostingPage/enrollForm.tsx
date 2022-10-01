@@ -1,8 +1,10 @@
-import React, { useState, useCallback, SetStateAction, Dispatch } from 'react';
+import React, { useState, useCallback, SetStateAction, Dispatch, useEffect } from 'react';
+import { recruitmentImagesState } from 'recoil/atoms';
 import { Button, Input } from '@mui/material';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import Container from './style';
 import SelectOption, { MenuItemType } from './Select';
 import UploadImages from './uploadImages';
@@ -32,7 +34,6 @@ const locations: MenuItemType[] = [
 ];
 const careers: MenuItemType[] = [{ name: '신입' }, { name: '경력직' }];
 function EnrollForm() {
-  const [fileNames, setFileNames] = useState<any[]>([]);
   const [companyName, setCompanyName] = useState('');
   const [contents, setContents] = useState('');
   const [tech, setTech] = useState('');
@@ -46,7 +47,12 @@ function EnrollForm() {
   const [techError, setTechError] = useState(true);
   const [salaryError, setSalaryError] = useState(true);
   const [companyURLError, setCompanyURLError] = useState(true);
+  const [imagesState] = useRecoilState<any[]>(recruitmentImagesState);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(imagesState);
+  }, [imagesState]);
 
   const textChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunction: Function) => {
     setFunction(e.target.value);
@@ -62,19 +68,19 @@ function EnrollForm() {
   };
 
   const captureToFirebase = async () => {
-    const urlArray:
-      | string[]
-      | 'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2' =
-      [];
-    fileNames.map(async (imageName) => {
+    console.log(`test:${imagesState}`);
+    const urlArray = new Array(4).fill(
+      'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2',
+    );
+
+    imagesState.map(async (imageName, index) => {
       if (imageName !== undefined) {
         const storageRef = ref(storage, imageName.name);
-        console.log(`img name:${imageName}`);
         // upload the file
         const uploadTask = await uploadBytesResumable(storageRef, imageName);
         const url = await getDownloadURL(uploadTask.ref);
         console.log(url);
-        urlArray.push(url);
+        urlArray[index] = url;
       }
     });
     return urlArray;
@@ -107,7 +113,7 @@ function EnrollForm() {
         });
       }
     },
-    [companyName, contents, tech, career, salary, duty, location, companyURL],
+    [companyName, contents, tech, career, salary, duty, location, companyURL, imagesState],
   );
 
   return (
@@ -210,10 +216,10 @@ function EnrollForm() {
             <label className="sectionName" htmlFor="companyImage">
               첨부 이미지
             </label>
-            <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={0} />
-            <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={1} />
-            <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={2} />
-            <UploadImages fileNames={fileNames} setFileNames={setFileNames} idx={3} />
+            <UploadImages idx={0} />
+            <UploadImages idx={1} />
+            <UploadImages idx={2} />
+            <UploadImages idx={3} />
           </div>
         </form>
       </Container>
