@@ -19,6 +19,7 @@ export const employmentNotification = async (
   division: string,
   applyLink: string,
   salary: string,
+  firebaseUrl: string,
 ) => {
   const response: any = await serverApi.post('https://hsureadme.herokuapp.com/api/v1/recruit_post/new', {
     companyName,
@@ -29,6 +30,7 @@ export const employmentNotification = async (
     division,
     applyLink,
     salary: Number(salary),
+    firebaseUrl,
   });
 
   try {

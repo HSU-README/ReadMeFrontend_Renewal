@@ -68,8 +68,8 @@ export default function DeleteCompanySelectCard({ data }: { data: RecruitmentTyp
         </div>
         <div className="company-title">{userName}</div>
         <div className="recruitment-content">
-          {recruitmentContent.length > 15 ? (
-            <span>{recruitmentContent.slice(0, 17)} ...</span>
+          {recruitmentContent.length > 10 ? (
+            <span>{recruitmentContent.slice(0, 11)} ...</span>
           ) : (
             <span>{recruitmentContent}</span>
           )}
