@@ -5,9 +5,9 @@ const Container = styled.div`
   text-align: left;
   form {
     width: 60%;
-    height: 90vh;
+    height: 85vh;
     margin: 5% auto 5% auto;
-    padding-top: 2%;
+    padding-top: 5%;
     padding-right: 2%;
     padding-bottom: 2%;
     box-shadow: 3px 3px 6px 6px rgb(0 0 0 / 10%);
@@ -15,6 +15,8 @@ const Container = styled.div`
   .section {
     margin-bottom: 5%;
     margin-left: 3%;
+    display: flex;
+    align-items: center;
   }
   .sectionName {
     width: 11%;
@@ -57,7 +59,7 @@ const Container = styled.div`
   }
   .urlAndSalarySection {
     margin-left: 4%;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
     display: flex;
   }
 `;

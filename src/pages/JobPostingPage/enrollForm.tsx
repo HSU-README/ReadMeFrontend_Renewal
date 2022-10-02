@@ -34,7 +34,8 @@ const locations: MenuItemType[] = [
 ];
 const careers: MenuItemType[] = [{ name: '신입' }, { name: '경력직' }];
 function EnrollForm() {
-  const [companyName, setCompanyName] = useState('');
+  const readmeUserInfo = localStorage.getItem('readme_userInfo');
+  const companyName = readmeUserInfo !== null ? JSON.parse(readmeUserInfo).name : null;
   const [contents, setContents] = useState('');
   const [tech, setTech] = useState('');
   const [companyURL, setCompanyURL] = useState('');
@@ -42,7 +43,6 @@ function EnrollForm() {
   const [duty, setDuty] = useState('');
   const [location, setLocation] = useState('');
   const [career, setCareer] = useState('');
-  const [companyNameError, setCompanyNameError] = useState(true);
   const [contentsError, setContentsError] = useState(true);
   const [techError, setTechError] = useState(true);
   const [salaryError, setSalaryError] = useState(true);
@@ -90,9 +90,6 @@ function EnrollForm() {
     async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       let chk = true;
-      if (!validation(companyName, setCompanyNameError)) {
-        chk = false;
-      }
       if (!validation(contents, setContentsError)) {
         chk = false;
       }
@@ -113,7 +110,7 @@ function EnrollForm() {
         });
       }
     },
-    [companyName, contents, tech, career, salary, duty, location, companyURL, imagesState],
+    [contents, tech, career, salary, duty, location, companyURL, imagesState],
   );
 
   return (
@@ -121,21 +118,7 @@ function EnrollForm() {
       <Container>
         <form>
           <div className="section">
-            <label className="sectionName" htmlFor="companyName">
-              회사명
-            </label>
-            <Input
-              onChange={(e) => textChange(e, setCompanyName)}
-              placeholder="카카오 엔터프라이즈"
-              disableUnderline
-              className="inputCompanyName"
-              sx={{ height: '6vh' }}
-              id="companyName"
-            />
-            {!companyNameError && <div className="validationText">회사명을 입력해주세요.</div>}
-          </div>
-          <div className="section">
-            <label className="sectionName" style={{ top: '2rem' }} htmlFor="content">
+            <label className="sectionName" style={{}} htmlFor="content">
               구인 내용
             </label>
             <Input
