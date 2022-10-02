@@ -14,7 +14,7 @@ const Container = styled.div`
   }
 
   .pofol-thumbnail {
-    width: 70%;
+    width: 75%;
     object-fit: fill;
     margin: 0px auto;
   }

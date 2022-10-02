@@ -115,3 +115,17 @@
   background-color: #d9d9d9;
   border-radius: 7px;
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide.card {
+  height: 50vh;
+  margin-bottom: 0.5%;
+}
+
+.swiper-wrapper {
+  margin-top: 0%;
+}

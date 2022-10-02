@@ -4,7 +4,7 @@ import loadable from '@loadable/component';
 import { RecoilRoot } from 'recoil';
 
 const Home = loadable(() => import('pages/Home'));
-const SearchPage = loadable(() => import('./pages/Search/index'));
+const SearchPage = loadable(() => import('./pages/Search'));
 const SignUp = loadable(() => import('pages/Signup'));
 const Login = loadable(() => import('pages/Login/LoginPage'));
 const MyPage = loadable(() => import('pages/MyPage'));
