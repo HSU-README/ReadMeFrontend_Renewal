@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import colors from 'styles/colors';
@@ -85,88 +84,87 @@ function Home() {
           </button>
         )}
       </div>
-      <div className="sectionFont">인기 포트폴리오</div>
-      <Swiper
-        slidesPerView={4}
-        grid={{
-          rows: 1,
-        }}
-        navigation
-        modules={[Grid, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {mostLikePortfolio.map(
-          (data: DocumentType) =>
-            data.visibility === 'PUBLIC' && (
-              <SwiperSlide>
-                <MainSelectCard key={data.docId} data={data} />
-              </SwiperSlide>
-            ),
-        )}
-      </Swiper>
-      <div className="sectionFont">
-        전체 포트폴리오
-        <Link
-          to="/all"
-          style={{
-            textDecoration: 'none',
-            color: colors.gray,
-            fontSize: '20px',
-            lineHeight: '40px',
-            marginLeft: '18px',
+      <div style={{ width: '100%' }}>
+        <div className="sectionFont">인기 포트폴리오</div>
+        <Swiper
+          slidesPerView={4}
+          grid={{
+            rows: 1,
           }}
+          navigation
+          modules={[Grid, Pagination, Navigation]}
         >
-          <h6 style={{ color: colors.gray, lineHeight: '10px' }}>+ 더보기 </h6>
-        </Link>
-      </div>
-      <Swiper
-        slidesPerView={4}
-        grid={{
-          rows: 1,
-        }}
-        navigation
-        modules={[Grid, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {allPortfolio.map(
-          (data: DocumentType) =>
-            data.visibility === 'PUBLIC' && (
-              <SwiperSlide>
-                <MainSelectCard key={data.docId} data={data} />
-              </SwiperSlide>
-            ),
-        )}
-      </Swiper>
-      <div className="sectionFont">
-        구인
-        <Link
-          to="/allPositionpage"
-          style={{
-            textDecoration: 'none',
-            color: colors.gray,
-            fontSize: '20px',
-            lineHeight: '40px',
-            marginLeft: '18px',
+          {mostLikePortfolio.map(
+            (data: DocumentType) =>
+              data.visibility === 'PUBLIC' && (
+                <SwiperSlide className="card">
+                  <MainSelectCard key={data.docId} data={data} />
+                </SwiperSlide>
+              ),
+          )}
+        </Swiper>
+        <div className="sectionFont">
+          전체 포트폴리오
+          <Link
+            to="/all"
+            style={{
+              textDecoration: 'none',
+              color: colors.gray,
+              fontSize: '20px',
+              lineHeight: '40px',
+              marginLeft: '18px',
+            }}
+          >
+            <h6 style={{ color: colors.gray, margin: '0px auto' }}>+ 더보기 </h6>
+          </Link>
+        </div>
+        <Swiper
+          slidesPerView={4}
+          grid={{
+            rows: 1,
           }}
+          navigation
+          modules={[Grid, Pagination, Navigation]}
         >
-          <h6 style={{ color: colors.gray, lineHeight: '10px' }}>+ 더보기 </h6>
-        </Link>
+          {allPortfolio.map(
+            (data: DocumentType) =>
+              data.visibility === 'PUBLIC' && (
+                <SwiperSlide className="card">
+                  <MainSelectCard key={data.docId} data={data} />
+                </SwiperSlide>
+              ),
+          )}
+        </Swiper>
+        <div className="sectionFont">
+          채용 공고
+          <Link
+            to="/allPositionpage"
+            style={{
+              textDecoration: 'none',
+              color: colors.gray,
+              fontSize: '20px',
+              lineHeight: '40px',
+              marginLeft: '18px',
+            }}
+          >
+            <h6 style={{ color: colors.gray, margin: '0px auto' }}>+ 더보기 </h6>
+          </Link>
+        </div>
+        <Swiper
+          slidesPerView={4}
+          grid={{
+            rows: 1,
+          }}
+          navigation
+          modules={[Grid, Pagination, Navigation]}
+        >
+          {allRecruitData.map((data: DocumentType, index: number) => (
+            <SwiperSlide className="card">
+              <CompanySelectCard logo={companyLogo[index]} data={data} key={data.docId} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-      <Swiper
-        slidesPerView={4}
-        grid={{
-          rows: 1,
-        }}
-        navigation
-        modules={[Grid, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {allRecruitData.map((data: DocumentType, index: number) => (
-          <SwiperSlide>
-            <CompanySelectCard logo={companyLogo[index]} data={data} key={data.docId} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
       <br />
       <br />
       <Footer />

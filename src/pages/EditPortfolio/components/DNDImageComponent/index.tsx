@@ -42,8 +42,8 @@ function DNDImageComponent(props: any) {
             <details>
               <summary className="menu">상상부기</summary>
               <ImageList
-                sx={{ width: 280, height: 200, backgroundColor: 'white' }}
-                cols={3}
+                sx={{ width: 175, height: 200, backgroundColor: 'white' }}
+                cols={2}
                 rowHeight={140}
                 className="ImageListIem"
               >
@@ -68,8 +68,8 @@ function DNDImageComponent(props: any) {
             <details>
               <summary className="menu">상상부기 프렌즈</summary>
               <ImageList
-                sx={{ width: 280, height: 200, backgroundColor: 'white' }}
-                cols={3}
+                sx={{ width: 175, height: 200, backgroundColor: 'white' }}
+                cols={2}
                 rowHeight={150}
                 className="ImageListIem"
               >
@@ -92,7 +92,7 @@ function DNDImageComponent(props: any) {
             <br />
             <details>
               <summary className="menu">픽토그램</summary>
-              <ImageList sx={{ width: 280, height: 200, backgroundColor: 'white' }} cols={3} rowHeight={100}>
+              <ImageList sx={{ width: 190, height: 200, backgroundColor: 'white' }} cols={2} rowHeight={100}>
                 {Picktogram.map((item) => (
                   <ImageListItem key={item.label} className="ImageListIem">
                     <div style={{ border: '1px solid lightgray' }} key={item.label}>

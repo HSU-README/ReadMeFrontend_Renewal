@@ -3,8 +3,8 @@ import colors from 'styles/colors';
 
 export const Container = styled.div`
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 75%;
+  width: 80%;
   margin: 50px auto;
   box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
@@ -17,10 +17,11 @@ export const Container = styled.div`
   .pofol-title {
     height: 10%;
     padding: 0px 20px 0px 20px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     color: black;
     text-align: left;
+    line-height: 40px;
   }
 
   .top-info-container {
@@ -33,26 +34,26 @@ export const Container = styled.div`
   }
 
   .docDate {
-    margin-top: 6%;
+    margin-top: 12%;
     margin-bottom: 5%;
-    font-size: 13px;
+    font-size: 14px;
     color: ${colors.gray};
     text-align: left;
   }
 
   .hashtag-container {
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 4%;
     height: 0px;
   }
 
   .bottom-info-container {
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2.5% 20px 20px;
-    margin-top: 10px;
+    padding: 2.5% 20px 0px 20px;
+    margin-top: 4.5%;
     border-top: 1px solid;
     border-color: #f1f3f5;
   }
