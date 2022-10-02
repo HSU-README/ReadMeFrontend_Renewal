@@ -19,24 +19,16 @@ function SelectPortfolio() {
     <Container>
       <Header />
       <div className="sectionFont">양식 선택</div>
-      <div
-        style={{
-          width: '100%',
-          height: '170vh',
-          backgroundColor: 'white',
-        }}
-      >
+      <div className="swiper-container">
         <Swiper
           slidesPerView={3}
           grid={{
             rows: 2,
           }}
-          spaceBetween={40}
           pagination={{
             clickable: true,
           }}
           modules={[Grid, Pagination]}
-          className="mySwiper"
         >
           <SwiperSlide>
             <NewGenerateCard />

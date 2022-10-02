@@ -37,7 +37,7 @@ export default function BasicSelectCard({ data }: { data: DocumentType }) {
   return (
     // TODO link url 변경 필요
     <Container>
-      <Link to={`/preview/${docuemntId}`} style={{ textDecoration: 'none', color: 'black', width: '300px' }}>
+      <Link to={`/preview/${docuemntId}`} style={{ textDecoration: 'none', color: 'black' }}>
         <div className="pofol-thumbnail-container">
           <img
             style={{ width: '100%', height: '100%', objectFit: 'fill' }}
@@ -46,7 +46,6 @@ export default function BasicSelectCard({ data }: { data: DocumentType }) {
             alt="thumbnail"
           />
         </div>
-        <hr style={{ margin: '0px' }} />
         <div className="pofol-title">{docTitle}</div>
         <div className="top-info-container">
           <div className="hashtag-container">

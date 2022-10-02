@@ -1,31 +1,36 @@
 import styled from 'styled-components';
-import colors from 'styles/colors';
 import maxWidth from 'styles/mixin';
 
 const Container = styled.div`
   ${maxWidth}
-  background-color: ${colors.background};
 
   .sectionFont {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 30px;
-    margin-left: 200px;
     font-weight: bold;
     color: black;
     font-size: 40px;
+    margin-left: 16%;
+  }
+
+  .swiper-container {
+    width: 75%;
+    height: 120vh;
+    background-color: white;
+    margin: 0px auto 3% auto;
   }
 
   .swiper {
-    width: 95%;
-    height: 85%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 100%;
   }
 
   .swiper-slide {
-    background-color: ${colors.background};
-    height: calc((100% - 60px) / 2) !important;
+    height: 40%;
+  }
+
+  .swiper-wrapper {
+    width: 80%;
+    height: 120%;
   }
 `;
 
