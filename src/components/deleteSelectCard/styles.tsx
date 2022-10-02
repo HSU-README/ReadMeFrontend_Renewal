@@ -56,7 +56,8 @@ export const Container = styled.div<{ hide: boolean }>`
 
   .hashtag-container {
     display: flex;
-    margin-top: 5%;
+    margin-top: 5.5%;
+    height: 17px;
   }
 
   .bottom-info-container {
