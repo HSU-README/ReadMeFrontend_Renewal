@@ -61,7 +61,6 @@ function CompanyForm() {
         </div>
         <div className="recruitInfoHeaderSection">
           <div className="infoHeader">공고 정보</div>
-          <hr />
         </div>
         <div className="recruitInfoDatas">
           <div className="infoSection">
@@ -97,7 +96,7 @@ function CompanyForm() {
         </div>
         <div className="recruitInfoHeaderSection">
           <div className="ImageHeader">근무 환경</div>
-          <div style={{ display: 'flex', paddingLeft: '2%' }}>
+          <div style={{ display: 'flex', marginBottom: '3%' }}>
             <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
             <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
             <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
@@ -114,12 +113,12 @@ function CompanyForm() {
         style={{
           backgroundColor: '#FF6B6B',
           color: 'white',
+          width: '15%',
           fontSize: '1.5em',
           fontWeight: '700',
           borderRadius: '20px',
-          marginLeft: '40%',
+          marginLeft: '42.5%',
           marginBottom: '3%',
-          width: '15%',
         }}
       >
         신청하기

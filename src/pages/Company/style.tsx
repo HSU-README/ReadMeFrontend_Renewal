@@ -4,17 +4,18 @@ const Container = styled.div`
   width: 100%;
   text-align: left;
   hr {
-    border 0.7px solid #B3B3B3;
+    border: 0.7px solid #b3b3b3;
   }
   form {
     width: 60%;
     height: 90vh;
-    box-shadow: 10px 5px 5px #D3D3D3;
-    margin: 3% auto 3% auto;
+    box-shadow: 3px 3px 6px 6px rgb(0 0 0 / 10%);
+    margin: 5% auto 5% auto;
     padding-top: 2%;
     padding-right: 2rem;
     padding-bottom: 2%;
     shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    overflow: auto;
   }
   .nameSection {
     font-size: 2rem;
@@ -22,18 +23,17 @@ const Container = styled.div`
   }
   .name {
     font-weight: 800;
-    padding-left: 2%;
   }
   .recruitInfoHeaderSection {
-    padding: 0% 5% 3% 5%;
+    padding: 0% 5% 1% 5%;
     margin-top: 1%;
   }
-  .infoHeader{
+  .infoHeader {
     font-size: 1.2em;
     font-weight: 800;
-    padding-left: 2%;
+    margin-top: 2%;
   }
-  .recruitInfoDatas{
+  .recruitInfoDatas {
     display: grid;
     height: 200px;
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
@@ -52,7 +52,6 @@ const Container = styled.div`
     padding: 1.5% 3% 1.5% 3%;
     margin-right: 10%;
     font-size: 1rem;
-    
   }
   .icon {
     width: 6%;
@@ -60,7 +59,7 @@ const Container = styled.div`
   }
   .sectionName {
     margin: 1% 3% 1% 3%;
-    color:#838383;
+    color: #838383;
   }
   .infoData {
     margin-top: 1%;
@@ -72,26 +71,25 @@ const Container = styled.div`
     grid-column: 1/3;
     padding-left: 1%;
     margin-left: 5%;
-    margin-right:5%;
+    margin-right: 5%;
   }
   .stackAndLinkSectionIcon {
-    width:4%;
+    width: 4%;
     height: 80%;
   }
   .stackAndLinkSectionName {
     margin: 1% 3% 1% 0.9%;
-    color:#838383;
+    color: #838383;
   }
   .companyImg {
     width: 24.5%;
     height: 145px;
     margin-right: 1%;
   }
-  .recruitInfoHeaderSection > .ImageHeader{
+  .recruitInfoHeaderSection > .ImageHeader {
     font-size: 1.2em;
     font-weight: 800;
-    padding-left: 2%;
-    margin-top: 7.5%;
+    margin-top: 9%;
     margin-bottom: 1%;
   }
 `;
