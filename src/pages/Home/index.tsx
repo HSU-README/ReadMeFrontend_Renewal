@@ -136,7 +136,7 @@ function Home() {
           )}
         </Swiper>
         <div className="sectionFont">
-          구인
+          채용 공고
           <Link
             to="/allPositionpage"
             style={{
@@ -147,7 +147,7 @@ function Home() {
               marginLeft: '18px',
             }}
           >
-            <h6 style={{ color: colors.gray, lineHeight: '10px' }}>+ 더보기 </h6>
+            <h6 style={{ color: colors.gray, margin: '0px auto' }}>+ 더보기 </h6>
           </Link>
         </div>
         <Swiper
