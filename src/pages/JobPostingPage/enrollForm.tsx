@@ -118,7 +118,6 @@ function EnrollForm() {
 
   return (
     <>
-      <div style={{ marginLeft: '43%', fontSize: '2em', marginTop: '2%', fontWeight: '800' }}>채용공고 등록</div>
       <Container>
         <form>
           <div className="section">

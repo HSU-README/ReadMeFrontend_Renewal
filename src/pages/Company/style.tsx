@@ -9,13 +9,12 @@ const Container = styled.div`
   form {
     width: 60%;
     height: 90vh;
-    overflow: scroll;
+    box-shadow: 10px 5px 5px #D3D3D3;
     margin: 3% auto 3% auto;
-    border: 1px solid black;
     padding-top: 2%;
     padding-right: 2rem;
-    border-radius: 20px;
     padding-bottom: 2%;
+    shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   }
   .nameSection {
     font-size: 2rem;
@@ -84,15 +83,15 @@ const Container = styled.div`
     color:#838383;
   }
   .companyImg {
-    width: 22%;
-    border: 1px solid black;
-    margin-right: 2%;
+    width: 245px;
+    height: 185px;
+    margin-right: 1%;
   }
   .recruitInfoHeaderSection > .ImageHeader{
     font-size: 1.2em;
     font-weight: 800;
     padding-left: 2%;
-    margin-top: 5%;
+    margin-top: 7.5%;
     margin-bottom: 1%;
   }
 `;

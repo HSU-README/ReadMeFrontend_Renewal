@@ -8,10 +8,11 @@ import CompanyIcon from '../../assets/icons/recruitPageIcons/company.png';
 import WonSolidIcon from '../../assets/icons/recruitPageIcons/won_solid.png';
 import RegionIcon from '../../assets/icons/recruitPageIcons/location_company.png';
 import LinkIcon from '../../assets/icons/recruitPageIcons/link.png';
+import DummyCompany from '../../assets/images/companyDefault/Pangyo.jpg';
 
 function CompanyForm() {
   const [companyName, setCompanyName] = useState(''); // 회사명
-  // const [contents, setContents] = useState(''); // 업무 내용
+  const [contents, setContents] = useState(''); // 업무 내용
   const [tech, setTech] = useState(''); // 기술 스텍
   const [companyURL, setCompanyURL] = useState(''); // 회사 URL
   const [salary, setSalary] = useState(''); // 연봉
@@ -22,7 +23,7 @@ function CompanyForm() {
   // const navigate = useNavigate();
   const setFunction = (d: any): void => {
     setCompanyName(d.companyName);
-    // setContents(d.content);
+    setContents(d.content);
     setTech(d.skillStack);
     setSalary(d.salary);
     setRegion(d.region);
@@ -76,7 +77,7 @@ function CompanyForm() {
           <div className="infoSection">
             <img className="icon" src={WonSolidIcon} alt="고용 형태" />
             <div className="sectionName">연봉</div>
-            <div className="infoData">{salary}</div>
+            <div className="infoData">{salary} 만원</div>
           </div>
           <div className="infoSectionRight">
             <img className="icon" src={RegionIcon} alt="고용 형태" />
@@ -95,39 +96,17 @@ function CompanyForm() {
           </div>
         </div>
         <div className="recruitInfoHeaderSection">
-          <div className="ImageHeader">공고 정보</div>
-          <div style={{ display: 'flex' }}>
-            <img className="companyImg" src={LinkIcon} alt="기업 이미지" />
-            <img className="companyImg" src={LinkIcon} alt="기업 이미지" />
-            <img className="companyImg" src={LinkIcon} alt="기업 이미지" />
-            <img className="companyImg" src={LinkIcon} alt="기업 이미지" />
+          <div className="ImageHeader">근무 환경</div>
+          <div style={{ display: 'flex', paddingLeft: '2%' }}>
+            <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
+            <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
+            <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
+            <img className="companyImg" src={DummyCompany} alt="기업 이미지" />
           </div>
         </div>
         <div className="recruitInfoHeaderSection">
           <div className="infoHeader">업무 소개</div>
-          <div style={{ border: '1px solid black', paddingLeft: '2%', marginTop: '1%', overflow: 'scroll' }}>
-            업무 내용이
-            들어갑니다아아아아아아아아아ㅏ아아ㅏ아아아아아아ㅏ아ㅏ아아아아아ㅏ아아아아아아아ㅏ아아아아아아ㅏ아아아아아아
-            만약 업무 내용이 길다면 스크롤바가 생겨서 표현하는 것이 좋다고 봄. 내용의 디테일 폼에서만 스크롤 바가 생기게
-            부탁합니다 ㅠㅠㅠ ㄳㄳ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴ 업무 내용이
-            들어갑니다아아아아아아아아아ㅏ아아ㅏ아아아아아아ㅏ아ㅏ아아아아아ㅏ아아아아아아아ㅏ아아아아아아ㅏ아아아아아아
-            만약 업무 내용이 길다면 스크롤바가 생겨서 표현하는 것이 좋다고 봄. 내용의 디테일 폼에서만 스크롤 바가 생기게
-            부탁합니다 ㅠㅠㅠ ㄳㄳ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴ 업무 내용이
-            들어갑니다아아아아아아아아아ㅏ아아ㅏ아아아아아아ㅏ아ㅏ아아아아아ㅏ아아아아아아아ㅏ아아아아아아ㅏ아아아아아아
-            만약 업무 내용이 길다면 스크롤바가 생겨서 표현하는 것이 좋다고 봄. 내용의 디테일 폼에서만 스크롤 바가 생기게
-            부탁합니다 ㅠㅠㅠ ㄳㄳ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴ 업무 내용이
-            들어갑니다아아아아아아아아아ㅏ아아ㅏ아아아아아아ㅏ아ㅏ아아아아아ㅏ아아아아아아아ㅏ아아아아아아ㅏ아아아아아아
-            만약 업무 내용이 길다면 스크롤바가 생겨서 표현하는 것이 좋다고 봄. 내용의 디테일 폼에서만 스크롤 바가 생기게
-            부탁합니다 ㅠㅠㅠ ㄳㄳ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇ ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇ
-            ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴ
-          </div>
+          <div style={{ paddingLeft: '2%', marginTop: '1%', wordBreak: 'break-all' }}>{contents}</div>
         </div>
       </form>
       <Button

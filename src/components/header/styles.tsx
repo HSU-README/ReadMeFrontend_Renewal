@@ -3,7 +3,7 @@ import maxWidth from 'styles/mixin';
 import colors from 'styles/colors';
 
 export const headerFont = {
-  fontSize: '24px',
+  fontSize: '20px',
   fontWeight: '700',
   color: 'white',
   cursor: 'pointer',
@@ -49,8 +49,8 @@ export const Container = styled.div`
 `;
 
 export const MyPage = styled.div<{ bgImg: string }>`
-  width: 35px;
-  height: 35px;
+  width: 42px;
+  height: 42px;
   border: 1px solid;
   border-color: white;
   border-radius: 50px;

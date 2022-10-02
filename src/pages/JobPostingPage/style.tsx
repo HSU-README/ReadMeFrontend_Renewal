@@ -9,13 +9,11 @@ const Container = styled.div`
   form {
     width: 60%;
     height: 90vh;
-    overflow: scroll;
     margin: 3% auto 3% auto;
-    border: 1px solid black;
     padding-top: 2%;
     padding-right: 2%;
-    border-radius: 20px;
     padding-bottom: 2%;
+    box-shadow: 10px 5px 5px #D3D3D3;
   }
   .section {
     margin-bottom: 5%;
