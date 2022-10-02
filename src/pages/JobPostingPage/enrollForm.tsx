@@ -67,12 +67,11 @@ function EnrollForm() {
     return true;
   };
 
-  const captureToFirebase = async () => {
-    console.log(`test:${imagesState}`);
-    const urlArray = new Array(4).fill(
-      'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2',
-    );
+  const urlArray = new Array(4).fill(
+    'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2',
+  );
 
+  const captureToFirebase = async () => {
     imagesState.map(async (imageName, index) => {
       if (imageName !== undefined) {
         const storageRef = ref(storage, imageName.name);
@@ -105,12 +104,22 @@ function EnrollForm() {
       if (chk) {
         const docUrl = await captureToFirebase();
         console.log(docUrl);
-        employmentNotification(companyName, contents, tech, duty, location, career, companyURL, salary).then(() => {
+        employmentNotification(
+          companyName,
+          contents,
+          tech,
+          duty,
+          location,
+          career,
+          companyURL,
+          salary,
+          urlArray[0],
+        ).then(() => {
           navigate('/');
         });
       }
     },
-    [contents, tech, career, salary, duty, location, companyURL, imagesState],
+    [companyName, contents, tech, career, salary, duty, location, companyURL, imagesState],
   );
 
   return (

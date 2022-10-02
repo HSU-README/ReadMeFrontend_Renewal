@@ -9,6 +9,7 @@ export type RecruitmentType = {
   division: string;
   applyLink: string;
   salary: string;
+  firebaseUrl: String;
 };
 
 // 태그 타입
