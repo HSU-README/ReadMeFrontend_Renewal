@@ -230,7 +230,7 @@ function EnrollForm() {
           fontSize: '1.5em',
           fontWeight: '700',
           borderRadius: '20px',
-          marginLeft: '40%',
+          marginLeft: '42.5%',
           marginBottom: '3%',
         }}
         onClick={postSubmit}

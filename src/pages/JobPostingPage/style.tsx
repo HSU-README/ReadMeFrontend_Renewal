@@ -3,17 +3,14 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   text-align: left;
-  hr {
-    border 0.7px solid #B3B3B3;
-  }
   form {
     width: 60%;
     height: 90vh;
-    margin: 3% auto 3% auto;
+    margin: 5% auto 5% auto;
     padding-top: 2%;
     padding-right: 2%;
     padding-bottom: 2%;
-    box-shadow: 10px 5px 5px #D3D3D3;
+    box-shadow: 3px 3px 6px 6px rgb(0 0 0 / 10%);
   }
   .section {
     margin-bottom: 5%;
@@ -33,7 +30,7 @@ const Container = styled.div`
     padding-left: 1%;
     border-radius: 15px;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid #c4c4c4;
   }
   .inputURL {
     width: 60%;
@@ -43,7 +40,7 @@ const Container = styled.div`
     margin-right: 2%;
     border-radius: 15px;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid #c4c4c4;
   }
   .menuItems {
     width: fit-content;
@@ -52,12 +49,11 @@ const Container = styled.div`
     padding-right: 2%;
     border-radius: 15px;
     background-color: white;
-    border: 1px solid black;
   }
   .linkSectionName {
     font-size: 1.2em;
     font-weight: 700;
-    margin-left:2%;
+    margin-left: 2%;
   }
   .urlAndSalarySection {
     margin-left: 4%;
@@ -85,7 +81,7 @@ export const ImageBox = styled.section<ImageBoxProps>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px dotted black;
+    border: 2px dotted #c4c4c4;
     border-radius: 20px;
     width: 100%;
     height: 20vh;
