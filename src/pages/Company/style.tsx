@@ -83,8 +83,8 @@ const Container = styled.div`
     color:#838383;
   }
   .companyImg {
-    width: 245px;
-    height: 185px;
+    width: 24.5%;
+    height: 145px;
     margin-right: 1%;
   }
   .recruitInfoHeaderSection > .ImageHeader{
