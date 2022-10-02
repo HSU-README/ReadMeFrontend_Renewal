@@ -41,7 +41,7 @@ export const Container = styled.div<{ hide: boolean }>`
   .recruitment-content {
     height: 10%;
     padding: 4% 20px 0px 20px;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 700;
     color: black;
     text-align: left;
