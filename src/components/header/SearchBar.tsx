@@ -41,7 +41,7 @@ function Searchbar() {
         placeholder={placeHolder}
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            document.location.href = `search?where=${searchText}`;
+            document.location.href = `https://hsureadme.herokuapp.com/api/v1/doc/search?where=${searchText}`;
           }
         }}
         value={searchText}
