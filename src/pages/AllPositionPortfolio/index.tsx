@@ -3,14 +3,13 @@ import { Container } from 'pages/AllPositionPortfolio/styles';
 import CompanySelectCard from 'components/companySelectCard';
 import { getAllPortfolio } from 'apis/portfolioApi';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import Header from 'components/header';
 import Footer from 'components/footer';
 import { getAllRecruitment } from '../../apis/companyApi';
-import './styles.css';
 import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
 import DevLogo from '../../assets/images/companyDefault/devImg.gif';
 import HackingLogo from '../../assets/images/companyDefault/hacking.jpg';
@@ -48,158 +47,91 @@ function AllPositionPortfolio() {
     fetchAllrecruitData();
   }, []);
 
-  if (userLikePortfolio.length === 0) {
-    return (
-      <Container>
-        <Header />
-        <div style={{ fontSize: '40px', margin: '220px 400px' }}>
-          <img
-            src={require('assets/icons/not_found_icon.png')}
-            style={{ width: '507px', height: '301px' }}
-            alt="not_found"
-          />
-          <br />
-          <strong>찾으시는 채용공고가 없습니다.</strong>
-        </div>
-        <Footer />
-      </Container>
-    );
-  }
-
   return (
-    // swiper 익숙치 않아서 막 쓴 부분이 있음 보고 수정 부탁요.
-    <Container>
+    <>
       <Header />
-      <div className="titleFont">전체 구인 포지션</div>
-      <div className="subFont">영업 / 기획</div>
-      <div className="swiperSection">
-        <Swiper
-          slidesPerView={4}
-          breakpoints={{
-            // when window width is >= 640px
-            640: {
-              width: 640,
-              slidesPerView: 1,
-            },
-            // when window width is >= 768px
-            768: {
-              width: 768,
-              slidesPerView: 2,
-            },
-          }}
-          grid={{
-            rows: userLikePortfolio.length < 4 ? 1 : 1,
-          }}
-          modules={[FreeMode, Pagination, Navigation]}
-        >
-          {recuitDatas.map(
-            (data: recruitTypes) =>
-              data.jobOpening === '영업/기획' && (
-                <SwiperSlide>
-                  <CompanySelectCard logo={companyLogo[idx1++]} data={data} key={data.id} />
-                </SwiperSlide>
-              ),
-          )}
-        </Swiper>
-      </div>
-      <div className="subFont">개발</div>
-      <div className="swiperSection">
-        <Swiper
-          slidesPerView={4}
-          breakpoints={{
-            // when window width is >= 640px
-            640: {
-              width: 640,
-              slidesPerView: 1,
-            },
-            // when window width is >= 768px
-            768: {
-              width: 768,
-              slidesPerView: 2,
-            },
-          }}
-          grid={{
-            rows: userLikePortfolio.length < 4 ? 1 : 1,
-          }}
-          modules={[FreeMode, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {recuitDatas.map(
-            (data: recruitTypes) =>
-              data.jobOpening === '개발' && (
-                <SwiperSlide>
-                  <CompanySelectCard logo={companyLogo[idx2++]} data={data} key={data.id} />
-                </SwiperSlide>
-              ),
-          )}
-        </Swiper>
-      </div>
-      <div className="subFont">디자인</div>
-      <div className="swiperSection">
-        <Swiper
-          slidesPerView={4}
-          breakpoints={{
-            // when window width is >= 640px
-            640: {
-              width: 640,
-              slidesPerView: 1,
-            },
-            // when window width is >= 768px
-            768: {
-              width: 768,
-              slidesPerView: 2,
-            },
-          }}
-          grid={{
-            rows: userLikePortfolio.length < 4 ? 1 : 1,
-          }}
-          modules={[FreeMode, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {recuitDatas.map(
-            (data: recruitTypes) =>
-              data.jobOpening === '디자인' && (
-                <SwiperSlide>
-                  <CompanySelectCard logo={companyLogo[idx3++]} data={data} key={data.id} />
-                </SwiperSlide>
-              ),
-          )}
-        </Swiper>
-      </div>
-      <div className="subFont">인턴 / 계약직</div>
-      <div className="swiperSection">
-        <Swiper
-          slidesPerView={4}
-          breakpoints={{
-            // when window width is >= 640px
-            640: {
-              width: 640,
-              slidesPerView: 1,
-            },
-            // when window width is >= 768px
-            768: {
-              width: 768,
-              slidesPerView: 2,
-            },
-          }}
-          grid={{
-            rows: userLikePortfolio.length < 4 ? 1 : 1,
-          }}
-          modules={[FreeMode, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {recuitDatas.map(
-            (data: recruitTypes) =>
-              data.jobOpening === '인턴/계약직' && (
-                <SwiperSlide>
-                  <CompanySelectCard logo={companyLogo[idx4++]} data={data} key={data.id} />
-                </SwiperSlide>
-              ),
-          )}
-        </Swiper>
-      </div>
+      <Container>
+        <div className="titleFont">전체 구인 포지션</div>
+
+        <div className="subFont">개발</div>
+        <div className="swiperSection">
+          <Swiper
+            slidesPerView={5}
+            grid={{
+              rows: userLikePortfolio.length < 4 ? 1 : 1,
+            }}
+            modules={[Pagination, Navigation]}
+          >
+            {recuitDatas.map(
+              (data: recruitTypes) =>
+                data.jobOpening === '개발' && (
+                  <SwiperSlide>
+                    <CompanySelectCard logo={companyLogo[idx2++]} data={data} key={data.id} />
+                  </SwiperSlide>
+                ),
+            )}
+          </Swiper>
+        </div>
+        <div className="subFont">영업 / 기획</div>
+        <div className="swiperSection">
+          <Swiper
+            slidesPerView={5}
+            grid={{
+              rows: 1,
+            }}
+            modules={[Pagination, Navigation]}
+          >
+            {recuitDatas.map(
+              (data: recruitTypes) =>
+                data.jobOpening === '영업/기획' && (
+                  <SwiperSlide>
+                    <CompanySelectCard logo={companyLogo[idx1++]} data={data} key={data.id} />
+                  </SwiperSlide>
+                ),
+            )}
+          </Swiper>
+        </div>
+        <div className="subFont">디자인</div>
+        <div className="swiperSection">
+          <Swiper
+            slidesPerView={5}
+            grid={{
+              rows: userLikePortfolio.length < 4 ? 1 : 1,
+            }}
+            modules={[Pagination, Navigation]}
+          >
+            {recuitDatas.map(
+              (data: recruitTypes) =>
+                data.jobOpening === '디자인' && (
+                  <SwiperSlide>
+                    <CompanySelectCard logo={companyLogo[idx3++]} data={data} key={data.id} />
+                  </SwiperSlide>
+                ),
+            )}
+          </Swiper>
+        </div>
+        <div className="subFont">인턴 / 계약직</div>
+        <div className="swiperSection">
+          <Swiper
+            slidesPerView={5}
+            grid={{
+              rows: userLikePortfolio.length < 4 ? 1 : 1,
+            }}
+            modules={[Pagination, Navigation]}
+          >
+            {recuitDatas.map(
+              (data: recruitTypes) =>
+                data.jobOpening === '인턴/계약직' && (
+                  <SwiperSlide>
+                    <CompanySelectCard logo={companyLogo[idx4++]} data={data} key={data.id} />
+                  </SwiperSlide>
+                ),
+            )}
+          </Swiper>
+        </div>
+      </Container>
       <Footer />
-    </Container>
+    </>
   );
 }
 

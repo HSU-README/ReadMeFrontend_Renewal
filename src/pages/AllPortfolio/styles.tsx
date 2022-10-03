@@ -4,6 +4,7 @@ import maxWidth from 'styles/mixin';
 
 export const Container = styled.div`
   ${maxWidth}
+  height: 78vh;
   background-color: white;
 
   .sectionFont {
@@ -18,43 +19,43 @@ export const Container = styled.div`
   }
 
   .titleAllFont {
-    text-align: center;
-    font-size: 48px;
-    font-weight: 800;
-    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    font-size: 40px;
+    margin: 3.5% auto 0px auto;
   }
 
   .swiper {
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: white;
-    height: calc((100% - 50px) / 2) !important;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    height: 45vh;
   }
 
-  .swiper-slide img {
-    display: block;
+  .swiper-wrapper {
+    margin-top: 3%;
+  }
+
+  .swiper-pagination {
+    margin-bottom: 11%;
+  }
+
+  .notFound {
     width: 100%;
+    height: 65vh;
+    text-align: center;
+    padding-top: 8%;
+  }
+  .notFoundIcon {
+    width: 30%;
+  }
+  .notFoundText {
+    font-size: 30px;
+    font-weight: 600;
   }
 `;
 

@@ -41,7 +41,7 @@ function Searchbar() {
         placeholder={placeHolder}
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            document.location.href = `https://readme-pro.netlify.app/search?where=${searchText}`;
+            document.location.href = `/search?where=${searchText}`;
           }
         }}
         value={searchText}

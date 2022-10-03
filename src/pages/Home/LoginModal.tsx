@@ -5,7 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
-import './styles.css';
+import { ModalContainer } from './styles';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -13,6 +13,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
+
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -31,29 +32,28 @@ function LoginModal({ showLoginModal, setShowLoginModal }: loginModalProps): Rea
     setShowLoginModal(false);
   };
   return (
-    <div>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={showLoginModal}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={showLoginModal}>
-          <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              로그인 후 이용 가능한 서비스입니다.
-            </Typography>
-            <NavLink to="/login" className="confirmBtn" onClick={handleClose}>
-              확인
-            </NavLink>
-          </Box>
-        </Fade>
-      </Modal>
-    </div>
+    <ModalContainer>
+      <NavLink to="/login" className="confirmBtn" onClick={handleClose}>
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          open={showLoginModal}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={showLoginModal}>
+            <Box sx={style}>
+              <Typography id="transition-modal-title" variant="h6" component="h2">
+                로그인 후 이용 가능한 서비스입니다.
+              </Typography>
+            </Box>
+          </Fade>
+        </Modal>
+      </NavLink>
+    </ModalContainer>
   );
 }
 export default LoginModal;

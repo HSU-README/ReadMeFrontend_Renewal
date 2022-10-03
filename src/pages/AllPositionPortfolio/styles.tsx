@@ -4,6 +4,7 @@ import maxWidth from 'styles/mixin';
 
 export const Container = styled.div`
   ${maxWidth}
+  height: 100%;
 
   .sectionFont {
     display: flex;
@@ -13,41 +14,39 @@ export const Container = styled.div`
   .swiper {
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    bottom: 8vh;
   }
 
   .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    height: calc((100% - 50px) / 2) !important;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    height: 48vh;
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
+  .swiper-wrapper {
+    margin-top: 3%;
+  }
+
+  .swiper-pagination {
+    margin-bottom: 11%;
   }
 
   .swiperSection {
-    width: 85%;
-    height: fit-content;
-    margin: 2% 5% 5% 5%;
+    width: 100%;
+  }
+
+  .titleFont {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    font-size: 40px;
+    margin: 3.5% auto 5% auto;
+  }
+
+  .subFont {
+    text-align: left;
+    margin-left: 2%;
+    font-size: 2rem;
+    font-weight: 600;
   }
 `;
 

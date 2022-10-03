@@ -16,13 +16,13 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import 'react-toastify/dist/ReactToastify.css';
-import './styles.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
 import DevLogo from '../../assets/images/companyDefault/devImg.gif';
 import HackingLogo from '../../assets/images/companyDefault/hacking.jpg';
 import CodingLogo from '../../assets/images/companyDefault/coding.gif';
+import { Container } from './styles';
 
 const companyLogo = [PangyoLogo, DevLogo, HackingLogo, CodingLogo];
 function Home() {
@@ -58,7 +58,7 @@ function Home() {
     fetchAllrecruitData();
   }, []);
   return (
-    <div style={{ position: 'relative', backgroundColor: 'white' }}>
+    <Container style={{ position: 'relative', backgroundColor: 'white' }}>
       {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} />}
       <Header />
       <Banner />
@@ -168,7 +168,7 @@ function Home() {
       <br />
       <br />
       <Footer />
-    </div>
+    </Container>
   );
 }
 export default Home;
