@@ -10,9 +10,7 @@ import Header from 'components/header';
 import { DocumentType } from '../../types/document';
 import { getSearchPortfolio } from '../../apis/portfolioApi';
 import notFoundIcon from '../../assets/icons/not_found_icon.png';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './index.css';
+import Container from './styles.';
 
 function SearchPage() {
   const [searchPortfolio, setSearchPortfolio] = useState<DocumentType[]>([]);
@@ -28,20 +26,13 @@ function SearchPage() {
   }, []);
 
   return (
-    <div className="cardView">
+    <>
       <Header />
-      <div
-        style={{
-          height: '100vh',
-          padding: searchPortfolio.length < 8 ? '10%' : '0%',
-        }}
-      >
+      <Container>
+        <div className="title">&apos;{new URLSearchParams(window.location.search).get('where')}&apos; 검색 결과</div>
         {searchPortfolio.length !== 0 ? (
           <Swiper
             slidesPerView={4}
-            grid={{
-              rows: searchPortfolio.length < 8 ? 1 : 2,
-            }}
             navigation
             spaceBetween={40}
             pagination={{
@@ -65,9 +56,9 @@ function SearchPage() {
             <div className="notFoundText">찾으시는 문서가 없어요!</div>
           </div>
         )}
-      </div>
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 }
 
