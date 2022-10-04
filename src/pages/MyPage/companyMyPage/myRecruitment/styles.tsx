@@ -13,7 +13,6 @@ export const Container = styled.div`
 
   .swiper-slide {
     height: 40%;
-    margin-left: 34px;
   }
 
   .swiper-wrapper {

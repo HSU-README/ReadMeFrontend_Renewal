@@ -33,7 +33,7 @@ const Container = styled.div`
 
   /* 채용공고 명 */
   .title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
   }
 
@@ -41,7 +41,7 @@ const Container = styled.div`
   .hashTags {
     font-size: 0.9rem;
     color: gray;
-    margin: 3% auto 0%;
+    margin: 3.5% auto 0%;
   }
 `;
 export default Container;
