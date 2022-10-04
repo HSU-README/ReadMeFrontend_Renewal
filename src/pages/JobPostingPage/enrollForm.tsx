@@ -1,9 +1,10 @@
+/* eslint-disable consistent-return */
 import React, { useState, useCallback, SetStateAction, Dispatch, useEffect } from 'react';
 import { recruitmentImagesState } from 'recoil/atoms';
 import { Button, Input } from '@mui/material';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Container from './style';
 import SelectOption, { MenuItemType } from './Select';
@@ -47,8 +48,9 @@ function EnrollForm() {
   const [techError, setTechError] = useState(true);
   const [salaryError, setSalaryError] = useState(true);
   const [companyURLError, setCompanyURLError] = useState(true);
+  const [photoUrl, setPhotoURL] = useState('');
   const [imagesState] = useRecoilState<any[]>(recruitmentImagesState);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     console.log(imagesState);
@@ -67,22 +69,20 @@ function EnrollForm() {
     return true;
   };
 
-  const urlArray = new Array(4).fill(
-    'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2',
-  );
+  // const urlArray = new Array(4).fill(
+  //   'https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/thumnail.png?alt=media&token=ce69dedd-6098-44aa-aba5-202383541bc2',
+  // );
 
   const captureToFirebase = async () => {
-    imagesState.map(async (imageName, index) => {
-      if (imageName !== undefined) {
-        const storageRef = ref(storage, imageName.name);
-        // upload the file
-        const uploadTask = await uploadBytesResumable(storageRef, imageName);
-        const url = await getDownloadURL(uploadTask.ref);
-        console.log(url);
-        urlArray[index] = url;
-      }
-    });
-    return urlArray;
+    const imageName = imagesState[0];
+    if (imageName !== undefined) {
+      const storageRef = ref(storage, imageName.name);
+      // upload the file
+      const uploadTask = await uploadBytesResumable(storageRef, imageName);
+      const URL = await getDownloadURL(uploadTask.ref);
+      setPhotoURL(URL);
+      return URL;
+    }
   };
 
   const postSubmit = useCallback(
@@ -98,25 +98,34 @@ function EnrollForm() {
       if (!validation(companyURL, setCompanyURLError)) {
         chk = false;
       }
-      if (!validation(salary, setSalaryError)) {
+      if (!validation(salary, setSalaryError) || !Number.isNaN(salary)) {
         chk = false;
       }
       if (chk) {
-        const docUrl = await captureToFirebase();
-        console.log(docUrl);
-        employmentNotification(
-          companyName,
-          contents,
-          tech,
-          duty,
-          location,
-          career,
-          companyURL,
-          salary,
-          urlArray[0],
-        ).then(() => {
-          navigate('/');
-        });
+        const result = await captureToFirebase();
+        try {
+          console.log(`photoUrl ${photoUrl}`);
+          console.log(`result ${result}`);
+          if (result !== undefined) {
+            console.log(result);
+            employmentNotification(
+              companyName,
+              contents,
+              tech,
+              duty,
+              location,
+              career,
+              companyURL,
+              salary,
+              result,
+            ).then(() => {
+              // navigate('/');
+            });
+          }
+        } catch (error) {
+          console.log('here');
+          console.error(error);
+        }
       }
     },
     [companyName, contents, tech, career, salary, duty, location, companyURL, imagesState],

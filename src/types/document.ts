@@ -13,6 +13,18 @@ export type DocumentType = {
   designerUrl: string;
 };
 
+export type RecruitType = {
+  companyName: string;
+  content: string;
+  skillStack: string[];
+  jobOpening: string;
+  region: string;
+  division: string;
+  applyLink: string;
+  salary: Number;
+  firebaseUrl: string;
+};
+
 // 태그 타입
 export type TagType = {
   name: string;

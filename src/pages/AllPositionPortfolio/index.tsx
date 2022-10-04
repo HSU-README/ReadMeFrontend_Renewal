@@ -10,30 +10,11 @@ import 'swiper/css/pagination';
 import Header from 'components/header';
 import Footer from 'components/footer';
 import { getAllRecruitment } from '../../apis/companyApi';
-import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
-import DevLogo from '../../assets/images/companyDefault/devImg.gif';
-import HackingLogo from '../../assets/images/companyDefault/hacking.jpg';
-import CodingLogo from '../../assets/images/companyDefault/coding.gif';
-
-const companyLogo = [PangyoLogo, DevLogo, HackingLogo, CodingLogo];
-
-type recruitTypes = {
-  id: number;
-  companyName: string;
-  content: string;
-  skillStack: string;
-  jobOpening: string;
-  region: string;
-  salary: string;
-};
+import { RecruitType } from '../../types/document';
 
 function AllPositionPortfolio() {
   const [userLikePortfolio, setUserLikePortfolio] = useState([]);
-  const [recuitDatas, setRecruitDatas] = useState<recruitTypes[]>([]);
-  let idx1 = 0;
-  let idx2 = 0;
-  let idx3 = 0;
-  let idx4 = 0;
+  const [recuitDatas, setRecruitDatas] = useState<RecruitType[]>([]);
   useEffect(() => {
     async function fetchUserLikePortfolioData() {
       const datas = await getAllPortfolio();
@@ -63,10 +44,10 @@ function AllPositionPortfolio() {
             modules={[Pagination, Navigation]}
           >
             {recuitDatas.map(
-              (data: recruitTypes) =>
+              (data: RecruitType) =>
                 data.jobOpening === '개발' && (
                   <SwiperSlide>
-                    <CompanySelectCard logo={companyLogo[idx2++]} data={data} key={data.id} />
+                    <CompanySelectCard logo={data.firebaseUrl} data={data} key={data.companyName} />
                   </SwiperSlide>
                 ),
             )}
@@ -82,10 +63,10 @@ function AllPositionPortfolio() {
             modules={[Pagination, Navigation]}
           >
             {recuitDatas.map(
-              (data: recruitTypes) =>
+              (data: RecruitType) =>
                 data.jobOpening === '영업/기획' && (
                   <SwiperSlide>
-                    <CompanySelectCard logo={companyLogo[idx1++]} data={data} key={data.id} />
+                    <CompanySelectCard logo={data.firebaseUrl} data={data} key={data.companyName} />
                   </SwiperSlide>
                 ),
             )}
@@ -101,10 +82,10 @@ function AllPositionPortfolio() {
             modules={[Pagination, Navigation]}
           >
             {recuitDatas.map(
-              (data: recruitTypes) =>
+              (data: RecruitType) =>
                 data.jobOpening === '디자인' && (
                   <SwiperSlide>
-                    <CompanySelectCard logo={companyLogo[idx3++]} data={data} key={data.id} />
+                    <CompanySelectCard logo={data.firebaseUrl} data={data} key={data.companyName} />
                   </SwiperSlide>
                 ),
             )}
@@ -120,10 +101,10 @@ function AllPositionPortfolio() {
             modules={[Pagination, Navigation]}
           >
             {recuitDatas.map(
-              (data: recruitTypes) =>
+              (data: RecruitType) =>
                 data.jobOpening === '인턴/계약직' && (
                   <SwiperSlide>
-                    <CompanySelectCard logo={companyLogo[idx4++]} data={data} key={data.id} />
+                    <CompanySelectCard logo={data.firebaseUrl} data={data} key={data.companyName} />
                   </SwiperSlide>
                 ),
             )}
