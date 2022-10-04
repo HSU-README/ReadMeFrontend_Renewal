@@ -6,7 +6,7 @@ import CompanySelectCard from 'components/companySelectCard';
 import Footer from 'components/footer';
 import { getMostLikePortfolio, getAllPortfolio, getMajorPortfolio } from 'apis/portfolioApi';
 import { getAllRecruitment } from 'apis/companyApi';
-import { DocumentType } from 'types/document';
+import { DocumentType, RecruitType } from 'types/document';
 import Banner from 'pages/Home/banner/Banner';
 import Header from 'components/header';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,13 +18,8 @@ import 'swiper/css/pagination';
 import 'react-toastify/dist/ReactToastify.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import PangyoLogo from '../../assets/images/companyDefault/Pangyo.jpg';
-import DevLogo from '../../assets/images/companyDefault/devImg.gif';
-import HackingLogo from '../../assets/images/companyDefault/hacking.jpg';
-import CodingLogo from '../../assets/images/companyDefault/coding.gif';
 import { Container } from './styles';
 
-const companyLogo = [PangyoLogo, DevLogo, HackingLogo, CodingLogo];
 function Home() {
   const [mostLikePortfolio, setMostLikePortfolio] = useState([]);
   const [allPortfolio, setAllPortfolio] = useState([]);
@@ -50,7 +45,7 @@ function Home() {
     }
     async function fetchAllrecruitData() {
       const recruitDatas = await getAllRecruitment();
-      setAllRecruitData(recruitDatas?.data.result.slice(0, 12));
+      setAllRecruitData(recruitDatas?.data.result);
     }
     fetchMostLikePortfolioData();
     fetchAllPortfolioData();
@@ -158,9 +153,9 @@ function Home() {
           navigation
           modules={[Grid, Pagination, Navigation]}
         >
-          {allRecruitData.map((data: DocumentType, index: number) => (
+          {allRecruitData.map((data: RecruitType) => (
             <SwiperSlide className="card">
-              <CompanySelectCard logo={companyLogo[index]} data={data} key={data.docId} />
+              <CompanySelectCard logo={data.firebaseUrl} data={data} key={data.companyName} />
             </SwiperSlide>
           ))}
         </Swiper>

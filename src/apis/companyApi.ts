@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import axios from 'axios';
 import { ToastError, ToastSuccess } from 'hooks/toastHook';
 import { RecruitmentType } from 'types/recruitment';
@@ -19,8 +20,10 @@ export const employmentNotification = async (
   division: string,
   applyLink: string,
   salary: string,
-  firebaseUrl: string,
+  result: string,
 ) => {
+  console.log(`result ${result} 111`);
+  console.log(typeof result);
   const response: any = await serverApi.post('https://hsureadme.herokuapp.com/api/v1/recruit_post/new', {
     companyName,
     content,
@@ -30,9 +33,8 @@ export const employmentNotification = async (
     division,
     applyLink,
     salary: Number(salary),
-    firebaseUrl,
+    firebaseUrl: result,
   });
-
   try {
     console.log(response);
     return response;
@@ -45,6 +47,7 @@ export const employmentNotification = async (
 export const getAllRecruitment = () => {
   const response = serverApi.get('https://hsureadme.herokuapp.com/api/v1/recruit_posts/');
   try {
+    console.log(response);
     return response;
   } catch (error) {
     return console.log(error);
