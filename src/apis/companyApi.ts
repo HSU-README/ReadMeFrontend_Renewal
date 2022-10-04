@@ -47,7 +47,6 @@ export const employmentNotification = async (
 export const getAllRecruitment = () => {
   const response = serverApi.get('https://hsureadme.herokuapp.com/api/v1/recruit_posts/');
   try {
-    console.log(response);
     return response;
   } catch (error) {
     return console.log(error);
