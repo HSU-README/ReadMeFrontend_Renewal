@@ -4,7 +4,7 @@ import { recruitmentImagesState } from 'recoil/atoms';
 import { Button, Input } from '@mui/material';
 import { storage } from 'utils/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Container from './style';
 import SelectOption, { MenuItemType } from './Select';
@@ -50,7 +50,7 @@ function EnrollForm() {
   const [companyURLError, setCompanyURLError] = useState(true);
   const [photoUrl, setPhotoURL] = useState('');
   const [imagesState] = useRecoilState<any[]>(recruitmentImagesState);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(imagesState);
@@ -98,10 +98,11 @@ function EnrollForm() {
       if (!validation(companyURL, setCompanyURLError)) {
         chk = false;
       }
-      if (!validation(salary, setSalaryError) || !Number.isNaN(salary)) {
+      if (!validation(salary, setSalaryError) || Number.isNaN(salary)) {
         chk = false;
       }
       if (chk) {
+        console.log('here');
         const result = await captureToFirebase();
         try {
           console.log(`photoUrl ${photoUrl}`);
@@ -119,7 +120,7 @@ function EnrollForm() {
               salary,
               result,
             ).then(() => {
-              // navigate('/');
+              navigate('/');
             });
           }
         } catch (error) {
