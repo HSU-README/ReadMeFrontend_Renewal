@@ -48,7 +48,6 @@ function EnrollForm() {
   const [techError, setTechError] = useState(true);
   const [salaryError, setSalaryError] = useState(true);
   const [companyURLError, setCompanyURLError] = useState(true);
-  const [photoUrl, setPhotoURL] = useState('');
   const [imagesState] = useRecoilState<any[]>(recruitmentImagesState);
   const navigate = useNavigate();
 
@@ -80,7 +79,6 @@ function EnrollForm() {
       // upload the file
       const uploadTask = await uploadBytesResumable(storageRef, imageName);
       const URL = await getDownloadURL(uploadTask.ref);
-      setPhotoURL(URL);
       return URL;
     }
   };
@@ -102,27 +100,23 @@ function EnrollForm() {
         chk = false;
       }
       if (chk) {
-        console.log('here');
-        const result = await captureToFirebase();
+        const thumbnail = await captureToFirebase();
+        const defaultThumbnail = 'https://readme-pro.netlify.app/static/media/Pangyo.478c2833b9b5c385f196.jpg';
         try {
-          console.log(`photoUrl ${photoUrl}`);
-          console.log(`result ${result}`);
-          if (result !== undefined) {
-            console.log(result);
-            employmentNotification(
-              companyName,
-              contents,
-              tech,
-              duty,
-              location,
-              career,
-              companyURL,
-              salary,
-              result,
-            ).then(() => {
-              navigate('/');
-            });
-          }
+          console.log(thumbnail);
+          employmentNotification(
+            companyName,
+            contents,
+            tech,
+            duty,
+            location,
+            career,
+            companyURL,
+            salary,
+            thumbnail || defaultThumbnail,
+          ).then(() => {
+            navigate('/');
+          });
         } catch (error) {
           console.log('here');
           console.error(error);
