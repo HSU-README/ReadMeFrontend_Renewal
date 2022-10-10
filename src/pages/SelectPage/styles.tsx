@@ -10,6 +10,7 @@ const Container = styled.div`
     color: black;
     font-size: 40px;
     margin-left: 16%;
+    margin-top: 4%;
   }
 
   .swiper-container {
@@ -25,6 +26,7 @@ const Container = styled.div`
   }
 
   .swiper-slide {
+    bottom: 2%;
     height: 40%;
   }
 
