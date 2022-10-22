@@ -37,7 +37,7 @@
 
 ## 🎞 Demo
 [리뉴얼 전 리드미 시연영상보기](https://www.youtube.com/watch?v=X-rooURijag)  
-[리뉴얼 후 리드미 시연영상보기](https://youtu.be/OUL0vgH_dk8)
+[리뉴얼 후 리드미 시연영상보기](https://www.youtube.com/watch?v=o1WqMeW8qFM&ab_channel=LINKER)
 
 <br/>
 
